@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Bloquer l'accès à la console d'admin (inutile pour Google)
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://runpassion.fr/coaching/sitemap.xml

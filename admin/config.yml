@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Permet de tester le CMS en local (nécessite de lancer: npx decap-cms-proxy-server)
+local_backend: true
+
+media_folder: "images"
+public_folder: "images"
+
+collections:
+  - name: "shoes"
+    label: "Tests & Articles Running"
+    folder: "content/shoes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre de l'article", name: "title", widget: "string" }
+      - { label: "Catégorie", name: "category", widget: "select", options: ["Matériel", "Actualités", "Conseils", "Guides"], default: "Matériel" }
+      - { label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Auteur", name: "author", widget: "string", default: "Vincent" }
+      - { label: "Mettre en avant (Featured)", name: "featured", widget: "boolean", default: false }
+      - { label: "Image principale (URL ou Fichier)", name: "image", widget: "image" }
+      - { label: "Extrait / Résumé court", name: "excerpt", widget: "text" }
+      - { label: "Contenu de l'article (Markdown)", name: "body", widget: "markdown" }

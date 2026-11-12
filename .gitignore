@@ -1,0 +1,16 @@
+# Python / local scripts
+__pycache__/
+*.pyc
+.env
+
+# Backups & local temp folders
+*.bak
+Nouveau dossier (4)/
+Nouveau Document texte.txt
+input_tests/
+
+# Heavy RAW camera files
+*.CR3
+
+# Sensitive file (contains hardcoded password; kept on Hostinger)
+save_article.php

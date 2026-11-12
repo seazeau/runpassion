@@ -1,0 +1,31 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Articles de Blog"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Titre de l'article", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "date", widget: "date", format: "YYYY-MM-DD", dateFormat: "DD/MM/YYYY" }
+      - { label: "Résumé court (SEO)", name: "excerpt", widget: "text" }
+      - label: "Image de couverture"
+        name: "image"
+        widget: "select"
+        default: "/cover-vma-run.png"
+        options:
+          - { label: "Piste Athlétisme (VMA / Vitesse) — Par défaut", value: "/cover-vma-run.png" }
+          - { label: "Forêt & Nature (Endurance Fondamentale)", value: "/cover-endurance-run.png" }
+          - { label: "Équipement running & Montre GPS (Conseils / Planification)", value: "/cover-coach-run.png" }
+          - { label: "Piste de course coucher de soleil (Action)", value: "/hero-run.png" }
+      - { label: "Contenu (Markdown)", name: "body", widget: "markdown" }

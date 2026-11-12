@@ -1,0 +1,3 @@
+:HL["/coaching/_next/static/chunks/2r1ca4tas-ylb.css","style"]
+:HL["/coaching/cover-endurance-run.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"endurance-fondamentale-running","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"UGUDccwCbT4ULOQh2t3hp"}

@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Redirection 301 de l'ancien coaching vers le nouveau site indépendant
+RewriteRule ^coaching(/.*)?$ https://vincentbuisson.fr/ [R=301,L]
+RewriteRule ^coach-running-en-ligne/?$ https://vincentbuisson.fr/ [R=301,L]
+RewriteRule ^coach-course-a-pied/?$ https://vincentbuisson.fr/ [R=301,L]
+
+# Si le fichier ou le dossier demandé existe réellement (images, css, js), on le sert directement
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Toutes les autres URLs d'articles renvoient vers index.html (statut HTTP 200)
+RewriteRule ^ index.html [L,QSA]
+</IfModule>

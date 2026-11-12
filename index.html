@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="RUN.png">
+    
+    <!-- SEO & META TAGS -->
+    <title id="meta-title">RunPassion | Blog Running, Trail & Tests de Chaussures</title>
+    <meta name="description" id="meta-desc" content="Découvrez nos tests indépendants de chaussures de running et de trail (Nike, Asics, Hoka, Brooks). Conseils d'entraînement marathon et bons plans équipement par des experts passionnés.">
+    <link rel="canonical" id="canonical-url" href="https://runpassion.fr/">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://runpassion.fr/">
+    <meta property="og:title" content="RunPassion | Le média expert du running indépendant">
+    <meta property="og:description" content="Tests de chaussures, conseils d'entraînement et bons plans running.">
+    <meta property="og:image" content="RUN.png">
+
+    <!-- Design & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Importation des données du script Python (avec cache-buster anti-reprise d'ancienne version) -->
+    <script src="articles_data.js?v=20260917_nocoach"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'],
+                        title: ['Outfit', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#fcb900',
+                            yellowHover: '#d89f00',
+                            dark: '#040406',
+                            card: '#0a0a0e',
+                            cardGray: '#121217',
+                            border: 'rgba(252, 185, 0, 0.08)',
+                            metaGray: '#94A3B8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif !important; 
+            background-color: #040406; 
+            background-image: 
+                linear-gradient(rgba(252, 185, 0, 0.012) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(252, 185, 0, 0.012) 1px, transparent 1px);
+            background-size: 60px 60px;
+            background-attachment: fixed;
+            color: #fff; 
+            scroll-behavior: smooth; 
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif !important;
+        }
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+        
+        /* Contenu Article */
+        .article-content { font-size: 1.125rem; line-height: 1.8; color: #d1d5db; }
+        
+        /* BOUCLIER TYPOGRAPHIQUE ABSOLU : Force la police, la taille et retire le gras parasite de WordPress */
+        .article-content p, 
+        .article-content div, 
+        .article-content span,
+        .article-content ul,
+        .article-content li,
+        .article-content font {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 400 !important;
+            font-size: 1.125rem !important;
+            line-height: 1.8 !important;
+            color: #d1d5db !important;
+        }
+        
+        /* Autorise le gras uniquement sur les vraies balises Strong/B courtes */
+        .article-content strong, 
+        .article-content b { 
+            font-family: 'Inter', sans-serif !important;
+            color: #fff !important; 
+            font-weight: 700 !important; 
+            font-size: 1.125rem !important;
+        }
+        
+        .article-content p { margin-bottom: 1.5rem !important; text-align: justify; hyphens: auto; }
+        .article-content h2 { color: #fcb900 !important; font-weight: 900 !important; font-family: 'Inter', sans-serif !important; font-size: 1.5rem !important; margin-top: 3.5rem !important; margin-bottom: 1.5rem !important; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; scroll-margin-top: 100px; line-height: 1.3 !important; }
+        .article-content h3 { color: #fff !important; font-weight: 800 !important; font-family: 'Inter', sans-serif !important; font-size: 1.25rem !important; margin-top: 2rem !important; margin-bottom: 1rem !important; scroll-margin-top: 100px; line-height: 1.3 !important; }
+        
+        /* Centrage et style par défaut des images individuelles hors de la galerie */
+        .article-content img:not(.gallery-img) {
+            display: block !important;
+            margin: 2.5rem auto !important;
+            border-radius: 1.5rem !important;
+            max-width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* --- SYSTÈME DE GALERIE AUTO CÔTE À CÔTE BLINDÉ --- */
+        .custom-auto-gallery {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+            margin: 4rem 0 !important;
+            width: 100% !important;
+        }
+        @media (min-width: 768px) {
+            .custom-auto-gallery[data-cols="3"] {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+        
+        .custom-auto-gallery img.gallery-img {
+            margin: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            aspect-ratio: 4/3 !important;
+            object-fit: cover !important;
+            border-radius: 1.5rem !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        /* Fallback Jetpack Tiled Gallery CSS */
+        .tiled-gallery__row {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            gap: 1.5rem !important;
+            margin: 4rem 0 !important;
+            width: 100% !important;
+        }
+        .tiled-gallery__col {
+            flex: 1 !important;
+            min-width: 0 !important;
+        }
+        .tiled-gallery__item img {
+            margin: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 4/3 !important;
+            object-fit: cover !important;
+            border-radius: 1.5rem !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+        }
+
+
+        .animate-in { animation: fadeIn 0.6s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        #read-progress { position: fixed; top: 0; left: 0; height: 3px; background: #fcb900; z-index: 100; width: 0%; transition: width 0.1s ease; }
+        
+        .logo-img { filter: invert(1) brightness(1.5); mix-blend-mode: screen; }
+
+        /* Styles Admin */
+        #page-admin input, #page-admin textarea, #page-admin select, #page-login input {
+            background: #1a1a1a !important;
+            border: 1px solid #333 !important;
+            color: white !important;
+            padding: 0.75rem !important;
+            border-radius: 0.5rem !important;
+            width: 100%;
+        }
+        #page-admin input:focus, #page-admin textarea:focus, #page-login input:focus { border-color: #fcb900 !important; outline: none; }
+
+        /* BOUCLIER ANTI-WORDPRESS : Masque le contenu généré par le thème après le footer */
+        #runpassion-global-footer ~ *:not(#toast-notif):not(script):not(#back-to-top) {
+            display: none !important;
+        }
+        .related-posts, .post-navigation, .site-footer, .nav-links, .ast-single-related-posts-container {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-yellow selection:text-black">
+
+    <div id="read-progress"></div>
+
+    <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-white/10">
+        <div class="max-w-[1200px] mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- LOGO AREA -->
+            <div class="flex items-center gap-3 cursor-pointer group" onclick="showPage('home')">
+                <img src="Vert et Orange Fluo Sci-Fi Jeu YouTube Chaîne Art.png" 
+                     alt="RunPassion" 
+                     class="h-10 w-auto logo-img group-hover:scale-105 transition-transform" 
+                     onerror="this.style.display='none';">
+                <div class="flex items-center">
+                    <span class="text-xl font-black text-white uppercase italic tracking-tighter">RUN</span>
+                    <span class="text-xl font-black text-brand-yellow uppercase italic tracking-tighter">PASSION</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex gap-5 lg:gap-7 font-bold text-xs uppercase tracking-widest items-center">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="text-white hover:text-brand-yellow transition">Accueil</a>
+                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition" onclick="scrollToSection('tests-materiel')">Tests</a>
+                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition" onclick="scrollToSection('guides-section')">Guides</a>
+                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition" onclick="scrollToSection('actu-section')">Actualités</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('bons-plans-section')" class="text-gray-400 hover:text-brand-yellow transition">Bons Plans</a>
+                <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="text-brand-yellow border border-brand-yellow/40 px-3.5 py-1.5 rounded-lg hover:bg-brand-yellow hover:text-black transition flex items-center gap-1.5 font-black shadow-sm group">
+                    <span>Coaching</span>
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-75 group-hover:opacity-100"></i>
+                </a>
+                <!-- BARRE DE RECHERCHE -->
+                <div class="relative ml-2">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                    <input type="text" id="desktop-search" placeholder="Rechercher..." class="bg-white/5 border border-white/10 text-white text-xs rounded-full pl-10 pr-4 py-2 w-40 focus:w-56 focus:outline-none focus:border-brand-yellow transition-all duration-300 placeholder-gray-500" onkeyup="if(event.key === 'Enter') filterByKeyword(this.value)">
+                </div>
+            </nav>
+            <button class="md:hidden text-white" id="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.remove('translate-x-full')"><i data-lucide="menu"></i></button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[60] transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8 text-2xl font-black uppercase">
+        <button class="absolute top-6 right-6 text-white" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"><i data-lucide="x" class="w-10 h-10"></i></button>
+        
+        <div class="relative w-3/4 mb-4">
+            <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+            <input type="text" id="mobile-search" placeholder="RECHERCHER..." class="bg-white/10 border border-white/20 text-white text-lg rounded-xl pl-12 pr-4 py-3 w-full focus:outline-none focus:border-brand-yellow placeholder-gray-400" onkeyup="if(event.key === 'Enter') { filterByKeyword(this.value); document.getElementById('mobile-menu').classList.add('translate-x-full'); }">
+        </div>
+
+        <a href="javascript:void(0)" onclick="showPage('home'); document.getElementById('mobile-menu').classList.add('translate-x-full')" class="text-white">Accueil</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('tests-materiel'); document.getElementById('mobile-menu').classList.add('translate-x-full')" class="text-white">Tests</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('guides-section'); document.getElementById('mobile-menu').classList.add('translate-x-full')" class="text-white">Guides</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('actu-section'); document.getElementById('mobile-menu').classList.add('translate-x-full')" class="text-white">Actualités</a>
+        <a href="javascript:void(0)" onclick="scrollToSection('bons-plans-section'); document.getElementById('mobile-menu').classList.add('translate-x-full')" class="text-white">Bons Plans</a>
+        <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="text-brand-yellow border border-brand-yellow/40 px-6 py-3 rounded-2xl flex items-center gap-3 text-xl font-black">
+            <span>Coaching Vincent Buisson</span>
+            <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+        </a>
+    </div>
+
+    <main class="pt-24 pb-12">
+        <!-- PAGE ACCUEIL -->
+        <div id="page-home" class="max-w-[1200px] mx-auto px-6">
+            
+            <div id="hero-section" class="mb-16"></div>
+
+            <!-- BONS PLANS FLASH -->
+            <section id="bons-plans-section" class="mb-20 animate-in">
+                <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                    <h2 class="text-xl font-black uppercase tracking-tight flex items-center gap-2">
+                        <i data-lucide="zap" class="text-brand-yellow w-5 h-5"></i> Bons Plans Flash
+                    </h2>
+                </div>
+                <div id="bons-plans-grid" class="flex overflow-x-auto hide-scroll lg:grid lg:grid-cols-5 md:grid-cols-3 gap-6 pb-4"></div>
+            </section>
+
+            <!-- SECTION PARTENAIRES -->
+            <section id="promo-section" class="mb-20 animate-in">
+                <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                    <h2 class="text-xl font-black uppercase tracking-tight flex items-center gap-2">
+                        <i data-lucide="ticket" class="text-brand-yellow w-5 h-5"></i> Partenaires officiels
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Top4Running -->
+                    <div class="bg-brand-card border border-white/5 p-8 rounded-3xl relative overflow-hidden flex flex-col">
+                        <a href="https://top4running.fr?a_box=sc3esau3" target="_blank" rel="noopener noreferrer" class="flex items-center gap-6 mb-6 group/link">
+                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center p-3 shadow-lg shrink-0 transition-transform group-hover/link:scale-105">
+                                <img src="image_808e21.png" alt="Top4Running" class="w-full h-full object-contain" loading="lazy">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover/link:text-brand-yellow transition-colors">
+                                    Top4Running <i data-lucide="external-link" class="w-4 h-4 inline-block ml-1 opacity-50 mb-1"></i>
+                                </h3>
+                                <p class="text-brand-yellow text-xs font-bold uppercase">-5% SUPPLÉMENTAIRES</p>
+                            </div>
+                        </a>
+                        <div class="flex gap-2 mt-auto">
+                            <div class="bg-black border border-white/10 px-4 py-3 rounded-lg flex-grow font-mono font-bold text-white text-center tracking-widest uppercase italic">RUNPASSION</div>
+                            <button onclick="copyCode('RUNPASSION', this)" class="bg-brand-yellow text-black font-bold px-4 py-3 rounded-lg hover:bg-brand-yellowHover transition"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                    <!-- Nutripure -->
+                    <div class="bg-brand-card border border-white/5 p-8 rounded-3xl relative overflow-hidden flex flex-col">
+                        <a href="https://www.nutripure.fr/fr/?s=RUNPASSION" target="_blank" rel="noopener noreferrer" class="flex items-center gap-6 mb-6 group/link">
+                            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center p-3 shadow-lg shrink-0 transition-transform group-hover/link:scale-105">
+                                <img src="image_808dff.png" alt="Nutripure" class="w-full h-full object-contain" loading="lazy">
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-black text-white uppercase tracking-tight group-hover/link:text-brand-yellow transition-colors">
+                                    Nutripure <i data-lucide="external-link" class="w-4 h-4 inline-block ml-1 opacity-50 mb-1"></i>
+                                </h3>
+                                <p class="text-brand-yellow text-xs font-bold uppercase">-10% 1ÈRE COMMANDE</p>
+                            </div>
+                        </a>
+                        <div class="flex gap-2 mt-auto">
+                            <div class="bg-black border border-white/10 px-4 py-3 rounded-lg flex-grow font-mono font-bold text-white text-center tracking-widest uppercase text-sm flex items-center justify-center italic">RUNPASSION</div>
+                            <button onclick="copyCode('RUNPASSION', this)" class="bg-white text-black font-bold px-4 py-3 rounded-lg hover:bg-gray-200 transition"><i data-lucide="copy" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="guides-section" class="mb-20 animate-in">
+                <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                    <h2 class="text-xl font-black uppercase tracking-tight flex items-center gap-2">
+                        <i data-lucide="book-open" class="text-brand-yellow w-5 h-5"></i> Guides d'Achat 2026
+                    </h2>
+                </div>
+                <div id="guides-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- ENCART PROMO COACHING VINCENT BUISSON -->
+            <section class="mb-20 animate-in">
+                <div class="relative bg-gradient-to-r from-brand-card via-[#16161f] to-black rounded-[32px] p-8 md:p-12 border border-brand-yellow/20 shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 group">
+                    <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-brand-yellow/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="flex flex-col md:flex-row items-center gap-6 z-10 text-center md:text-left">
+                        <div class="relative w-24 h-24 md:w-28 md:h-28 rounded-2xl overflow-hidden border-2 border-brand-yellow shrink-0 shadow-xl">
+                            <img src="Paris_Half_Race_Story-08.jpg" alt="Vincent Buisson Coach Running" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div>
+                            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 mb-3">
+                                <span class="bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/30 text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-widest">Coaching Sur-Mesure</span>
+                                <span class="bg-white/5 text-gray-400 border border-white/10 text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-wider">Suivi Nolio 7j/7</span>
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-black text-white uppercase italic tracking-tight mb-2">Préparez vos objectifs avec Vincent Buisson</h3>
+                            <p class="text-gray-400 text-sm max-w-xl font-medium mb-3">Diplômé STAPS & Enseignant EPS. Programmes 100% individualisés en <a href="https://vincentbuisson.fr/coaching-10km/" target="_blank" rel="noopener" class="text-brand-yellow underline hover:text-white">coaching 10 km</a>, <a href="https://vincentbuisson.fr/coaching-semi-marathon/" target="_blank" rel="noopener" class="text-brand-yellow underline hover:text-white">préparation semi-marathon</a> et <a href="https://vincentbuisson.fr/coaching-marathon/" target="_blank" rel="noopener" class="text-brand-yellow underline hover:text-white">coaching marathon en ligne</a>. Échanges quotidiens sur Nolio et premier bilan visio offert.</p>
+                            <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 text-[11px] font-bold">
+                                <a href="https://vincentbuisson.fr/calculateur-allures/" target="_blank" rel="noopener" class="bg-white/5 hover:bg-brand-yellow/20 text-gray-300 hover:text-brand-yellow border border-white/10 px-3 py-1 rounded-lg transition">⚡ Calculateur VMA & Zones FC</a>
+                                <a href="https://vincentbuisson.fr/blog/endurance-fondamentale-zone-2-running/" target="_blank" rel="noopener" class="bg-white/5 hover:bg-brand-yellow/20 text-gray-300 hover:text-brand-yellow border border-white/10 px-3 py-1 rounded-lg transition">📖 Guide Endurance Fondamentale</a>
+                                <a href="https://vincentbuisson.fr/blog/seuil-lactique-course-a-pied-sv1-sv2/" target="_blank" rel="noopener" class="bg-white/5 hover:bg-brand-yellow/20 text-gray-300 hover:text-brand-yellow border border-white/10 px-3 py-1 rounded-lg transition">🔥 Guide Seuil SV1 & SV2</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="z-10 shrink-0 w-full lg:w-auto">
+                        <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 w-full lg:w-auto bg-brand-yellow text-black font-black py-4 px-8 rounded-xl hover:bg-white hover:scale-105 transition-all uppercase text-xs tracking-widest shadow-xl italic">
+                            Découvrir le coaching <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LE FIL ACTU -->
+            <section id="actu-section" class="mb-24 animate-in">
+                <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
+                    <h2 class="text-xl font-black uppercase tracking-tight flex items-center gap-2">
+                        <i data-lucide="radio" class="text-brand-yellow w-5 h-5"></i> Le Fil Actu
+                    </h2>
+                </div>
+                <div id="actu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+            </section>
+
+            <!-- SECTION ARTICLES (FLUX GLOBAL) -->
+            <section id="tests-materiel" class="mb-10 animate-in">
+                <div class="flex items-center justify-between mb-10 border-b border-white/10 pb-4">
+                    <h2 class="text-2xl font-black uppercase tracking-tight italic">Nos Tests & Conseils</h2>
+                </div>
+                <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 mb-12"></div>
+                <div id="load-more-container" class="flex justify-center mt-4">
+                    <button onclick="loadMoreArticles()" class="bg-white/5 border border-white/10 text-white font-black px-10 py-4 rounded-2xl hover:bg-brand-yellow hover:text-black transition-all uppercase text-xs tracking-widest flex items-center gap-3 shadow-xl italic">
+                        Charger plus d'articles <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </section>
+
+        </div> <!-- Fin de la zone d'accueil -->
+
+        <!-- PAGE ARTICLE -->
+        <div id="page-article" class="hidden"></div>
+
+        <!-- AUTH -->
+        <div id="page-login" class="hidden max-w-[400px] mx-auto px-6 py-20 text-center animate-in">
+            <h2 class="text-2xl font-black mb-8 uppercase italic">Accès Rédaction</h2>
+            <input type="password" id="admin-password" placeholder="Mot de passe" class="mb-4 text-center">
+            <button onclick="checkLogin()" class="w-full bg-brand-yellow text-black font-black py-4 rounded-xl hover:bg-white transition-all uppercase text-xs tracking-widest italic">Se connecter</button>
+            <p id="login-error" class="text-red-500 text-[10px] font-bold mt-4 uppercase tracking-widest opacity-0">Mot de passe incorrect</p>
+        </div>
+
+        <!-- ADMIN -->
+        <div id="page-admin" class="hidden max-w-[1200px] mx-auto px-6 animate-in">
+            <div class="flex justify-between items-center mb-12">
+                <h1 class="text-4xl font-black italic uppercase tracking-tighter">Éditeur Intelligent</h1>
+                <button onclick="logout()" class="text-gray-500 font-bold uppercase text-[10px] tracking-widest">Déconnexion</button>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-7 space-y-4">
+                    <input type="text" id="edit-title" placeholder="Modèle de chaussure / Titre">
+                    <div class="grid grid-cols-2 gap-4">
+                        <select id="edit-category">
+                            <option value="Tests">Tests</option>
+                            <option value="Actualités">Actualités</option>
+                            <option value="Guides">Guides</option>
+                        </select>
+                        <input type="text" id="edit-image" placeholder="URL de l'image (Optionnel)">
+                    </div>
+                    <textarea id="edit-content" rows="15" placeholder="Tapez les notes (Poids : 255g, Drop : 6mm...) puis votre texte de test..."></textarea>
+                </div>
+                <div class="lg:col-span-5 space-y-6 text-center">
+                    <button onclick="generateJSON()" class="w-full bg-brand-yellow text-black font-black py-4 rounded-xl shadow-xl italic">Générer JSON</button>
+                    <textarea id="output-json" readonly rows="18" class="font-mono text-xs opacity-50 mt-4"></textarea>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECTION NEWSLETTER (NOUVEAU) -->
+    <section id="newsletter-section" class="max-w-[1200px] mx-auto px-6 mb-20 animate-in">
+        <div class="bg-gradient-to-br from-brand-yellow to-brand-yellowHover rounded-[40px] p-10 md:p-16 flex flex-col md:flex-row items-center justify-between shadow-2xl relative overflow-hidden">
+            <div class="md:w-3/5 relative z-10 mb-8 md:mb-0 text-center md:text-left">
+                <h3 class="text-3xl md:text-5xl font-black text-black uppercase italic tracking-tighter mb-4 leading-none">Rejoins RUNPASSIONFR.</h3>
+                <p class="text-black/80 font-bold text-sm mb-6">Reçois nos derniers tests exclusifs, nos guides d'achat et nos meilleurs bons plans directement dans ta boîte mail. Zéro spam, 100% course à pied.</p>
+                <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault(); alert('Abonnement réussi ! Bienvenue dans la meute RunPassion.');">
+                    <input type="email" placeholder="Ton adresse email..." required class="flex-grow bg-white text-black font-bold px-5 py-4 rounded-xl border-none focus:ring-4 focus:ring-black/10 text-sm">
+                    <button type="submit" class="bg-black text-white font-black uppercase text-xs tracking-widest px-8 py-4 rounded-xl hover:bg-gray-800 transition-colors shadow-lg">S'abonner</button>
+                </form>
+            </div>
+            <i data-lucide="mail" class="absolute -right-10 -bottom-10 w-64 h-64 text-black opacity-10 transform -rotate-12"></i>
+        </div>
+    </section>
+
+    <!-- FOOTER GLOBAL -->
+    <footer id="runpassion-global-footer" class="bg-brand-cardGray pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <!-- PAVÉ SEO -->
+            <div class="bg-gradient-to-br from-black to-brand-cardGray rounded-[40px] p-10 border border-white/5 shadow-2xl text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-8 leading-tight underline decoration-brand-yellow decoration-4 underline-offset-8 italic">RunPassion : Votre Média Expert en Running et Trail</h2>
+                <div class="grid md:grid-cols-2 gap-12 text-gray-400 leading-relaxed text-left font-medium">
+                    <p>Bienvenue sur <strong class="text-white">RunPassion.fr</strong>, la référence indépendante pour tous les passionnés de running. Nous décortiquons pour vous les dernières nouveautés matériel avec des <strong class="text-white">tests de chaussures de running</strong> complets et impartiaux.</p>
+                    <p>Pour vos objectifs chronométriques (<a href="https://vincentbuisson.fr/coaching-10km/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">plan 10 km</a>, <a href="https://vincentbuisson.fr/coaching-semi-marathon/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">préparation semi-marathon</a>, <a href="https://vincentbuisson.fr/coaching-marathon/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">coaching marathon</a> et trail), profitez du <strong class="text-white"><a href="https://vincentbuisson.fr/" target="_blank" rel="noopener" class="text-brand-yellow hover:underline">coaching course à pied en ligne de Vincent Buisson</a></strong> (enseignant d'EPS & diplômé STAPS sur Nolio), et découvrez nos codes promos exclusifs chez Top4Running et Nutripure.</p>
+                </div>
+            </div>
+
+            <!-- MAILLAGE SÉMANTIQUE (KEYWORDS FOOTER) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 pb-16 border-b border-white/10 text-sm mb-12">
+                <div>
+                    <h4 class="text-brand-yellow font-black uppercase text-[10px] tracking-[0.3em] mb-8">Marques & Tests</h4>
+                    <ul class="space-y-4 text-gray-500 font-medium">
+                        <li><a href="javascript:void(0)" onclick="filterByKeyword('Asics')" class="hover:text-brand-yellow transition">Chaussures Asics Running</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterByKeyword('Nike')" class="hover:text-brand-yellow transition">Nouveautés Nike Performance</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterByKeyword('Adidas')" class="hover:text-brand-yellow transition">Gamme Adidas Adizero</a></li>
+                        <li><a href="javascript:void(0)" onclick="filterByKeyword('Hoka')" class="hover:text-brand-yellow transition">Tests Hoka One One</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-brand-yellow font-black uppercase text-[10px] tracking-[0.3em] mb-8">Équipement</h4>
+                    <ul class="space-y-4 text-gray-500 font-medium">
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('tests-materiel')" class="hover:text-brand-yellow transition">Meilleures Plaques Carbone</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('tests-materiel')" class="hover:text-brand-yellow transition">Chaussures Trail Ultra</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('tests-materiel')" class="hover:text-brand-yellow transition">Montres GPS Running</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-brand-yellow font-black uppercase text-[10px] tracking-[0.3em] mb-8">Guides & Coaching</h4>
+                    <ul class="space-y-4 text-gray-500 font-medium">
+                        <li><a href="https://vincentbuisson.fr/" target="_blank" rel="noopener" class="text-brand-yellow font-bold hover:underline flex items-center gap-1.5">Coach Running — Vincent Buisson <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></a></li>
+                        <li><a href="https://vincentbuisson.fr/coaching-marathon/" target="_blank" rel="noopener" class="hover:text-brand-yellow transition">Coach Marathon (Sub 3h / 3h30 / 4h)</a></li>
+                        <li><a href="https://vincentbuisson.fr/coaching-semi-marathon/" target="_blank" rel="noopener" class="hover:text-brand-yellow transition">Coaching Semi-Marathon (1h30 / 1h45)</a></li>
+                        <li><a href="https://vincentbuisson.fr/coaching-10km/" target="_blank" rel="noopener" class="hover:text-brand-yellow transition">Coaching 10 km (Sub 40' / 45' / 50')</a></li>
+                        <li><a href="https://vincentbuisson.fr/calculateur-allures/" target="_blank" rel="noopener" class="hover:text-brand-yellow transition">Calculateur VMA & Zones Cardiaques</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('guides-section')" class="hover:text-brand-yellow transition">Guides d'Achat 2026</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('actu-section')" class="hover:text-brand-yellow transition">Le Fil Actu Running</a></li>
+                        <li><a href="javascript:void(0)" onclick="openArticle('les-4-meilleures-chaussures-pour-marathon')" class="hover:text-brand-yellow transition">Guide Spécial Marathon</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-brand-yellow font-black uppercase text-[10px] tracking-[0.3em] mb-8">Bons Plans</h4>
+                    <ul class="space-y-4 text-gray-500 font-medium">
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('promo-section')" class="hover:text-brand-yellow transition">Code Promo Top4Running</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('promo-section')" class="hover:text-brand-yellow transition">Code Promo Nutripure</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToSection('bons-plans-section')" class="hover:text-brand-yellow transition">Soldes Running</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- LOGO & ADMIN -->
+            <div class="text-center pt-8">
+                <div class="text-2xl font-black mb-6 uppercase italic tracking-tighter">RUN<span class="text-brand-yellow">PASSION</span></div>
+                <button onclick="showPage('admin')" class="text-[9px] text-gray-600 hover:text-white transition-colors uppercase tracking-[0.4em] font-black">Espace Rédaction</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOUTON REMONTER (NOUVEAU) -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-8 right-8 bg-brand-yellow text-black p-3 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-[100] hover:scale-110">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
+
+    <div id="toast-notif" class="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-4 rounded-xl shadow-2xl font-bold flex items-center gap-3 opacity-0 pointer-events-none transition-all duration-300 z-[110]">
+        <i data-lucide="check-circle" class="w-5 h-5"></i> <span>Copié !</span>
+    </div>
+
+    <script>
+        let isAuthenticated = false;
+        const ADMIN_PASS = "runpassion2026";
+        let displayLimit = 8; // Pagination d'articles
+        let currentFilteredList = [];
+
+        // Gestion du scroll (Barre de lecture et Bouton Remonter)
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('back-to-top');
+            if(window.scrollY > 600) { 
+                btn.classList.remove('opacity-0', 'pointer-events-none'); 
+                btn.classList.add('opacity-100', 'pointer-events-auto'); 
+            } else { 
+                btn.classList.add('opacity-0', 'pointer-events-none'); 
+                btn.classList.remove('opacity-100', 'pointer-events-auto'); 
+            }
+            
+            if (!document.getElementById('page-article').classList.contains('hidden')) {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('read-progress').style.width = scrolled + "%";
+            } else {
+                document.getElementById('read-progress').style.width = "0%";
+            }
+        });
+
+        const mockArticles = [
+            { id: 1, title: "Test Adidas Hyperboost EDGE", category: "Adidas", author: "Vincent", date: "2026-03-25", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le super-trainer ultime sans plaque carbone. Pensé pour l'entraînement quotidien polyvalent (endurance fondamentale, sorties longues et tempo)." },
+            { id: 2, title: "Test Asics Gel-Cumulus 28", category: "Asics", author: "Vincent", date: "2026-03-18", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: true, excerpt: "La série Cumulus d'Asics est de retour. Elle s'allège et intègre une nouvelle mousse pour un confort optimal au quotidien." },
+            { id: 3, title: "Test Brooks Adrenaline GTS 25", category: "Brooks", author: "Vincent", date: "2026-03-15", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: true, excerpt: "La référence de la stabilité fait peau neuve. Un soutien renforcé idéal pour accumuler les kilomètres en toute sécurité." },
+            { id: 4, title: "KIPRUN Kipstorm Lab Elite", category: "Kiprun", author: "La Rédaction", date: "2026-03-10", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le modèle élite unisexe ultra-performant de chez Decathlon, pensé exclusivement pour la compétition marathon." },
+            { id: 5, title: "Test New Balance Rebel V5", category: "New Balance", author: "Julien", date: "2026-03-26", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: true, excerpt: "L'entraînement très dynamique, léger et sans plaque. La chaussure parfaite pour vos séances tempo." },
+            { id: 6, title: "Salomon S/LAB Phantasm 3", category: "Salomon", author: "Vincent", date: "2026-03-01", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition sur route très haute performance. Ce bolide unisexe intègre une plaque carbone ravageuse." },
+            { id: 7, title: "Kiprun Kipstorm Tempo", category: "Kiprun", author: "Vincent", date: "2026-02-25", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le super-trainer de chez Decathlon à un prix défiant toute concurrence pour vos sorties rythmées." },
+            { id: 8, title: "Test New Balance 1080 v15", category: "New Balance", author: "La Rédaction", date: "2026-02-20", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le roi du confort est de retour. Footing, récupération et accumulation de kilomètres sans la moindre douleur." },
+            { id: 9, title: "Test Asics Metaspeed Ray", category: "Asics", author: "Vincent", date: "2026-02-12", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La nouvelle pépite de compétition Elite. Un confort ferme et orienté performance pure pour battre des records." },
+            { id: 10, title: "Test Asics SonicBlast", category: "Asics", author: "Julien", date: "2026-02-05", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement quotidien dynamique et rebondissant. Une belle surprise dans la gamme intermédiaire d'Asics." },
+            { id: 11, title: "La Sportiva Prodigio Pro", category: "La Sportiva", author: "Vincent", date: "2026-02-02", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Modèle ultra-trail doté d'une géométrie dynamique pour les coureurs cherchant de la vitesse sur longues distances en montagne." },
+            { id: 12, title: "Saucony Endorphin Speed 5", category: "Saucony", author: "La Rédaction", date: "2026-01-28", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Chaussure polyvalente pour les entraînements rythmés et la compétition. Plaque en nylon intégrée, plus flexible que le carbone." },
+            { id: 13, title: "Mizuno Wave Skyrise 6", category: "Mizuno", author: "Julien", date: "2026-01-25", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Confort optimal, adhérence et amortissement performant pour toutes les courses (footing, récupération, entraînement quotidien)." },
+            { id: 14, title: "Hoka Clifton 10", category: "Hoka", author: "Vincent", date: "20 Janvier 2026", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Légèreté et moelleux pour courir au quotidien (le grand classique Hoka)." },
+            { id: 15, title: "Adidas Adizero Evo SL", category: "Adidas", author: "Vincent", date: "15 Janvier 2026", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La 'super-shoe' de l'entraînement, inspirée de la légendaire Evo Pro 1. Parfaite pour le confort, le dynamisme et les séances tempo." },
+            { id: 16, title: "Hoka Mafate X", category: "Hoka", author: "La Rédaction", date: "10 Janvier 2026", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le summum de l'amorti pour trails difficiles et ultramarathons. Équipée d'une plaque en fibre de carbone à fourche." },
+            { id: 17, title: "Salomon Aero Glide 3", category: "Salomon", author: "Julien", date: "05 Janvier 2026", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement quotidien très amorti (maximaliste) sur route." },
+            { id: 18, title: "Mizuno Wave Rebellion Pro 3", category: "Mizuno", author: "Vincent", date: "02 Janvier 2026", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition sur route avec plaque carbone. Modèle au design extrême (foulée médio-pied fortement encouragée)." },
+            { id: 19, title: "Nike Vomero 18", category: "Nike", author: "Vincent", date: "28 Décembre 2025", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Allie confort et performance. Avec son amorti réactif et très mou, elle offre une excellente absorption des chocs." },
+            { id: 20, title: "Salomon S/LAB Ultra Glide", category: "Salomon", author: "La Rédaction", date: "20 Décembre 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition ultra-trail. Modèle unisexe élite ultra amorti pour tenir la distance." },
+            { id: 21, title: "Hoka Cielo X1 2.0", category: "Hoka", author: "Vincent", date: "15 Décembre 2025", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Modèle de compétition ultime chez Hoka (Plaque carbone). Géométrie très agressive et semelle incurvée." },
+            { id: 22, title: "Adidas Adizero Adios Pro 4", category: "Adidas", author: "La Rédaction", date: "10 Décembre 2025", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La reine des marathons. Compétition sur route avec tiges carbone (EnergyRods 2.0)." },
+            { id: 23, title: "Nike Vaporfly 4", category: "Nike", author: "Vincent", date: "05 Décembre 2025", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition élite sur route. Toujours la référence absolue en matière de retour d'énergie avec la mousse ZoomX." },
+            { id: 24, title: "Adidas Adizero Adios 9", category: "Adidas", author: "Julien", date: "01 Décembre 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Chaussure 'traditionnelle' à profil bas. Parfaite pour le travail sur piste et les séances de VMA courtes." },
+            { id: 25, title: "Nike Pegasus Premium", category: "Nike", author: "Vincent", date: "25 Novembre 2025", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement très haut de gamme avec une unité Zoom Air sculptée et visible sur toute la longueur." },
+            { id: 26, title: "Hoka Bondi 9", category: "Hoka", author: "La Rédaction", date: "20 Novembre 2025", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le navire amiral de l'amorti chez Hoka. Profil maximaliste pensé uniquement pour les footings de récupération." },
+            { id: 27, title: "Saucony Ride 18", category: "Saucony", author: "Julien", date: "15 Novembre 2025", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le 'daily trainer' par excellence. L'intégration de la mousse PWRRUN+ lui donne plus de rebond et de durabilité." },
+            { id: 29, title: "Nike Zoom Fly 6", category: "Nike", author: "Vincent", date: "05 Novembre 2025", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le compagnon d'entraînement de la Vaporfly. C'est un modèle 'Super-Trainer' avec plaque carbone." },
+            { id: 30, title: "On CloudSurfer Next", category: "On", author: "Julien", date: "01 Novembre 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Chaussure de footing dynamique (technologie CloudTec Phase). Plus légère et réactive." },
+            { id: 31, title: "New Balance Fresh Foam X 1080 v14", category: "New Balance", author: "Vincent", date: "28 Octobre 2025", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le summum du confort chez New Balance. Parfaite pour l'entraînement quotidien et les footings lents." },
+            { id: 32, title: "Brooks Glycerin Max", category: "Brooks", author: "La Rédaction", date: "25 Octobre 2025", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Amorti maximaliste démesuré. Conçue avec la mousse DNA Tuned, une chaussure de récupération hyper protectrice." },
+            { id: 33, title: "Nike Pegasus Plus", category: "Nike", author: "Vincent", date: "20 Octobre 2025", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "L'héritière spirituelle de la célèbre Pegasus Turbo. Équipée de mousse ZoomX sur toute la longueur." },
+            { id: 34, title: "Hoka Speedgoat 6", category: "Hoka", author: "Vincent", date: "15 Octobre 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La reine des sentiers. Trail polyvalent, très accrocheur (semelle Vibram Megagrip)." },
+            { id: 35, title: "On CloudBoom Strike", category: "On", author: "Julien", date: "10 Octobre 2025", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Chaussure de compétition ultra-innovante. Conçue pour battre des records sur marathon." },
+            { id: 36, title: "Puma Deviate Nitro Elite 3", category: "Puma", author: "Vincent", date: "05 Octobre 2025", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Un rapport qualité/prix exceptionnel pour une chaussure à plaque carbone très légère et extrêmement propulsive." },
+            { id: 37, title: "Puma Deviate Nitro 3", category: "Puma", author: "Vincent", date: "01 Octobre 2025", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "L'excellente chaussure d'entraînement à tout faire. Elle intègre une plaque en carbone composite." },
+            { id: 38, title: "Asics SuperBlast 2", category: "Asics", author: "La Rédaction", date: "28 Septembre 2025", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le Super-Trainer par excellence. Pas de plaque carbone, mais une semelle immense en mousse FF Turbo+." },
+            { id: 39, title: "Mizuno Neo Vista", category: "Mizuno", author: "Vincent", date: "25 Septembre 2025", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Super-Trainer hyper moelleux. Son look 'chaussette' et sa plaque en nylon la rendent très fluide." },
+            { id: 40, title: "Nike Pegasus Trail 5", category: "Nike", author: "Julien", date: "20 Septembre 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Chaussure hybride 'Door-to-Trail'. Très confortable sur la route et idéale pour les chemins de forêt." },
+            { id: 41, title: "Asics Gel Kayano 31", category: "Asics", author: "Vincent", date: "15 Septembre 2025", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La référence absolue en matière de stabilité. Pensée pour l'entraînement quotidien et les sorties longues des coureurs pronateurs." },
+            { id: 42, title: "Adidas Adizero SL2", category: "Adidas", author: "Julien", date: "10 Septembre 2025", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Probablement le meilleur rapport qualité/prix du marché actuel. Une chaussure d'entraînement quotidien hyper polyvalente." },
+            { id: 43, title: "Nike Pegasus 41", category: "Nike", author: "La Rédaction", date: "05 Septembre 2025", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le classique indémodable de Nike. Cette version gagne en confort grâce à la nouvelle mousse ReactX et ses deux unités Zoom Air." },
+            { id: 44, title: "Hoka Skyward X", category: "Hoka", author: "Vincent", date: "01 Septembre 2025", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Un 'Super-Trainer' maximaliste hors norme. Avec ses 48 mm au talon et sa plaque en carbone convexe." },
+            { id: 45, title: "Salomon S/Lab Spectur", category: "Salomon", author: "Julien", date: "28 Août 2025", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Une chaussure à plaque carbone pensée spécifiquement pour les coureurs amateurs visant entre 3h et 4h30 au marathon." },
+            { id: 46, title: "Nike Zegama Trail 2", category: "Nike", author: "Vincent", date: "25 Août 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Trail longue distance et Ultra. Très confortable avec sa mousse ZoomX, et enfin dotée d'une semelle extérieure Vibram Megagrip." },
+            { id: 47, title: "Hoka Mach 6", category: "Hoka", author: "La Rédaction", date: "20 Août 2025", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement rythmé et tempo sans plaque. Très légère et dynamique, c'est l'outil parfait pour les séances de fractionné." },
+            { id: 48, title: "Saucony Triumph 22", category: "Saucony", author: "Vincent", date: "15 Août 2025", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le modèle 'cruiser' de Saucony. Équipée de la mousse PWRRUN PB, elle est ultra-moelleuse." },
+            { id: 49, title: "Kiprun KD900X LD", category: "Kiprun", author: "Julien", date: "10 Août 2025", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La chaussure de compétition carbone 'Longue Distance' de Decathlon. Légère, très propulsive et abordable." },
+            { id: 50, title: "New Balance Hierro v8", category: "New Balance", author: "Vincent", date: "05 Août 2025", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Trail confort, rando-course et 'door-to-trail'. Une chaussure très protectrice avec semelle Vibram." },
+            { id: 51, title: "Nike Alphafly 3", category: "Nike", author: "La Rédaction", date: "01 Août 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "L'arme absolue de Nike pour le marathon. Plaque carbone plus large, unités Air Zoom à l'avant." },
+            { id: 52, title: "On CloudMonster Hyper", category: "On", author: "Vincent", date: "28 Juillet 2025", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le 'Super-Trainer' de chez On, sans plaque carbone. Équipée de la super-mousse Helion HF à l'avant-pied." },
+            { id: 53, title: "Adidas Terrex Agravic Speed Ultra", category: "Adidas", author: "Julien", date: "25 Juillet 2025", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La chaussure de compétition ultime pour le trail chez Adidas. Profil rocker très prononcé." },
+            { id: 54, title: "Asics Metaspeed Paris", category: "Asics", author: "Vincent", date: "20 Juillet 2025", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition sur route du 10 km au marathon. Asics a drastiquement réduit le poids de sa chaussure phare." },
+            { id: 55, title: "Saucony Endorphin Pro 4", category: "Saucony", author: "La Rédaction", date: "15 Juillet 2025", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition carbone sur route. Elle se démarque de ses concurrentes par un confort exceptionnel." },
+            { id: 56, title: "New Balance Supercomp Elite v4", category: "New Balance", author: "Vincent", date: "10 Juillet 2025", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition carbone sur route. La v4 a été totalement repensée avec une géométrie angulaire très agressive." },
+            { id: 57, title: "On CloudMonster 2", category: "On", author: "Julien", date: "05 Juillet 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement quotidien. C'est le 'monstre' d'amorti de chez On." },
+            { id: 58, title: "Asics Gel-Nimbus 26", category: "Asics", author: "Vincent", date: "01 Juillet 2025", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le roi du confort chez Asics. Amorti maximaliste ultra-moelleux (PureGEL)." },
+            { id: 59, title: "Adidas Takumi Sen 10", category: "Adidas", author: "La Rédaction", date: "28 Juin 2025", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le scalpel pour les courtes distances. Équipée de tiges en fibre de verre." },
+            { id: 60, title: "Puma Fast-R Nitro Elite 2", category: "Puma", author: "Vincent", date: "25 Juin 2025", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition marathon. Son design est radical avec le talon complètement séparé de l'avant-pied." },
+            { id: 61, title: "On Cloudflow 4", category: "On", author: "Julien", date: "20 Juin 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement très dynamique (tempo, fractionné). Légère et réactive." },
+            { id: 62, title: "361° Kairos 2", category: "361°", author: "Vincent", date: "15 Juin 2025", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement quotidien avec un focus majeur sur la stabilité." },
+            { id: 63, title: "Adidas Supernova Rise", category: "Adidas", author: "La Rédaction", date: "10 Juin 2025", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Le grand retour d'Adidas sur le confort quotidien avec la mousse Dreamstrike+." },
+            { id: 64, title: "Asics Novablast 4", category: "Asics", author: "Vincent", date: "05 Juin 2025", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "L'un des plus gros succès récents. Ultra polyvalente et rebondissante." },
+            { id: 65, title: "On Cloudeclipse", category: "On", author: "Julien", date: "01 Juin 2025", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Amorti maximal chez On pour la route. Double couche de CloudTec Phase." },
+            { id: 66, title: "Adidas Adizero Adios Pro 3", category: "Adidas", author: "Vincent", date: "28 Mai 2025", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "L'ancienne reine des marathons. Toujours incroyablement performante." },
+            { id: 67, title: "Brooks Hyperion Max", category: "Brooks", author: "La Rédaction", date: "25 Mai 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement rapide et rythme. Une chaussure ultra-légère et très incurvée vers l'avant." },
+            { id: 68, title: "Salomon S/Lab Phantasm 2", category: "Salomon", author: "Vincent", date: "20 Mai 2025", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Modèle élite à plaque carbone pour la compétition sur route." },
+            { id: 69, title: "Nike Vaporfly 2", category: "Nike", author: "Julien", date: "15 Mai 2025", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Une légende du carbone, connue pour sa bascule agressive." },
+            { id: 70, title: "Saucony Kinvara PRO", category: "Saucony", author: "Vincent", date: "10 Mai 2025", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Un 'Super-Trainer' hybride avec une plaque en carbone en forme de goutte d'eau (3/4)." },
+            { id: 71, title: "Hoka Tecton X2", category: "Hoka", author: "La Rédaction", date: "05 Mai 2025", image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Trail rapide et compétition. Équipée de plaques carbone parallèles pour la relance." },
+            { id: 72, title: "Salomon DRX Bliss", category: "Salomon", author: "Vincent", date: "01 Mai 2025", image: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement quotidien guidé. L'Active Chassis encadre le pied pour limiter la fatigue." },
+            { id: 73, title: "Nike UltraFly Trail", category: "Nike", author: "Julien", date: "28 Avril 2025", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "La première chaussure de trail Nike avec plaque carbone intégrale et mousse ZoomX." },
+            { id: 74, title: "Salomon Phantasm 2", category: "Salomon", author: "Vincent", date: "25 Avril 2025", image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement rapide. Intègre une plaque en fibre de verre plus tolérante." },
+            { id: 75, title: "Nike Pegasus 40", category: "Nike", author: "La Rédaction", date: "20 Avril 2025", image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Polyvalence à l'ancienne. C'est un 'daily trainer' classique et robuste." },
+            { id: 76, title: "Saucony Endorphin Rift", category: "Saucony", author: "Vincent", date: "15 Avril 2025", image: "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Trail rapide, léger et agile. Équipée de la super-mousse PWRRUN PB mais sans plaque." },
+            { id: 77, title: "On CloudBoom Echo 3", category: "On", author: "Julien", date: "10 Avril 2025", image: "https://images.unsplash.com/photo-1552674605-db6facb5?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Compétition sur route élite. Très ferme, racée et exigeante musculairement." },
+            { id: 78, title: "Salomon Aero Volt", category: "Salomon", author: "Vincent", date: "05 Avril 2025", image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Chaussure urbaine hyper légère. Parfaite pour des footings courts et le bitume l'été." },
+            { id: 79, title: "Hoka Mach X", category: "Hoka", author: "La Rédaction", date: "01 Avril 2025", image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Entraînement tempo. Équipée d'une plaque en Pebax (plastique souple) prise en sandwich." },
+            { id: 80, title: "Kiprun KD 900", category: "Kiprun", author: "Vincent", date: "28 Mars 2025", image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800", featured: false, excerpt: "Chaussure de VMA, piste et entraînement rythmé. Mousse VFOAM (Pebax) très légère." },
+            {
+                id: 1774267788718,
+                title: "Les 4 meilleures chaussures pour marathon",
+                category: "Guides",
+                author: "La Rédaction",
+                date: "2026-03-23",
+                image: "IMG_0425.jpg",
+                content: "<p>L'année 2026 marque un nouveau tournant dans la guerre des \"Super Shoes\". Que vous visiez un chrono sub-3h ou que vous cherchiez simplement à maximiser votre économie musculaire pour ne pas subir le fameux \"mur\" des 30 km, la plaque carbone est aujourd'hui incontournable.</p><p>Mais attention, toutes les plaques ne se valent pas, et la géométrie de la chaussure doit correspondre à votre foulée. Après avoir testé les nouveautés de cette année, voici la sélection ultime de RunPassion pour exploser votre record sur les 42,195 km.</p><h2>1. Adidas Adizero Adios Pro 4 : L'arme absolue (et la plus sûre)</h2><p>C'est la reine incontestée des pelotons. Adidas a réussi à améliorer ce qui semblait déjà parfait avec la Pro 3. La perte de poids est significative et le maintien de la tige a été totalement repensé pour éviter les frictions sur longue distance.</p><p><img src=\"IMG_7046.jpg\" alt=\"Adidas Adios Pro 4\" style=\"width: 70% !important; max-width: 600px !important;\"></p><p>Prix : 250 € (Souvent repérée autour de 215,40 € chez <a href=\"https://top4running.fr/?a_box=sc3esau3\" target=\"_blank\" style=\"color: #ffb600; font-weight: bold;\">Top4Running</a>)</p><p>Poids : 199 g</p><p>Drop : 6 mm</p><p>Stack : 39 mm / 33 mm</p><p>Profil : Coureur universel, attaque médio-pied ou avant-pied.</p><p>Pourquoi la choisir ?</p><p>Au lieu d'une plaque pleine, l'Adios Pro 4 utilise les EnergyRods 2.0 (des tiges en carbone imitant les métatarses du pied). Le résultat ? Une propulsion foudroyante vers l'avant, couplée à la mousse Lightstrike Pro, tout en gardant une flexibilité latérale qui fatigue beaucoup moins la cheville sur la fin de course.</p><p>✅ Points forts : * Poids plume passé sous la barre des 200g.</p><p>Les EnergyRods 2.0 offrent un déroulé plus naturel qu'une plaque pleine.</p><p>Accroche de la semelle Continental irréprochable, même sous la pluie.</p><p>❌ Points faibles : * Strictement réservée à la compétition ou aux allures très rapides.</p><h2>2. Asics Metaspeed Sky Tokyo : L'allongeur de foulée</h2><p>Asics a profité de l'année olympique pour sortir son édition \"Tokyo\" et la marque japonaise a frappé un grand coup. La Metaspeed Sky Tokyo s'adresse spécifiquement aux coureurs qui accélèrent en allongeant leur foulée (stride runners).</p><p><img src=\"asics-metaspeed-sky-tokyo-970360-1013a162-600-960.jpg\" alt=\"Asics Metaspeed Sky Tokyo\" style=\"width: 70% !important; max-width: 600px !important;\"></p><p>Prix : 270 € (Gros bon plan actuel : 213,90 € chez <a href=\"https://top4running.fr/?a_box=sc3esau3\" target=\"_blank\" style=\"color: #ffb600; font-weight: bold;\">Top4Running</a>)</p><p>Poids : 185 g</p><p>Drop : 5 mm</p><p>Stack : 39.5 mm / 34.5 mm</p><p>Profil : Attaque avant-pied, foulée bondissante.</p><p>Pourquoi la choisir ?</p><p>Avec un poids délirant de 185g, on l'oublie complètement au pied. La nouvelle mousse FF Turbo+ offre un pop incroyable. La plaque carbone est placée très haut dans la semelle (près du pied) pour compresser un maximum de mousse et restituer une énergie phénoménale à chaque impact.</p><p>✅ Points forts : * Rapport poids/amorti sensationnel (185g seulement).</p><p>La nouvelle mousse FF Turbo+ est encore plus magique.</p><p>Un effet rebond massif pour ceux qui ont de l'amplitude.</p><p>❌ Points faibles : * Instabilité prononcée dans les virages serrés.</p><p>Nécessite une technique de course irréprochable.</p><h2>3. Saucony Endorphin Elite 2 : Le rebond agressif</h2><p>Si la ligne \"Pro\" de Saucony est excellente, la ligne \"Elite\" repousse les limites de la légalité et du design. L'Endorphin Elite 2 est une machine à casser des chronos.</p><p><img src=\"IMG_0425.jpg\" alt=\"Saucony Endorphin Elite 2\" style=\"width: 70% !important; max-width: 600px !important;\"></p><p>Prix : 300 € (Mais on peut la trouver à 219 € sur <a href=\"https://top4running.fr/?a_box=sc3esau3\" target=\"_blank\" style=\"color: #ffb600; font-weight: bold;\">Top4Running</a> !)</p><p>Poids : ~204 g</p><p>Drop : 8 mm</p><p>Stack : 40 mm / 32 mm</p><p>Profil : Attaque talon dynamique ou médio-pied.</p><p>Pourquoi la choisir ?</p><p>Sa conception repose sur la super-mousse PWRRUN HG, la plus réactive de chez Saucony. Mais son arme secrète réside dans sa plaque en carbone à fentes (slotted carbon plate). Cette plaque agressive vous propulse violemment vers l'avant, tout en permettant au pied de fléchir légèrement sur les côtés. C'est la chaussure la plus \"nerveuse\" de ce classement.</p><p>✅ Points forts : * La bascule vers l'avant (rocker) est la plus marquée du marché.</p><p>Le renvoi d'énergie de la mousse PWRRUN HG.</p><p>Une géométrie qui pousse constamment à la relance.</p><p>❌ Points faibles : * Prix de base astronomique (300 €).</p><p>Le confort de la tige en mesh minimaliste peut être rude sur 42km.</p><h2>4. Hoka Cielo X1 3.0 : Le confort au service de la vitesse</h2><p>Pour 2026, Hoka affine son bolide. Si vous trouviez la gamme Rocket X trop minimaliste, la Cielo X1 3.0 est le parfait compromis entre l'amorti signature de la marque et la vitesse pure.</p><p><img src=\"post5 (1).jpg\" alt=\"Hoka Cielo X1 3.0\" style=\"width: 70% !important; max-width: 600px !important;\"></p><p>Prix : 275 € - <a href=\"https://top4running.fr/?a_box=sc3esau3\" target=\"_blank\" style=\"color: #ffb600; font-weight: bold;\">Vérifier le prix sur Top4Running</a></p><p>Poids : 240 g (Enfin une vraie cure d'amincissement !)</p><p>Drop : 7 mm</p><p>Stack : 40 mm / 33 mm</p><p>Profil : Tous types de foulées (grande tolérance).</p><p>Pourquoi la choisir ?</p><p>Hoka utilise ici un double assemblage de mousse PEBA ultra-résiliente, prenant en sandwich une plaque carbone incurvée et dotée de petites \"ailes\" latérales. L'avantage majeur de la Cielo X1 3.0 par rapport à ses concurrentes, c'est sa capacité à rester confortable et stable même après le 30ème kilomètre, quand la fatigue musculaire se fait sentir et que la foulée se dégrade.</p><p>✅ Points forts : * Une propulsion mécanique énorme couplée au confort Hoka.</p><p>L'une des chaussures carbone les plus tolérantes quand la foulée se dégrade.</p><p>Poids grandement amélioré par rapport aux versions 1 et 2.</p><p>❌ Points faibles : * Reste légèrement plus lourde que les pures élites (Adios Pro 4 ou Metaspeed).</p><p>Prix très premium.</p><h3>Verdict : Laquelle est faite pour vous ?</h3><p>Pour le rapport performance/sûreté absolu : L'Adidas Adios Pro 4 reste la valeur refuge pour 90% des coureurs.</p><p>Si vous avez une foulée bondissante et puissante : Foncez sur l'Asics Metaspeed Sky Tokyo, elle vous fera voler.</p><p>Pour un effet bascule agressif et un dynamisme pur : La Saucony Endorphin Elite 2 est la plus féroce.</p><p>Si vous redoutez la casse musculaire sur la fin de course : La Hoka Cielo X1 3.0 vous protègera sans sacrifier votre chrono.</p>"
+            }
+        ];
+
+        // FONCTION POUR CRÉER LES SLUGS AUTOMATIQUEMENT
+        function createSlug(title) {
+            return title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)+/g, "").replace(/^test-/, "");
+        }
+
+        let articlesData = [];
+        if (typeof window.wordpressArticles !== 'undefined' && window.wordpressArticles.length > 0) {
+            articlesData = window.wordpressArticles;
+        } else if (typeof wordpressArticles !== 'undefined' && wordpressArticles.length > 0) {
+            articlesData = wordpressArticles;
+        } else {
+            articlesData = mockArticles;
+        }
+
+        // SÉCURITÉ ABSOLUE : Si le Guide d'Achat 2026 n'est pas dans les données chargées
+        if (!articlesData.some(a => a.id === 1774267788718)) {
+            const guide = mockArticles.find(a => a.id === 1774267788718);
+            if (guide) articlesData.push(guide);
+        }
+
+        // Ajout dynamique du slug à chaque article
+        articlesData.forEach(a => { 
+            if (!a.slug && a.title) {
+                a.slug = createSlug(a.title); 
+            } else if (a.slug) {
+                a.slug = a.slug.replace(/^test-/, "");
+            }
+        });
+
+        const guidesData = [
+            { title: "Les 4 meilleures chaussures pour marathon", count: "4 modèles", image: "IMG_0425.jpg", slug: "les-4-meilleures-chaussures-pour-marathon" }
+        ];
+
+        const bonsPlansData = [
+            { brand: "Adidas", model: "Adios Pro 4", image: "https://i1.t4s.cz//products/js2579/adidas-adizero-adios-pro-4-1054720-js25791-960.webp", oldPrice: "250,00€", newPrice: "215,40€", discount: "-14%", link: "https://top4running.fr/p/adidas-adizero-adios-pro-4-running-shoe-js2579?a_box=sc3esau3" },
+            { brand: "Nike", model: "Vomero Plus", image: "image_047be3.jpg", oldPrice: "169,95€", newPrice: "158,30€", discount: "-7%", link: "https://top4running.fr/p/nike-vomero-plus-running-shoe-hv8150-008?a_box=sc3esau3" },
+            { brand: "Asics", model: "SonicBlast", image: "image_047c04.jpg", oldPrice: "190,00€", newPrice: "134,90€", discount: "-29%", link: "https://top4running.fr/p/asics-sonicblast-1012b862-100#p0" },
+            { brand: "Asics", model: "Metaspeed Sky Tokyo", image: "image_046882.jpg", oldPrice: "270,00€", newPrice: "213,90€", discount: "-21%", link: "https://top4running.fr/p/asics-metaspeed-sky-tokyo-1013a162-600?a_box=sc3esau3" },
+            { brand: "Saucony", model: "Endorphin Elite 2", image: "image_047b67.jpg", oldPrice: "300,00€", newPrice: "219,00€", discount: "-27%", link: "https://top4running.fr/c/soldes-top4running-fr/type-2/page-10" }
+        ];
+
+        function init() {
+            articlesData.sort((a, b) => new Date(b.date) - new Date(a.date));
+            renderHome();
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleParam = urlParams.get('article');
+            
+            if (articleParam) {
+                openArticle(articleParam, false);
+            } else {
+                const pathSlug = window.location.pathname.replace(/^\/|\/$/g, '');
+                if (pathSlug && pathSlug !== 'index.html' && pathSlug !== 'index.htm') {
+                    if (!pathSlug.endsWith('.html')) {
+                        openArticle(pathSlug, false);
+                    }
+                }
+            }
+            
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+
+            window.addEventListener('popstate', (event) => {
+                const currentParams = new URLSearchParams(window.location.search);
+                const currentArticleParam = currentParams.get('article');
+                const currentPathSlug = window.location.pathname.replace(/^\/|\/$/g, '');
+
+                if (currentArticleParam) {
+                    openArticle(currentArticleParam, false);
+                } else if (currentPathSlug && currentPathSlug !== 'index.html' && !currentPathSlug.endsWith('.html')) {
+                    openArticle(currentPathSlug, false);
+                } else {
+                    showPage('home', false);
+                }
+            });
+        }
+
+        function renderArticlesList() {
+            const el = document.getElementById('articles-grid');
+            const loadMoreBtn = document.getElementById('load-more-container');
+            if (!el) return;
+            
+            const articlesToShow = currentFilteredList.slice(0, displayLimit);
+            
+            el.innerHTML = articlesToShow.map(art => `<a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex flex-col group cursor-pointer animate-in block"><div class="aspect-[16/10] rounded-[24px] overflow-hidden mb-6 bg-brand-card border border-white/5 shadow-lg relative hover-zoom"><img src="${art.image}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute top-4 right-4 bg-brand-yellow/90 backdrop-blur px-3 py-1 rounded-full text-[9px] font-black uppercase text-black tracking-widest">${art.category}</div></div><h3 class="text-xl font-bold leading-tight group-hover:text-brand-yellow transition-colors italic uppercase tracking-tighter">${art.title}</h3></a>`).join('');
+            
+            if (currentFilteredList.length > displayLimit) {
+                loadMoreBtn.style.display = 'flex';
+            } else {
+                loadMoreBtn.style.display = 'none';
+            }
+            
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        function loadMoreArticles() {
+            displayLimit += 8;
+            renderArticlesList();
+        }
+
+        function renderHome() {
+            displayLimit = 8; // Reset limit on home load
+            ['hero-section', 'promo-section', 'actu-section', 'bons-plans-section', 'guides-section', 'newsletter-section'].forEach(id => {
+                const el = document.getElementById(id);
+                if(el) el.style.display = '';
+            });
+
+            const isActu = (a) => a.category && a.category.toLowerCase().includes('actu');
+            const isGuide = (a) => a.category && a.category.toLowerCase().includes('guide');
+
+            const featuredList = articlesData.filter(a => a.featured === true);
+            let displayFeatured = [...featuredList];
+            if (displayFeatured.length < 3) {
+                const extras = articlesData.filter(a => !displayFeatured.some(f => f.id === a.id) && !isGuide(a) && !isActu(a)).slice(0, 3 - displayFeatured.length);
+                displayFeatured = [...displayFeatured, ...extras];
+            }
+            const hero = displayFeatured[0]; const sideFeatured = displayFeatured.slice(1, 3);
+            
+            const newsArticles = articlesData.filter(isActu).slice(0, 4);
+            const guidesArticles = articlesData.filter(isGuide);
+            
+            // Set currentFilteredList for the main feed (inclut également le dernier test en tête de grille)
+            currentFilteredList = articlesData.filter(a => !isActu(a) && !isGuide(a));
+
+            const setHtml = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+
+            if (hero) {
+                setHtml('hero-section', `
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in w-full">
+                        <a href="/${hero.slug}" onclick="openArticle('${hero.slug}'); return false;" class="lg:col-span-2 relative h-[500px] lg:h-[550px] rounded-[32px] overflow-hidden group cursor-pointer border border-white/5 shadow-2xl block">
+                            <img src="${hero.image}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1200'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent md:bg-gradient-to-r md:from-black/90 md:to-transparent"></div>
+                            <div class="absolute bottom-0 p-8 md:p-12 w-full">
+                                <span class="bg-brand-yellow text-black text-[10px] font-black uppercase px-3 py-1 rounded-full mb-4 inline-block italic">À la une</span>
+                                <h2 class="text-3xl md:text-5xl font-black leading-[1.1] group-hover:text-brand-yellow transition-colors italic uppercase tracking-tighter">${hero.title}</h2>
+                            </div>
+                        </a>
+                        <div class="flex flex-col gap-6 h-full">
+                            ${sideFeatured.map(art => `
+                                <a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex-1 relative rounded-[24px] overflow-hidden cursor-pointer group shadow-xl border border-white/5 min-h-[200px] block">
+                                    <img src="${art.image}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                                    <div class="absolute bottom-0 p-6 w-full"><h3 class="text-lg md:text-xl font-black text-white group-hover:text-brand-yellow transition-colors leading-tight italic uppercase">${art.title}</h3></div>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>`);
+            }
+
+            let guidesHtml = guidesData.map(g => `
+                <a ${g.slug ? `href="/${g.slug}" onclick="openArticle('${g.slug}'); return false;"` : 'href="#"'} class="group relative rounded-2xl overflow-hidden cursor-pointer h-[200px] shadow-lg border border-white/5 hover-zoom block">
+                    <img src="${g.image}" loading="lazy" class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-5 w-full">
+                        <span class="inline-block bg-brand-yellow/20 text-brand-yellow text-[10px] font-bold uppercase px-2 py-1 rounded mb-2 border border-brand-yellow/30">${g.count}</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-brand-yellow transition-colors italic leading-tight">${g.title}</h3>
+                    </div>
+                </a>
+            `).join('');
+
+            setHtml('guides-grid', guidesHtml);
+            setHtml('actu-grid', newsArticles.map(a => `<a href="/${a.slug}" onclick="openArticle('${a.slug}'); return false;" class="bg-brand-cardGray border-l-4 border-brand-yellow rounded-r-xl p-5 hover:bg-white/5 cursor-pointer border-y border-r border-white/5 shadow-lg block"><div class="flex items-center justify-between mb-3"><span class="text-brand-yellow text-[10px] font-black uppercase bg-brand-yellow/10 px-2 py-1 rounded">Actu</span><span class="text-gray-500 text-[10px] font-medium uppercase">${new Date(a.date).toLocaleDateString('fr-FR', {day: 'numeric', month: 'short'})}</span></div><h3 class="text-white font-semibold leading-snug text-sm">${a.title}</h3></a>`).join(''));
+            
+            setHtml('bons-plans-grid', bonsPlansData.map(item => `
+                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="min-w-[260px] md:min-w-0 w-full bg-brand-cardGray border border-white/5 rounded-2xl p-5 flex flex-col group hover:border-brand-yellow/30 transition-all cursor-pointer shadow-lg relative block">
+                    <div class="relative w-full aspect-square bg-white rounded-xl mb-5 overflow-hidden p-4 flex items-center justify-center">
+                        <span class="absolute top-3 left-3 bg-red-600 text-white text-[11px] font-black px-2.5 py-1 rounded shadow-md z-10">${item.discount}</span>
+                        <img src="${item.image}" loading="lazy" class="w-full h-full object-contain grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 rounded">
+                    </div>
+                    <div class="text-center flex-grow flex flex-col">
+                        <span class="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-2">${item.brand}</span>
+                        <h4 class="text-white font-black text-lg mb-4 leading-tight">${item.model}</h4>
+                        <div class="flex items-end justify-center gap-3 mb-6 mt-auto">
+                            <span class="text-brand-yellow font-black text-2xl leading-none">${item.newPrice}</span>
+                            <span class="text-gray-500 line-through text-sm font-medium mb-0.5">${item.oldPrice}</span>
+                        </div>
+                        <span class="w-full flex justify-center items-center gap-2 bg-white/10 group-hover:bg-brand-yellow text-white group-hover:text-black font-black py-3 rounded-xl transition-colors uppercase text-[10px] tracking-widest">
+                            Profiter de l'offre <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </div>
+                </a>
+            `).join(''));
+
+            renderArticlesList();
+        }
+
+        async function openArticle(identifier, pushHistory = true) {
+            const cleanId = identifier ? identifier.toString().replace(/^test-/, '') : '';
+            const art = articlesData.find(a => a.id.toString() === identifier.toString() || a.slug === identifier || a.slug === cleanId || ('test-' + a.slug) === identifier);
+            
+            if (!art) {
+                showPage('home', false);
+                return;
+            }
+            
+            // --- SEO & URL ---
+            document.title = `${art.title} | RunPassion`;
+            const metaTitleEl = document.getElementById('meta-title');
+            if(metaTitleEl) metaTitleEl.innerText = `${art.title} | RunPassion`;
+            
+            const metaDescEl = document.getElementById('meta-desc');
+            if(metaDescEl && art.excerpt) metaDescEl.setAttribute('content', art.excerpt);
+            
+            const canonicalEl = document.getElementById('canonical-url');
+            if(canonicalEl) canonicalEl.setAttribute('href', `https://runpassion.fr/${art.slug}`);
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (pushHistory) {
+                try { window.history.pushState({ articleId: art.slug }, '', '/' + art.slug); } catch (e) { }
+            }
+            
+            ['home', 'article', 'login', 'admin'].forEach(p => {
+                const el = document.getElementById(`page-${p}`);
+                if (el) el.classList.add('hidden');
+            });
+            
+            const p = document.getElementById('page-article'); 
+            p.classList.remove('hidden');
+            
+            const dateStr = new Date(art.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).toUpperCase();
+            const authorName = art.author === "Vincent" || art.author === "La Rédaction" ? "RUNPASSION.FR" : (art.author ? art.author.toUpperCase() : "RUNPASSION.FR");
+            
+            // TEMPS DE LECTURE ESTIMÉ
+            const plainTextForTime = document.createElement('div');
+            plainTextForTime.innerHTML = art.content || "";
+            const wordCount = (plainTextForTime.textContent || "").split(/\s+/).length;
+            const readTime = Math.max(1, Math.ceil(wordCount / 200));
+
+            let specs = { poids: "Non précisé", drop: "Non précisé", stack: "Non précisé", prix: "Non précisé", profil: "Neutre", usage: "Non précisé" };
+            let notes = { amorti: 8.5, dynamisme: 8.5, confort: 8.5, stabilite: 8.5 };
+            let pForts = [];
+            let pFaibles = [];
+            
+            const t = art.title.toLowerCase();
+            
+            if (t.includes('hyperboost')) {
+                specs.prix = "200 €"; specs.poids = "255 g"; specs.drop = "6 mm"; specs.stack = "45 mm / 39 mm"; 
+                specs.usage = "Entraînement quotidien polyvalent (endurance, tempo). Déconseillé pour la compétition pure.";
+                specs.profil = "Neutre"; notes = { amorti: 9.0, dynamisme: 8.5, confort: 9.0, stabilite: 7.5 };
+                pForts = ["Amorti généreux", "Grande polyvalence", "Dynamisme sans plaque"]; pFaibles = ["Poids un peu élevé (255g)", "Pas idéal pour la compétition pure"];
+            } else if (t.includes('cumulus 28')) {
+                specs.prix = "160 €"; specs.poids = "~250 g"; specs.drop = "8 mm"; specs.stack = "38.5 mm / 30.5 mm"; 
+                specs.usage = "Entraînement quotidien classique, confort.";
+                specs.profil = "Neutre"; notes = { amorti: 9.5, dynamisme: 6.5, confort: 9.5, stabilite: 9.0 };
+                pForts = ["Confort maximal", "Excellente durabilité", "Très bon amorti"]; pFaibles = ["Manque de dynamisme pour les séances rapides", "Pas de plaque carbone"];
+            } else if (t.includes('adrenaline')) {
+                specs.prix = "150 €"; specs.poids = "260 g"; specs.drop = "12 mm"; specs.stack = "36 mm / 24 mm"; 
+                specs.usage = "Entraînement quotidien avec soutien renforcé pour la pronation.";
+                specs.profil = "Pronateur"; notes = { amorti: 8.5, dynamisme: 6.0, confort: 9.0, stabilite: 10.0 };
+                pForts = ["Soutien ciblé (pronation)", "Excellente stabilité (10/10)", "Confortable"]; pFaibles = ["Drop très élevé (12mm)", "Poids conséquent (260g)"];
+            } else if (t.includes('kipstorm lab') || t.includes('kipstorm elite')) {
+                specs.prix = "299,99 €"; specs.poids = "~190 g"; specs.drop = "4 mm"; specs.stack = "40 mm / 36 mm"; 
+                specs.usage = "Modèle élite unisexe ultra-performant pour la compétition marathon.";
+                specs.profil = "Compétition"; notes = { amorti: 8.0, dynamisme: 10.0, confort: 7.5, stabilite: 6.5 };
+                pForts = ["Poids plume (190g)", "Plaque très réactive", "Rapport qualité/prix élite"]; pFaibles = ["Durabilité de la semelle", "Exigeante musculairement (Drop 4mm)"];
+            } else if (t.includes('rebel v5')) {
+                specs.prix = "150 €"; specs.poids = "210 g"; specs.drop = "6 mm"; specs.stack = "30 mm / 24 mm"; 
+                specs.usage = "Entraînement très dynamique, léger et sans plaque (séances tempo).";
+                specs.profil = "Universel"; notes = { amorti: 7.0, dynamisme: 9.5, confort: 8.5, stabilite: 7.0 };
+                pForts = ["Très légère (210g)", "Grande flexibilité", "Excellent rebond"]; pFaibles = ["Manque de structure pour les longues sorties", "Amorti un peu ferme"];
+            } else if (t.includes('phantasm 3') && !t.includes('s/lab')) {
+                specs.prix = "280 €"; specs.poids = "210 g"; specs.drop = "9 mm"; specs.stack = "38 mm / 29 mm"; 
+                specs.usage = "Compétition sur route très haute performance (Plaque carbone, Unisexe).";
+                specs.profil = "Elite"; notes = { amorti: 7.5, dynamisme: 9.5, confort: 7.0, stabilite: 7.5 };
+                pForts = ["Plaque carbone très dynamique", "Légèreté (210g)", "Fit précis"]; pFaibles = ["Prix élevé (280€)", "Confort minimaliste"];
+            } else if (t.includes('kipstorm tempo')) {
+                specs.prix = "139,99 €"; specs.poids = "230 g"; specs.drop = "6 mm"; specs.stack = "38 mm / 32 mm"; 
+                specs.usage = "Super-trainer pour les entraînements et sorties rythmées.";
+                specs.profil = "Neutre"; notes = { amorti: 8.0, dynamisme: 8.5, confort: 8.0, stabilite: 8.0 };
+                pForts = ["Prix imbattable (140€)", "Très polyvalente", "Bon équilibre amorti/dynamisme"]; pFaibles = ["Un peu lourde pour de la VMA pure (230g)", "Mesh moins respirant"];
+            } else if (t.includes('1080 v15')) {
+                specs.prix = "190 €"; specs.poids = "~220 g"; specs.drop = "6 mm"; specs.stack = "38 mm / 32 mm"; 
+                specs.usage = "Entraînement quotidien, footing et récupération avec un confort maximal.";
+                specs.profil = "Neutre"; notes = { amorti: 10.0, dynamisme: 5.5, confort: 10.0, stabilite: 8.5 };
+                pForts = ["Confort exceptionnel (10/10)", "Amorti ultra-moelleux", "Idéal sorties longues"]; pFaibles = ["Manque cruel de dynamisme", "S'écrase sur les accélérations"];
+            } else if (t.includes('metaspeed ray')) {
+                specs.prix = "300 €"; specs.poids = "~185 g"; specs.drop = "5 mm"; specs.stack = "40 mm / 35 mm"; 
+                specs.usage = "Compétition élite (Unisexe). Conçue pour battre records sur longue distance.";
+                specs.profil = "Elite Rapide"; notes = { amorti: 7.0, dynamisme: 10.0, confort: 6.5, stabilite: 5.0 };
+                pForts = ["Ultra-légère (185g)", "Plaque carbone agressive", "Retour d'énergie massif"]; pFaibles = ["Prix très élitiste (300€)", "Instable à basse vitesse"];
+            } else if (t.includes('sonicblast')) {
+                specs.prix = "190 €"; specs.poids = "260 g"; specs.drop = "8 mm"; specs.stack = "40 mm / 32 mm"; 
+                specs.usage = "Entraînement quotidien dynamique et rebondissant.";
+                specs.profil = "Neutre"; notes = { amorti: 8.5, dynamisme: 8.0, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Effet rebondissant agréable", "Très bon rapport qualité/prix", "Polyvalente"]; pFaibles = ["Poids perfectible (260g)", "Stack important réduisant la sensation du sol"];
+            } else if (t.includes('prodigio pro')) {
+                specs.prix = "180 €"; specs.poids = "~270 g"; specs.drop = "6 mm"; specs.stack = "34 mm / 28 mm"; 
+                specs.usage = "Modèle ultra-trail doté d'une géométrie dynamique pour la vitesse en montagne.";
+                specs.profil = "Trail"; notes = { amorti: 8.5, dynamisme: 8.5, confort: 8.5, stabilite: 9.0 };
+                pForts = ["Géométrie favorisant un déroulé dynamique", "Accroche exceptionnelle en montagne", "Idéale sur ultra-trail"]; pFaibles = ["Poids un peu lourd pour les sentiers roulants (270g)"];
+            } else if (t.includes('endorphin speed 5')) {
+                specs.prix = "200 €"; specs.poids = "~230 g"; specs.drop = "8 mm"; specs.stack = "36 mm / 28 mm"; 
+                specs.usage = "Chaussure polyvalente pour entraînements rythmés et compétition (Plaque nylon).";
+                specs.profil = "Universel Rapide"; notes = { amorti: 8.0, dynamisme: 9.5, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Plaque en nylon flexible et moins exigeante", "Très grande polyvalence", "Légèreté appréciable (230g)"]; pFaibles = ["Moins propulsive qu'une vraie carbone", "Prix élevé pour de l'entraînement"];
+            } else if (t.includes('skyrise 6')) {
+                specs.prix = "150 €"; specs.poids = "280 g"; specs.drop = "8 mm"; specs.stack = "38 mm / 30 mm"; 
+                specs.usage = "Confort optimal et amortissement performant pour toutes les courses (footing, récupération).";
+                specs.profil = "Neutre"; notes = { amorti: 9.5, dynamisme: 6.0, confort: 9.5, stabilite: 8.5 };
+                pForts = ["Confort optimal", "Très bonne adhérence", "Absorption des chocs très performante"]; pFaibles = ["Modèle lourd (280g)", "Manque de dynamisme sur allures rapides"];
+            } else if (t.includes('clifton 10')) {
+                specs.prix = "160 €"; specs.poids = "~240 g"; specs.drop = "5 mm"; specs.stack = "35 mm / 30 mm"; 
+                specs.usage = "Légèreté et moelleux pour courir au quotidien (le grand classique Hoka).";
+                specs.profil = "Neutre"; notes = { amorti: 9.0, dynamisme: 7.0, confort: 9.5, stabilite: 8.0 };
+                pForts = ["Le confort classique et moelleux d'Hoka", "Légèreté conservée (240g)", "Ajout de 3mm de stack pour plus d'amorti"]; pFaibles = ["Pas conçue pour les séances très intenses"];
+            } else if (t.includes('evo sl')) {
+                specs.prix = "150 €"; specs.poids = "224 g"; specs.drop = "6.5 mm"; specs.stack = "38 mm / 32 mm"; 
+                specs.usage = "La super-shoe de l'entraînement. Parfaite pour le confort, le dynamisme et le tempo.";
+                specs.profil = "Universel Rapide"; notes = { amorti: 8.5, dynamisme: 9.5, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Mousse Lightstrike Pro ultra-réactive", "Poids plume incroyable (224g)", "Design inspiré de l'Evo Pro 1"]; pFaibles = ["Durabilité de la mousse à vérifier sur très long terme"];
+            } else if (t.includes('mafate x')) {
+                specs.prix = "225 €"; specs.poids = "~280 g"; specs.drop = "4 mm"; specs.stack = "35 mm / 31 mm"; 
+                specs.usage = "Le summum de l'amorti pour trails difficiles et ultramarathons (Plaque carbone et PEBA).";
+                specs.profil = "Trail Elite"; notes = { amorti: 9.5, dynamisme: 9.0, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Mousse PEBA pour une propulsion unique", "Plaque carbone à fourche", "Le summum de l'amorti trail"]; pFaibles = ["Prix très élevé (225€)", "Drop de 4mm assez exigeant"];
+            } else if (t.includes('aero glide 3')) {
+                specs.prix = "150 €"; specs.poids = "~255 g"; drop = "10 mm"; specs.stack = "38 mm / 28 mm"; 
+                specs.usage = "Entraînement quotidien très amorti (maximaliste) sur route.";
+                specs.profil = "Neutre"; notes = { amorti: 9.5, dynamisme: 6.5, confort: 9.0, stabilite: 8.5 };
+                pForts = ["Amorti maximaliste excellent", "Très grand confort sur route", "Polyvalence pour les footings"]; pFaibles = ["Drop de 10mm un peu classique", "Manque de peps pour le fractionné"];
+            } else if (t.includes('rebellion pro 3')) {
+                specs.prix = "240 €"; specs.poids = "~210 g"; specs.drop = "1.5 mm"; specs.stack = "39.5 mm / 38 mm"; 
+                specs.usage = "Compétition sur route avec plaque carbone. Modèle au design extrême (foulée médio-pied).";
+                specs.profil = "Elite"; notes = { amorti: 8.0, dynamisme: 10.0, confort: 7.0, stabilite: 6.0 };
+                pForts = ["Design extrême hyper propulsif", "Plaque carbone redoutable", "Très légère (210g)"]; pFaibles = ["Instable au talon (drop 1.5mm)", "Exige une foulée médio-pied parfaite"];
+            } else if (t.includes('vomero 18')) {
+                specs.prix = "149,99 €"; specs.poids = "326 g"; specs.drop = "10 mm"; specs.stack = "46 mm / 36 mm"; 
+                specs.usage = "Allie confort et performance. Excellente absorption des chocs (idéale longues distances).";
+                specs.profil = "Lourd / Confort"; notes = { amorti: 10.0, dynamisme: 5.0, confort: 10.0, stabilite: 9.0 };
+                pForts = ["Amorti XXL ultra-moelleux (Stack 46mm !)", "Confort maximal garanti", "Absorption des chocs parfaite"]; pFaibles = ["Chaussure très lourde (326g)", "Pas du tout conçue pour la vitesse"];
+            } else if (t.includes('ultra glide')) {
+                specs.prix = "250 €"; specs.poids = "~270 g"; specs.drop = "6 mm"; specs.stack = "35 mm / 29 mm"; 
+                specs.usage = "Compétition ultra-trail. Modèle unisexe élite ultra amorti pour tenir la distance.";
+                specs.profil = "Trail Elite"; notes = { amorti: 9.0, dynamisme: 8.5, confort: 9.0, stabilite: 8.5 };
+                pForts = ["Idéale pour encaisser les distances ultra", "Excellent compromis amorti/dynamisme", "Finition S/LAB haut de gamme"]; pFaibles = ["Prix très élitiste (250€)"];
+            } else if (t.includes('kayano 31')) {
+                specs.prix = "200 €"; specs.poids = "305 g"; specs.drop = "10 mm"; specs.stack = "40 mm / 30 mm";
+                specs.usage = "Référence de la stabilité. Entraînement quotidien et sorties longues pour pronateurs.";
+                specs.profil = "Pronateur"; notes = { amorti: 9.0, dynamisme: 5.5, confort: 9.5, stabilite: 10.0 };
+                pForts = ["Stabilité absolue (10/10)", "Confort premium", "Excellent maintien"]; pFaibles = ["Poids conséquent (305g)", "Manque de dynamisme"];
+            } else if (t.includes('sl2') || t.includes('sl 2')) {
+                specs.prix = "130 €"; specs.poids = "235 g"; specs.drop = "9 mm"; specs.stack = "36 mm / 27 mm";
+                specs.usage = "Entraînement quotidien hyper polyvalent avec mousse Lightstrike Pro.";
+                specs.profil = "Universel"; notes = { amorti: 8.0, dynamisme: 8.5, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Rapport qualité/prix imbattable", "Mousse très dynamique", "Grande polyvalence"]; pFaibles = ["Maintien du talon perfectible"];
+            } else if (t.includes('pegasus 41')) {
+                specs.prix = "140 €"; specs.poids = "281 g"; specs.drop = "10 mm"; specs.stack = "37 mm / 27 mm";
+                specs.usage = "Classique indémodable pour tous les footings (mousse ReactX et Zoom Air).";
+                specs.profil = "Neutre"; notes = { amorti: 8.5, dynamisme: 7.5, confort: 9.0, stabilite: 8.5 };
+                pForts = ["Valeur sûre et robuste", "Mousse ReactX confortable", "Double unité Zoom Air"]; pFaibles = ["Un peu lourde pour la VMA (281g)"];
+            } else if (t.includes('skyward x')) {
+                specs.prix = "225 €"; specs.poids = "320 g"; specs.drop = "5 mm"; specs.stack = "48 mm / 43 mm";
+                specs.usage = "Super-Trainer maximaliste (48mm) avec plaque carbone convexe pour l'ultra-confort.";
+                specs.profil = "Lourd / Confort"; notes = { amorti: 10.0, dynamisme: 8.0, confort: 10.0, stabilite: 8.5 };
+                pForts = ["Stack massif inédit (48mm)", "Plaque carbone soulageant la foulée", "Protection ultime"]; pFaibles = ["Poids très important (320g)", "Prix premium (225€)"];
+            } else if (t.includes('spectur')) {
+                specs.prix = "210 €"; specs.poids = "235 g"; specs.drop = "8 mm"; specs.stack = "38 mm / 30 mm";
+                specs.usage = "Plaque carbone pensée spécifiquement pour les marathoniens amateurs (3h - 4h30).";
+                specs.profil = "Universel Rapide"; notes = { amorti: 8.0, dynamisme: 9.0, confort: 8.5, stabilite: 8.5 };
+                pForts = ["Carbone adapté aux allures intermédiaires", "Très bonne stabilité", "Finition S/Lab"]; pFaibles = ["Moins propulsive que les modèles élites purs"];
+            } else if (t.includes('zegama')) {
+                specs.prix = "180 €"; specs.poids = "320 g"; specs.drop = "4 mm"; specs.stack = "36 mm / 32 mm";
+                specs.usage = "Trail longue distance et Ultra. Mousse ZoomX et semelle Vibram Megagrip.";
+                specs.profil = "Trail Ultra"; notes = { amorti: 9.0, dynamisme: 7.5, confort: 9.5, stabilite: 8.5 };
+                pForts = ["Amorti ZoomX hyper confortable", "Semelle Vibram redoutable", "Idéale sur Ultra"]; pFaibles = ["Assez lourde (320g)", "Drop de 4mm"];
+            } else if (t.includes('mach 6')) {
+                specs.prix = "160 €"; specs.poids = "232 g"; specs.drop = "5 mm"; specs.stack = "37 mm / 32 mm";
+                specs.usage = "Entraînement rythmé et tempo sans plaque. Légère et dynamique.";
+                specs.profil = "Universel Rapide"; notes = { amorti: 8.0, dynamisme: 9.0, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Légèreté et dynamisme", "Alternative parfaite au carbone", "Très bonne relance"]; pFaibles = ["Durabilité de la semelle externe"];
+            } else if (t.includes('triumph 22')) {
+                specs.prix = "190 €"; specs.poids = "285 g"; specs.drop = "10 mm"; specs.stack = "37 mm / 27 mm";
+                specs.usage = "Modèle cruiser premium en mousse PWRRUN PB pour l'endurance fondamentale.";
+                specs.profil = "Neutre / Confort"; notes = { amorti: 9.5, dynamisme: 6.5, confort: 9.5, stabilite: 8.5 };
+                pForts = ["Mousse PWRRUN PB ultra-moelleuse", "Confort premium", "Idéale pour accumuler les bornes"]; pFaibles = ["Poids (285g)", "Manque de réactivité à haute vitesse"];
+            } else if (t.includes('kd900x ld') || t.includes('kd 900x ld')) {
+                specs.prix = "180 €"; specs.poids = "207 g"; specs.drop = "4 mm"; specs.stack = "38 mm / 34 mm";
+                specs.usage = "Compétition carbone Longue Distance de Decathlon pour le marathon.";
+                specs.profil = "Elite"; notes = { amorti: 8.0, dynamisme: 9.5, confort: 8.0, stabilite: 7.5 };
+                pForts = ["Rapport prix/carbone imbattable (180€)", "Poids plume (207g)", "Très propulsive sur marathon"]; pFaibles = ["Confort d'accueil ferme", "Drop 4mm exigeant"];
+            } else if (t.includes('hierro')) {
+                specs.prix = "160 €"; specs.poids = "318 g"; specs.drop = "6 mm"; specs.stack = "32 mm / 26 mm";
+                specs.usage = "Trail confort, rando-course et door-to-trail. Semelle Vibram.";
+                specs.profil = "Trail Confort"; notes = { amorti: 9.0, dynamisme: 6.0, confort: 9.5, stabilite: 9.0 };
+                pForts = ["Confort Fresh Foam X", "Semelle Vibram polyvalente", "Design très réussi"]; pFaibles = ["Lourde (318g)", "Pas pour terrains hyper techniques"];
+            } else if (t.includes('alphafly')) {
+                specs.prix = "310 €"; specs.poids = "220 g"; specs.drop = "8 mm"; specs.stack = "40 mm / 32 mm";
+                specs.usage = "L'arme absolue pour le marathon. Plaque carbone et unités Air Zoom.";
+                specs.profil = "Elite"; notes = { amorti: 9.0, dynamisme: 10.0, confort: 8.0, stabilite: 8.0 };
+                pForts = ["Transition parfaite (semelle continue)", "Propulsion exceptionnelle", "Plus stable que les versions précédentes"]; pFaibles = ["Prix prohibitif (310€)", "Fit voûte plantaire très particulier"];
+            } else if (t.includes('cloudmonster hyper')) {
+                specs.prix = "220 €"; specs.poids = "265 g"; specs.drop = "6 mm"; specs.stack = "37.5 mm / 31.5 mm";
+                specs.usage = "Super-Trainer sans plaque avec mousse élite Helion HF pour les gros blocs.";
+                specs.profil = "Universel Rapide"; notes = { amorti: 9.5, dynamisme: 9.0, confort: 9.0, stabilite: 8.5 };
+                pForts = ["Mousse Helion HF hyper dynamique", "Amorti massif protecteur", "Moins traumatisante (pas de plaque)"]; pFaibles = ["Prix d'un modèle carbone (220€)"];
+            } else if (t.includes('agravic speed ultra')) {
+                specs.prix = "220 €"; specs.poids = "260 g"; specs.drop = "8 mm"; specs.stack = "38 mm / 30 mm";
+                specs.usage = "Compétition ultra-trail, rocker très prononcé et tiges EnergyRods.";
+                specs.profil = "Trail Elite"; notes = { amorti: 8.5, dynamisme: 9.5, confort: 8.0, stabilite: 7.5 };
+                pForts = ["Rocker agressif pour une relance folle", "Mousse Lightstrike Pro", "Tiges EnergyRods efficaces"]; pFaibles = ["Instable dans les devers", "Usure rapide"];
+            } else if (t.includes('metaspeed paris')) {
+                specs.prix = "250 €"; specs.poids = "185 g"; specs.drop = "5 mm"; specs.stack = "39.5 mm / 34.5 mm";
+                specs.usage = "Compétition route ultime du 10 km au marathon (mousse FF Turbo+).";
+                specs.profil = "Elite"; notes = { amorti: 8.0, dynamisme: 10.0, confort: 8.0, stabilite: 7.5 };
+                pForts = ["Poids ultra léger (185g)", "Nouvelle mousse FF Turbo+ magique", "Adaptation selon la foulée (Sky ou Edge)"]; pFaibles = ["Durabilité limitée pour l'entraînement"];
+            } else if (t.includes('endorphin pro 4')) {
+                specs.prix = "250 €"; specs.poids = "212 g"; specs.drop = "8 mm"; specs.stack = "39.5 mm / 31.5 mm";
+                specs.usage = "Compétition carbone sur route avec un confort exceptionnel (Double amorti).";
+                specs.profil = "Elite"; notes = { amorti: 9.0, dynamisme: 9.5, confort: 9.0, stabilite: 8.0 };
+                pForts = ["Confort incroyable pour une carbone", "Double amorti PWRRUN HG et PB", "Semelle de propreté SRS"]; pFaibles = ["Un poil moins radicale que la concurrence directe"];
+            } else if (t.includes('supercomp elite v4')) {
+                specs.prix = "280 €"; specs.poids = "237 g"; specs.drop = "4 mm"; specs.stack = "40 mm / 36 mm";
+                specs.usage = "Compétition carbone avec géométrie agressive et 100% PEBA.";
+                specs.profil = "Elite"; notes = { amorti: 8.5, dynamisme: 9.5, confort: 8.5, stabilite: 7.5 };
+                pForts = ["Nouvelle mousse 100% PEBA", "Design agressif et racé", "Effet rebond très marqué"]; pFaibles = ["Poids en hausse (237g)", "Drop 4mm exigeant"];
+            } else if (t.includes('cloudmonster 2')) {
+                specs.prix = "190 €"; specs.poids = "295 g"; specs.drop = "6 mm"; specs.stack = "35 mm / 29 mm";
+                specs.usage = "Entraînement quotidien maximaliste. Roulement ferme et protecteur.";
+                specs.profil = "Neutre"; notes = { amorti: 9.0, dynamisme: 7.0, confort: 9.0, stabilite: 8.5 };
+                pForts = ["Amorti très massif", "Roulement vers l'avant agréable", "Bonne stabilité globale"]; pFaibles = ["Amorti assez ferme", "Lourdeur relative (295g)"];
+            } else if (t.includes('nimbus 26')) {
+                specs.prix = "200 €"; specs.poids = "305 g"; specs.drop = "8 mm"; specs.stack = "42 mm / 34 mm";
+                specs.usage = "Le roi du confort chez Asics (PureGEL) pour footings de récupération.";
+                specs.profil = "Lourd / Confort"; notes = { amorti: 10.0, dynamisme: 5.0, confort: 10.0, stabilite: 8.5 };
+                pForts = ["Effet pantoufle inégalé", "Technologie PureGEL ultra douce", "Col en maille très agréable"]; pFaibles = ["Zéro dynamisme", "Poids conséquent (305g)"];
+            } else if (t.includes('takumi sen')) {
+                specs.prix = "200 €"; specs.poids = "200 g"; specs.drop = "6 mm"; specs.stack = "33 mm / 27 mm";
+                specs.usage = "Le scalpel pour les courtes distances sur piste, 5 km et 10 km.";
+                specs.profil = "Elite Courte Distance"; notes = { amorti: 6.5, dynamisme: 10.0, confort: 7.0, stabilite: 7.0 };
+                pForts = ["Légèreté et précision absolues (200g)", "Idéale 5k et 10k", "Adhérence Continental"]; pFaibles = ["Manque d'amorti pour le long", "Fit très étroit"];
+            } else if (t.includes('fast-r')) {
+                specs.prix = "260 €"; specs.poids = "240 g"; specs.drop = "8 mm"; specs.stack = "40 mm / 32 mm";
+                specs.usage = "Compétition marathon radicale avec talon séparé et carbone apparent.";
+                specs.profil = "Elite"; notes = { amorti: 8.0, dynamisme: 10.0, confort: 7.5, stabilite: 7.0 };
+                pForts = ["Design féroce", "Plaque carbone ultra-visible et propulsive", "Mousse Aliphatic rebondissante"]; pFaibles = ["Look très polarisant", "Stabilité arrière délicate"];
+            } else if (t.includes('cloudflow 4')) {
+                specs.prix = "160 €"; specs.poids = "235 g"; specs.drop = "8 mm"; specs.stack = "31 mm / 23 mm";
+                specs.usage = "Entraînement très dynamique (tempo, fractionné) avec Speedboard nylon.";
+                specs.profil = "Universel Rapide"; notes = { amorti: 7.0, dynamisme: 8.5, confort: 8.0, stabilite: 8.5 };
+                pForts = ["Transitions très rapides", "Légèreté et fluidité", "Speedboard efficace"]; pFaibles = ["Manque d'amorti pour les longues sorties", "Sensation ferme"];
+            } else if (t.includes('kairos 2')) {
+                specs.prix = "150 €"; specs.poids = "295 g"; specs.drop = "8 mm"; specs.stack = "30 mm / 22 mm";
+                specs.usage = "Entraînement quotidien avec un focus majeur sur la stabilité (pronateurs).";
+                specs.profil = "Pronateur"; notes = { amorti: 7.5, dynamisme: 6.0, confort: 8.0, stabilite: 9.5 };
+                pForts = ["Excellente stabilité structurelle", "Prix raisonnable", "Robuste"]; pFaibles = ["Lourde et pataude (295g)"];
+            } else if (t.includes('supernova rise')) {
+                specs.prix = "150 €"; specs.poids = "275 g"; specs.drop = "10 mm"; specs.stack = "36 mm / 26 mm";
+                specs.usage = "Confort quotidien pour footings de récupération (mousse Dreamstrike+).";
+                specs.profil = "Neutre"; notes = { amorti: 8.5, dynamisme: 6.5, confort: 9.0, stabilite: 8.5 };
+                pForts = ["Mousse Dreamstrike+ très agréable", "Chausson confortable", "Polyvalence footing"]; pFaibles = ["Dynamisme classique", "Drop 10mm"];
+            } else if (t.includes('novablast 4')) {
+                specs.prix = "150 €"; specs.poids = "260 g"; specs.drop = "8 mm"; specs.stack = "41.5 mm / 33.5 mm";
+                specs.usage = "Polyvalence absolue, rebondissante (FF Blast+ Eco) du lent au semi.";
+                specs.profil = "Neutre"; notes = { amorti: 9.0, dynamisme: 8.5, confort: 9.0, stabilite: 8.0 };
+                pForts = ["Gros succès critique", "Mousse très joueuse", "Excellente géométrie trampoline"]; pFaibles = ["Adhérence sur sol mouillé parfaiteible"];
+            } else if (t.includes('cloudeclipse')) {
+                specs.prix = "190 €"; specs.poids = "285 g"; specs.drop = "6 mm"; specs.stack = "37 mm / 31 mm";
+                specs.usage = "Amorti maximal chez On pour absorber un maximum de chocs sur route.";
+                specs.profil = "Lourd / Confort"; notes = { amorti: 9.5, dynamisme: 6.5, confort: 9.5, stabilite: 8.5 };
+                pForts = ["Double couche CloudTec très efficace", "Douceur d'amorti inédite chez On", "Look ravageur"]; pFaibles = ["Poids (285g)", "Prix élevé (190€)"];
+            } else if (t.includes('adios pro 3')) {
+                specs.prix = "250 €"; specs.poids = "215 g"; specs.drop = "6.5 mm"; specs.stack = "39.5 mm / 33 mm";
+                specs.usage = "L'ancienne reine des marathons. Très performante et stable.";
+                specs.profil = "Elite"; notes = { amorti: 8.5, dynamisme: 9.5, confort: 8.0, stabilite: 8.0 };
+                pForts = ["Relance exceptionnelle (EnergyRods)", "Très bonne stabilité pour une carbone", "Prix souvent cassé"]; pFaibles = ["Laçage et confort du mesh"];
+            } else if (t.includes('hyperion max')) {
+                specs.prix = "170 €"; specs.poids = "220 g"; specs.drop = "8 mm"; specs.stack = "34 mm / 26 mm";
+                specs.usage = "Entraînement rapide ultra-léger et très incurvé vers l'avant (sans plaque).";
+                specs.profil = "Universel Rapide"; notes = { amorti: 7.5, dynamisme: 9.0, confort: 8.0, stabilite: 8.0 };
+                pForts = ["Très légère (220g)", "Rocker agressif pour la vitesse", "Alternative sans carbone"]; pFaibles = ["Amorti très ferme"];
+            } else if (t.includes('phantasm 2') && t.includes('s/lab')) {
+                specs.prix = "250 €"; specs.poids = "219 g"; specs.drop = "9 mm"; specs.stack = "37 mm / 28 mm";
+                specs.usage = "Modèle élite à plaque carbone pour la compétition sur route (Energy Foam+).";
+                specs.profil = "Elite"; notes = { amorti: 8.0, dynamisme: 9.5, confort: 8.0, stabilite: 7.5 };
+                pForts = ["Mousse Energy Foam+ très réactive", "Fit excellent", "Légèreté compétitive"]; pFaibles = ["Drop de 9mm un peu haut"];
+            } else if (t.includes('vaporfly 2') || t.includes('vaporfly next% 2')) {
+                specs.prix = "250 €"; specs.poids = "195 g"; specs.drop = "8 mm"; specs.stack = "40 mm / 32 mm";
+                specs.usage = "Une légende du carbone, bascule agressive et mousse ZoomX ferme.";
+                specs.profil = "Elite"; notes = { amorti: 8.0, dynamisme: 10.0, confort: 7.0, stabilite: 6.5 };
+                pForts = ["Rocker hyper agressif d'anthologie", "Mousse ZoomX avec pop inégalé", "Légère comme une plume"]; pFaibles = ["Très instable", "Quasi introuvable"];
+            } else if (t.includes('kinvara pro')) {
+                specs.prix = "220 €"; specs.poids = "269 g"; specs.drop = "8 mm"; specs.stack = "42 mm / 34 mm";
+                specs.usage = "Super-Trainer hybride avec plaque carbone 3/4 pour fluidifier la foulée.";
+                specs.profil = "Universel Rapide"; notes = { amorti: 9.0, dynamisme: 8.5, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Plaque carbone tolérante (3/4)", "Stack très généreux", "Fluidité de transition"]; pFaibles = ["Lourde pour une Kinvara", "Usure semelle externe"];
+            } else if (t.includes('tecton x2')) {
+                specs.prix = "220 €"; specs.poids = "252 g"; specs.drop = "5 mm"; specs.stack = "32 mm / 27 mm";
+                specs.usage = "Trail rapide et compétition avec plaques carbone parallèles.";
+                specs.profil = "Trail Elite"; notes = { amorti: 8.5, dynamisme: 9.5, confort: 8.5, stabilite: 8.5 };
+                pForts = ["Plaques carbone parallèles intelligentes", "Tige Matryx hyper résistante", "Excellente relance"]; pFaibles = ["Amorti un peu ferme sur l'ultra", "Prix (220€)"];
+            } else if (t.includes('drx bliss')) {
+                specs.prix = "160 €"; specs.poids = "266 g"; specs.drop = "8 mm"; specs.stack = "34 mm / 26 mm";
+                specs.usage = "Entraînement quotidien guidé avec Active Chassis pour limiter la pronation.";
+                specs.profil = "Pronateur"; notes = { amorti: 8.0, dynamisme: 7.0, confort: 8.5, stabilite: 9.5 };
+                pForts = ["Guidage en douceur", "Sécurisante avec la fatigue", "Bon confort"]; pFaibles = ["Dynamisme en retrait", "Look un peu pataud"];
+            } else if (t.includes('ultrafly trail')) {
+                specs.prix = "270 €"; specs.poids = "300 g"; specs.drop = "8.5 mm"; specs.stack = "38.5 mm / 30 mm";
+                specs.usage = "Ultra-trail compétition avec plaque carbone, ZoomX et semelle Vibram.";
+                specs.profil = "Trail Ultra Elite"; notes = { amorti: 9.5, dynamisme: 9.0, confort: 9.0, stabilite: 8.0 };
+                pForts = ["Mousse ZoomX sur trail", "Plaque carbone protectrice et propulsive", "Semelle Vibram"]; pFaibles = ["Poids lourd (300g)", "Prix astronomique (270€)", "Tige salissante"];
+            } else if (t.includes('phantasm 2') && !t.includes('s/lab')) {
+                specs.prix = "170 €"; specs.poids = "255 g"; specs.drop = "9 mm"; specs.stack = "35 mm / 26 mm";
+                specs.usage = "Entraînement rapide avec plaque fibre de verre plus tolérante.";
+                specs.profil = "Universel Rapide"; notes = { amorti: 7.5, dynamisme: 8.5, confort: 8.0, stabilite: 8.0 };
+                pForts = ["Plaque Energy Blade tolérante", "Idéale pour fractionné amateur", "Prix abordable"]; pFaibles = ["Drop 9mm", "Moins agressive que la S/Lab"];
+            } else if (t.includes('pegasus 40')) {
+                specs.prix = "130 €"; specs.poids = "288 g"; specs.drop = "10 mm"; specs.stack = "33 mm / 23 mm";
+                specs.usage = "Polyvalence à l'ancienne. Daily trainer classique et robuste.";
+                specs.profil = "Neutre"; notes = { amorti: 7.5, dynamisme: 6.5, confort: 8.0, stabilite: 8.5 };
+                pForts = ["Solidité légendaire", "Prix souvent bradé", "Ajustement classique"]; pFaibles = ["Mousse React ancienne", "Manque de peps"];
+            } else if (t.includes('endorphin rift')) {
+                specs.prix = "170 €"; specs.poids = "244 g"; specs.drop = "6 mm"; specs.stack = "33 mm / 27 mm";
+                specs.usage = "Trail rapide, léger et agile avec mousse PWRRUN PB (sans plaque).";
+                specs.profil = "Trail Rapide"; notes = { amorti: 8.0, dynamisme: 9.0, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Très légère et agile (244g)", "Mousse PWRRUN PB géniale sur sentiers", "Crampons agressifs"]; pFaibles = ["Manque de plaque anti-roche"];
+            } else if (t.includes('cloudboom echo 3')) {
+                specs.prix = "290 €"; specs.poids = "215 g"; specs.drop = "9 mm"; specs.stack = "37 mm / 28 mm";
+                specs.usage = "Compétition route élite très ferme et racée (5 km au semi).";
+                specs.profil = "Elite"; notes = { amorti: 6.5, dynamisme: 9.5, confort: 7.0, stabilite: 7.5 };
+                pForts = ["Propulsion extrême sur courte distance", "Look incroyable", "Légèreté"]; pFaibles = ["Trop ferme pour le marathon", "Prix délirant (290€)"];
+            } else if (t.includes('aero volt')) {
+                specs.prix = "150 €"; specs.poids = "213 g"; specs.drop = "8 mm"; specs.stack = "32 mm / 24 mm";
+                specs.usage = "Chaussure urbaine hyper légère pour footings courts et bitume l'été.";
+                specs.profil = "Universel Léger"; notes = { amorti: 7.0, dynamisme: 8.0, confort: 8.0, stabilite: 8.0 };
+                pForts = ["Mesh ultra-respirant", "Légèreté absolue (213g)", "Sensation de liberté"]; pFaibles = ["Pas pour les sorties longues", "Amorti limité"];
+            } else if (t.includes('mach x')) {
+                specs.prix = "180 €"; specs.poids = "266 g"; specs.drop = "5 mm"; specs.stack = "39 mm / 34 mm";
+                specs.usage = "Entraînement tempo avec plaque en Pebax souple pour les blocs d'allure.";
+                specs.profil = "Universel Rapide"; notes = { amorti: 8.5, dynamisme: 8.5, confort: 8.5, stabilite: 8.0 };
+                pForts = ["Plaque Pebax douce et agréable", "Super évolution de la Mach", "Parfaite pour le tempo long"]; pFaibles = ["Un peu plus lourde que la Mach standard"];
+            } else if (t.includes('kd 900')) {
+                specs.prix = "120 €"; specs.poids = "218 g"; specs.drop = "8 mm"; specs.stack = "32 mm / 24 mm";
+                specs.usage = "VMA, piste et entraînement rythmé avec mousse VFOAM (Pebax).";
+                specs.profil = "Universel Rapide"; notes = { amorti: 7.0, dynamisme: 8.5, confort: 7.5, stabilite: 8.0 };
+                pForts = ["Prix incroyable (120€) pour du Pebax", "Légèreté (218g)", "Excellente relance"]; pFaibles = ["Confort un peu spartiate", "Usure du mesh"];
+            }
+
+            // Priorité absolue aux données structurées présentes dans l'objet article
+            if (art.specs) specs = { ...specs, ...art.specs };
+            if (art.notes) notes = { ...notes, ...art.notes };
+            if (art.pointsForts && Array.isArray(art.pointsForts) && art.pointsForts.length > 0) pForts = art.pointsForts;
+            if (art.pointsFaibles && Array.isArray(art.pointsFaibles) && art.pointsFaibles.length > 0) pFaibles = art.pointsFaibles;
+
+            let pointsFortsHTML = pForts.map(pt => `<li class="flex items-start gap-3"><i data-lucide="check" class="w-4 h-4 text-green-400 shrink-0 mt-0.5"></i><span>${pt}</span></li>`).join('');
+            let pointsFaiblesHTML = pFaibles.map(pt => `<li class="flex items-start gap-3"><i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i><span>${pt}</span></li>`).join('');
+
+            let tempDivText = document.createElement('div');
+            tempDivText.innerHTML = art.content || "";
+            let plainText = tempDivText.textContent || tempDivText.innerText || "";
+            let lines = plainText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+            
+            lines.forEach(line => {
+                let colonIdx = line.indexOf(':');
+                if (colonIdx > -1) {
+                    let key = line.substring(0, colonIdx).trim().toLowerCase();
+                    let val = line.substring(colonIdx + 1).trim().replace(/\.$/, '').trim();
+                    if (key.includes('poids') && specs.poids === "Non précisé") specs.poids = val;
+                    else if (key.includes('drop') && specs.drop === "Non précisé") specs.drop = val;
+                    else if (key.includes('stack') && specs.stack === "Non précisé") specs.stack = val;
+                }
+            });
+
+            const searchStr = ((typeof art.category === 'string' ? art.category : JSON.stringify(art.category)) + " " + art.title).toLowerCase();
+            const excludeKeywords = ['actu', 'montre', 'gps', 'garmin', 'suunto', 'coros', 'casque', 'shokz', 'nutrition', 'guide'];
+            let isShoeReview = true;
+            
+            const isExplicitlyNonShoe = art.category && (art.category.toLowerCase().includes('guides') || art.category.toLowerCase().includes('actu'));
+            if (isExplicitlyNonShoe || excludeKeywords.some(kw => searchStr.includes(kw))) isShoeReview = false;
+            if (!isExplicitlyNonShoe && (specs.poids !== "Non précisé" || specs.drop !== "Non précisé" || specs.stack !== "Non précisé")) isShoeReview = true;
+
+            let tempDiv = document.createElement('div');
+            tempDiv.innerHTML = art.content || "";
+            
+            if (isShoeReview) {
+                const kwToClean = ['poids', 'drop', 'stack', 'prix', 'profil', 'usage', 'amorti', 'dynamisme', 'confort', 'stabilit'];
+                Array.from(tempDiv.querySelectorAll('p, div, li, span, h1, h2, h3, h4, h5, h6')).forEach(el => {
+                    let txt = el.textContent || "";
+                    let idx = txt.indexOf(':');
+                    if (idx > -1 && idx < 60) {
+                        let keyPart = txt.substring(0, idx).toLowerCase();
+                        // IMPORTANT : Ne pas supprimer si la ligne contient une image (anti-bug WordPress)
+                        if (kwToClean.some(k => keyPart.includes(k)) && el.querySelectorAll('img, iframe').length === 0) el.remove();
+                    }
+                });
+            }
+
+            let mainContent = tempDiv.innerHTML || "";
+            if(!mainContent.includes("<img") && !mainContent.includes("Test en conditions réelles") && isShoeReview) {
+                mainContent = `
+                    <p>Après plusieurs semaines d'essai sur différents types de séances (piste, asphalte, chemins tracés), voici ce qu'il faut retenir de ce modèle sur le terrain.</p>
+                    <p><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=600" alt="Test en course" loading="lazy"></p>
+                    <p><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600" alt="Détail semelle" loading="lazy"></p>
+                    <p><img src="https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?auto=format&fit=crop&q=80&w=600" alt="Détail mesh" loading="lazy"></p>
+                    <p>Le comportement de la chaussure se confirme au fil des kilomètres. La tige offre un excellent compromis entre maintien et respirabilité, même lors des sorties les plus exigeantes. L'accroche de la semelle extérieure est sécurisante, y compris sur les portions légèrement humides. Un modèle qui tient toutes ses promesses et s'inscrit comme une référence de sa catégorie.</p>
+                `;
+            }
+
+            tempDiv.innerHTML = mainContent;
+
+            // NETTOYAGE RADICAL DES STYLES WORDPRESS (Polices, tailles, couleurs forcées)
+            Array.from(tempDiv.querySelectorAll('*')).forEach(el => {
+                if(el.tagName !== 'IMG' && el.tagName !== 'IFRAME') {
+                    el.removeAttribute('style');
+                    el.removeAttribute('class');
+                }
+            });
+
+            // ANTI-GRAS BUGS WORDPRESS: Unwrap strong/b if they span too much text (often unclosed tags or whole-paragraph bolding)
+            Array.from(tempDiv.querySelectorAll('strong, b')).forEach(el => {
+                if (el.textContent.trim().length > 50) {
+                    const parent = el.parentNode;
+                    while (el.firstChild) {
+                        parent.insertBefore(el.firstChild, el);
+                    }
+                    parent.removeChild(el);
+                }
+            });
+            
+            let allImgs = Array.from(tempDiv.querySelectorAll('img'));
+            let groups = [];
+            let currentGroup = [];
+
+            for (let i = 0; i < allImgs.length; i++) {
+                let img = allImgs[i];
+                img.setAttribute('loading', 'lazy'); // LAZY LOADING
+                let container = img;
+                while (container.parentNode && container.parentNode !== tempDiv) container = container.parentNode;
+
+                let textLen = container.textContent.replace(/\s/g, '').length;
+                if (textLen > 30 && container.tagName !== 'FIGURE') {
+                    if (currentGroup.length > 0) groups.push(currentGroup);
+                    currentGroup = [];
+                    continue;
+                }
+
+                if (currentGroup.length === 0) currentGroup.push({ img: img, container: container });
+                else {
+                    let prevContainer = currentGroup[currentGroup.length - 1].container;
+                    if (container === prevContainer) currentGroup.push({ img: img, container: container });
+                    else {
+                        let nextNode = prevContainer.nextSibling;
+                        let isAdjacent = false;
+                        while (nextNode) {
+                            if (nextNode === container) { isAdjacent = true; break; }
+                            if (nextNode.nodeType === Node.TEXT_NODE && nextNode.textContent.trim() === '') nextNode = nextNode.nextSibling;
+                            else if (nextNode.nodeType === Node.ELEMENT_NODE && (nextNode.tagName === 'BR' || nextNode.innerHTML.replace(/&nbsp;/g, '').trim() === '')) nextNode = nextNode.nextSibling;
+                            else break;
+                        }
+                        if (isAdjacent) currentGroup.push({ img: img, container: container });
+                        else { groups.push(currentGroup); currentGroup = [{ img: img, container: container }]; }
+                    }
+                }
+            }
+            if (currentGroup.length > 0) groups.push(currentGroup);
+
+            groups.forEach(group => {
+                if (group.length >= 2) {
+                    let grid = document.createElement('div');
+                    grid.className = 'custom-auto-gallery';
+                    grid.setAttribute('data-cols', group.length >= 3 ? '3' : '2');
+                    let firstContainer = group[0].container;
+                    firstContainer.parentNode.insertBefore(grid, firstContainer);
+
+                    let containersToRemove = new Set();
+                    group.forEach(item => {
+                        item.img.classList.add('gallery-img', 'hover:scale-105', 'transition-transform', 'duration-300', 'cursor-pointer');
+                        grid.appendChild(item.img);
+                        containersToRemove.add(item.container);
+                    });
+                    containersToRemove.forEach(c => {
+                        if (c.textContent.trim() === '' && c.querySelectorAll('img, iframe').length === 0) c.remove();
+                    });
+                }
+            });
+
+            let finalMainContent = tempDiv.innerHTML.replace(/<p>\s*<\/p>/g, ''); 
+
+            // RICH SNIPPETS (JSON-LD) POUR LE SEO DE GOOGLE
+            let jsonLdScript = document.getElementById('json-ld-article');
+            if(!jsonLdScript) {
+                jsonLdScript = document.createElement('script');
+                jsonLdScript.type = 'application/ld+json';
+                jsonLdScript.id = 'json-ld-article';
+                document.head.appendChild(jsonLdScript);
+            }
+            let schema = {
+                "@context": "https://schema.org",
+                "@type": isShoeReview ? "Product" : "Article",
+                "name": art.title,
+                "image": art.image,
+                "description": art.excerpt || "Découvrez notre test et avis détaillé.",
+            };
+            if(isShoeReview) {
+                schema.review = {
+                    "@type": "Review",
+                    "reviewRating": { "@type": "Rating", "ratingValue": ((notes.amorti + notes.dynamisme + notes.confort + notes.stabilite)/4).toFixed(1), "bestRating": "10" },
+                    "author": { "@type": "Organization", "name": "RunPassion" }
+                };
+            }
+            jsonLdScript.text = JSON.stringify(schema);
+
+            // PARTAGE SOCIAL
+            const currentUrl = encodeURIComponent(window.location.href);
+            const currentTitle = encodeURIComponent(art.title);
+
+            p.innerHTML = `
+                <div class="max-w-[1200px] mx-auto px-6 pt-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_380px] gap-8 lg:gap-12 mt-4 w-full">
+                        
+                        <!-- COLONNE DE GAUCHE : LE CONTENU -->
+                        <div class="animate-in min-w-0 overflow-hidden w-full">
+                            
+                            <!-- EN-TÊTE : CATEGORIE ET TITRE -->
+                            <span class="text-brand-yellow font-black uppercase text-[10px] border border-brand-yellow/30 px-4 py-1.5 rounded-full mb-4 inline-block tracking-widest">${art.category}</span>
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-8 italic uppercase tracking-tighter" style="overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; hyphens: auto;">${art.title}</h1>
+                            
+                            <!-- LIGNE AUTEUR & TEMPS DE LECTURE -->
+                            <hr class="border-white/10 mb-6">
+                            <div class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-gray-500 mb-8 pb-6 border-b border-white/10 flex-wrap">
+                                <img src="Paris_Half_Race_Story-08.jpg" class="w-8 h-8 rounded-full object-cover object-top border border-white/10" onerror="this.style.display='none'" style="margin:0 !important;"/>
+                                <span class="flex items-center gap-2">PAR <strong class="text-white">${authorName}</strong></span>
+                                <span class="text-gray-600 hidden sm:inline">•</span>
+                                <span>PUBLIÉ LE ${dateStr}</span>
+                                <span class="text-gray-600 hidden sm:inline">•</span>
+                                <span class="flex items-center gap-1 text-brand-yellow"><i data-lucide="clock" class="w-3 h-3"></i> ${readTime} MIN DE LECTURE</span>
+                            </div>
+
+                            <!-- INTRO -->
+                            <p class="text-xl text-gray-300 font-normal leading-relaxed mb-10 text-justify">
+                                ${art.excerpt || (isShoeReview ? "Après plusieurs semaines d'essai sur différents terrains, allant du bitume sec aux chemins humides, voici notre verdict détaillé en conditions réelles." : "Découvrez notre analyse détaillée et nos conseils dans cet article.")}
+                            </p>
+
+                            <!-- IMAGE PRINCIPALE -->
+                            <img src="${art.image}" class="w-11/12 md:w-3/4 lg:w-2/3 mx-auto rounded-2xl mb-12 shadow-2xl object-cover aspect-video" style="margin: 0 auto 3rem auto !important;">
+
+                            ${isShoeReview ? `
+                            <!-- CARACTÉRISTIQUES ET NOTES -->
+                            <h2 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter text-white mb-8 border-l-4 border-brand-yellow pl-4 mt-12">Caractéristiques & Verdict</h2>
+                            <div class="bg-brand-cardGray border border-white/5 rounded-[24px] p-8 my-8 shadow-xl overflow-hidden">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                                    <!-- Specs -->
+                                    <div>
+                                        <h4 class="text-brand-yellow font-black uppercase tracking-[0.2em] text-[10px] mb-6">Spécifications</h4>
+                                        <ul class="space-y-4 text-gray-300 font-medium">
+                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
+                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="scale" class="w-4 h-4 text-brand-yellow"></i> Poids</span> 
+                                                <strong class="text-white text-sm text-right">${specs.poids}</strong>
+                                            </li>
+                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
+                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="arrow-down-up" class="w-4 h-4 text-brand-yellow"></i> Drop</span> 
+                                                <strong class="text-white text-sm text-right">${specs.drop}</strong>
+                                            </li>
+                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
+                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="layers" class="w-4 h-4 text-brand-yellow"></i> Stack</span> 
+                                                <strong class="text-white text-sm text-right">${specs.stack}</strong>
+                                            </li>
+                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
+                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="tag" class="w-4 h-4 text-brand-yellow"></i> Prix</span> 
+                                                <strong class="text-white text-sm text-right">${specs.prix}</strong>
+                                            </li>
+                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
+                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="activity" class="w-4 h-4 text-brand-yellow"></i> Profil</span> 
+                                                <strong class="text-white text-sm text-right">${specs.profil}</strong>
+                                            </li>
+                                            <li class="flex flex-col gap-2 pt-2">
+                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-brand-yellow"><i data-lucide="target" class="w-4 h-4"></i> Usage</span> 
+                                                <strong class="text-gray-300 text-sm font-medium leading-relaxed">${specs.usage}</strong>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- Notes -->
+                                    <div>
+                                        <h4 class="text-brand-yellow font-black uppercase tracking-[0.2em] text-[10px] mb-6">Nos Notes</h4>
+                                        <div class="space-y-5">
+                                            <div>
+                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Amorti</span> <strong class="text-white">${notes.amorti}<span class="text-gray-600">/10</span></strong></div>
+                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.amorti * 10}%"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Dynamisme</span> <strong class="text-white">${notes.dynamisme}<span class="text-gray-600">/10</span></strong></div>
+                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.dynamisme * 10}%"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Confort</span> <strong class="text-white">${notes.confort}<span class="text-gray-600">/10</span></strong></div>
+                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.confort * 10}%"></div></div>
+                                            </div>
+                                            <div>
+                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Stabilité</span> <strong class="text-white">${notes.stabilite}<span class="text-gray-600">/10</span></strong></div>
+                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.stabilite * 10}%"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- POINTS FORTS / FAIBLES DYNAMIQUES -->
+                                <div class="mt-10 pt-8 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-white/5 rounded-2xl p-6 border border-white/5">
+                                        <h4 class="text-green-400 font-black uppercase tracking-[0.2em] text-[10px] mb-4 flex items-center gap-2"><i data-lucide="plus-circle" class="w-4 h-4"></i> Points forts</h4>
+                                        <ul class="space-y-3 text-gray-300 text-sm font-medium">
+                                            ${pointsFortsHTML}
+                                        </ul>
+                                    </div>
+                                    <div class="bg-white/5 rounded-2xl p-6 border border-white/5">
+                                        <h4 class="text-red-400 font-black uppercase tracking-[0.2em] text-[10px] mb-4 flex items-center gap-2"><i data-lucide="minus-circle" class="w-4 h-4"></i> Points faibles</h4>
+                                        <ul class="space-y-3 text-gray-300 text-sm font-medium">
+                                            ${pointsFaiblesHTML}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            ` : ''}
+
+                            <!-- TESTS PRATIQUES / CONTENU -->
+                            ${isShoeReview ? `<h2 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter text-white mb-8 border-l-4 border-brand-yellow pl-4 mt-12">Tests Pratiques</h2>` : ''}
+                            <div class="article-content max-w-none text-justify mb-12" id="article-content-body">
+                                ${finalMainContent}
+                            </div>
+
+                            ${isShoeReview ? `
+                            <!-- 2ème CTA ACHAT TOP4RUNNING -->
+                            <div class="mb-16 w-full text-center bg-gradient-to-br from-brand-cardGray to-black p-10 rounded-[32px] border border-brand-yellow/10 shadow-2xl relative overflow-hidden group">
+                                <h3 class="text-2xl md:text-3xl font-black text-white italic uppercase tracking-tighter mb-3 relative z-10">Convaincu par ce modèle ?</h3>
+                                <p class="text-brand-yellow font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-8 relative z-10">-5% supplémentaires chez Top4Running avec le code RUNPASSION</p>
+                                <a href="${art.affiliateLink || 'https://top4running.fr?a_box=sc3esau3'}" target="_blank" rel="noopener noreferrer" class="relative z-10 inline-flex items-center justify-center w-full md:w-auto gap-4 bg-brand-yellow text-black font-black py-4 px-10 rounded-xl hover:bg-white hover:scale-105 transition-all uppercase text-sm tracking-[0.2em] shadow-lg">
+                                    Acheter la paire <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                            ` : ''}
+
+                            <!-- BOUTONS DE PARTAGE SOCIAL -->
+                            <div class="flex items-center justify-between border-t border-white/10 pt-8 pb-8 mb-8">
+                                <span class="font-bold text-white uppercase text-xs tracking-widest hidden sm:block">Partager l'article</span>
+                                <div class="flex gap-4 w-full sm:w-auto justify-center">
+                                    <a href="https://twitter.com/intent/tweet?url=${currentUrl}&text=${currentTitle}" target="_blank" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:text-black transition-colors shadow-lg"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u=${currentUrl}" target="_blank" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:text-black transition-colors shadow-lg"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                                    <a href="https://api.whatsapp.com/send?text=${currentTitle}%20-%20${currentUrl}" target="_blank" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-yellow hover:text-black transition-colors shadow-lg"><i data-lucide="share-2" class="w-5 h-5"></i></a>
+                                </div>
+                            </div>
+
+                            <!-- ENCART AUTEUR -->
+                            <div class="mb-16 bg-white/5 border border-white/10 rounded-[32px] p-8 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-lg">
+                                <img src="Paris_Half_Race_Story-08.jpg" class="w-24 h-24 rounded-full object-cover border-2 border-brand-yellow shadow-xl" alt="${authorName}" onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=200'" style="margin: 0 !important;">
+                                <div class="text-center md:text-left">
+                                    <h4 class="text-brand-yellow font-black uppercase tracking-[0.2em] text-[10px] mb-2">Rédigé par</h4>
+                                    <h5 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">${art.author || "Vincent"}</h5>
+                                    <p class="text-gray-400 text-sm leading-relaxed text-justify mb-4">Fondateur de RunPassion, enseignant d'EPS et coach running diplômé STAPS. Passionné de matériel, Vincent teste chaque paire en conditions réelles et accompagne également les coureurs de tous niveaux vers leurs records personnels.</p>
+                                    <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-yellow hover:text-white font-black text-xs uppercase tracking-widest transition-colors group">
+                                        <span>Découvrir son coaching sur vincentbuisson.fr</span> <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- CTA LIRE D'AUTRES ARTICLES -->
+                            <div class="flex justify-center mb-10 border-t border-white/10 pt-10">
+                                <a href="#" onclick="event.preventDefault(); filterArticles()" class="inline-flex items-center gap-3 bg-white/5 border border-white/10 text-white font-black px-8 py-4 rounded-xl hover:bg-brand-yellow hover:text-black transition-all uppercase text-xs tracking-[0.1em] shadow-xl italic">
+                                    <i data-lucide="grid" class="w-5 h-5"></i> Lire les autres publications
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- COLONNE DE DROITE : LA SIDEBAR -->
+                        <aside class="w-full lg:w-[340px] xl:w-[380px] shrink-0 space-y-8 h-fit lg:sticky lg:top-28">
+                            
+                            <!-- ENCART COACHING VINCENT BUISSON -->
+                            <div class="bg-gradient-to-br from-brand-cardGray via-black to-[#13131a] border border-brand-yellow/30 p-8 rounded-[32px] shadow-2xl flex flex-col items-center relative overflow-hidden group">
+                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none"></div>
+                                <div class="relative w-20 h-20 rounded-full overflow-hidden border-2 border-brand-yellow mb-4 shadow-xl shrink-0">
+                                    <img src="Paris_Half_Race_Story-08.jpg" alt="Vincent Buisson Coach Running" style="margin: 0 !important;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                </div>
+                                <span class="bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/30 text-[9px] font-black uppercase px-3 py-1 rounded-full mb-3 tracking-widest">Coaching Course à Pied</span>
+                                <h4 class="text-white font-black text-lg text-center mb-1 leading-tight uppercase italic">Vincent Buisson</h4>
+                                <p class="text-brand-yellow/90 font-bold text-[10px] uppercase tracking-wider text-center mb-3">Coach Diplômé STAPS & Enseignant EPS</p>
+                                <p class="text-gray-400 text-xs text-center mb-6 leading-relaxed">Préparez vos courses (10km, semi, marathon, trail) avec un plan 100% sur-mesure sur Nolio et un suivi quotidien. Premier échange visio offert.</p>
+                                <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="w-full bg-brand-yellow text-black font-black py-4 rounded-xl hover:bg-white hover:scale-105 transition-all text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 shadow-xl italic">
+                                    VOIR LE COACHING <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+
+                            <!-- ENCART TOP4RUNNING -->
+                            <div class="bg-brand-cardGray border border-white/5 p-8 rounded-[32px] shadow-xl flex flex-col items-center">
+                                <div class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center p-4 mb-6 shadow-lg group-hover/link:scale-105 transition-transform">
+                                    <img src="image_808e21.png" alt="Top4Running" style="margin: 0 !important;" class="w-full h-full object-contain">
+                                </div>
+                                <p class="text-brand-yellow font-bold text-[10px] uppercase tracking-[0.2em] mb-4 text-center">-5% supplémentaires</p>
+                                <a href="https://top4running.fr?a_box=sc3esau3" target="_blank" rel="noopener noreferrer" class="text-white font-black mb-6 uppercase text-[10px] tracking-[0.2em] italic flex justify-center items-center gap-2 hover:text-brand-yellow transition-colors text-center">
+                                    VISITER TOP4RUNNING <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+
+                                <div class="w-full space-y-3">
+                                    <div class="w-full bg-black border border-white/5 py-4 rounded-xl font-black text-brand-yellow tracking-[0.2em] text-xs uppercase text-center shadow-inner">
+                                        RUNPASSION
+                                    </div>
+                                    <button onclick="copyCode('RUNPASSION', this)" class="w-full bg-brand-yellow text-black font-black py-4 rounded-xl hover:bg-brand-yellowHover transition-all text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+                                        COPIER -5%
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ENCART NUTRIPURE -->
+                            <div class="bg-brand-cardGray border border-white/5 p-8 rounded-[32px] shadow-xl flex flex-col items-center">
+                                <div class="w-24 h-24 bg-white rounded-3xl flex items-center justify-center p-4 mb-6 shadow-lg group-hover/link:scale-105 transition-transform">
+                                    <img src="image_808dff.png" alt="Nutripure" style="margin: 0 !important;" class="w-full h-full object-contain">
+                                </div>
+                                <p class="text-brand-yellow font-bold text-[10px] uppercase tracking-[0.2em] mb-4 text-center">-10% sur la 1ère commande</p>
+                                <a href="https://www.nutripure.fr/fr/?s=RUNPASSION" target="_blank" rel="noopener noreferrer" class="text-white font-black mb-6 uppercase text-[10px] tracking-[0.2em] italic flex justify-center items-center gap-2 hover:text-brand-yellow transition-colors text-center">
+                                    VISITER NUTRIPURE <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+
+                                <div class="w-full space-y-3">
+                                    <div class="w-full bg-black border border-white/5 py-4 rounded-xl font-black text-white tracking-[0.2em] text-xs uppercase text-center shadow-inner">
+                                        RUNPASSION
+                                    </div>
+                                    <button onclick="copyCode('RUNPASSION', this)" class="w-full bg-white text-black font-black py-4 rounded-xl hover:bg-gray-200 transition-all text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+                                        COPIER -10%
+                                    </button>
+                                </div>
+                            </div>
+
+                        </aside>
+                    </div>
+                </div>`;
+
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        function checkLogin() { 
+            if (document.getElementById('admin-password').value === ADMIN_PASS) { 
+                isAuthenticated = true; 
+                showPage('admin'); 
+            } else { 
+                document.getElementById('login-error').style.opacity = "1"; 
+            } 
+        }
+
+        function logout() { 
+            isAuthenticated = false; 
+            showPage('home'); 
+        }
+
+        function showPage(p, pushHistory = true) { 
+            if (p === 'admin' && !isAuthenticated) p = 'login'; 
+            
+            // --- MISE À JOUR DE L'URL (RETOUR À L'ACCUEIL) ---
+            if (pushHistory && p === 'home') {
+                try {
+                    window.history.pushState({}, '', '/');
+                } catch(e) {}
+                document.title = "RunPassion | Blog Running, Trail & Tests de Chaussures";
+            }
+
+            ['home', 'article', 'login', 'admin'].forEach(id => {
+                const el = document.getElementById(`page-${id}`);
+                if(el) el.classList.add('hidden');
+            });
+            
+            const target = document.getElementById(`page-${p}`); 
+            if(target) target.classList.remove('hidden'); 
+            
+            if(p === 'home') renderHome(); 
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
+            if (typeof lucide !== 'undefined') lucide.createIcons(); 
+        }
+        
+        function generateJSON() {
+            const title = document.getElementById('edit-title').value;
+            const category = document.getElementById('edit-category').value;
+            const image = document.getElementById('edit-image').value || "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=800";
+            const content = document.getElementById('edit-content').value;
+            
+            const formattedContent = content.split('\n').map(line => {
+                if (line.trim().length > 0) return `<p>${line}</p>`;
+                return '';
+            }).join('');
+
+            const article = {
+                id: Date.now(),
+                title: title,
+                slug: createSlug(title),
+                category: category,
+                author: "La Rédaction",
+                date: new Date().toISOString().split('T')[0],
+                image: image,
+                content: formattedContent
+            };
+            document.getElementById('output-json').value = JSON.stringify(article, null, 2);
+        }
+        
+        function copyCode(c, btn) { 
+            navigator.clipboard.writeText(c); 
+            const t = document.getElementById('toast-notif'); 
+            t.style.opacity = '1'; t.style.pointerEvents = 'auto'; 
+            setTimeout(() => { t.style.opacity = '0'; t.style.pointerEvents = 'none'; }, 3000); 
+            
+            if (btn) {
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = `<i data-lucide="check" class="w-4 h-4"></i> Copié !`;
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+                setTimeout(() => { btn.innerHTML = originalHtml; if (typeof lucide !== 'undefined') lucide.createIcons(); }, 2000);
+            }
+        }
+        
+        function scrollToSection(id) { showPage('home'); setTimeout(() => { const s = document.getElementById(id); if(s) window.scrollTo({ top: s.offsetTop - 100, behavior: "smooth" }); }, 100); }
+        
+        function filterArticles() { 
+            showPage('home'); 
+            document.getElementById('hero-section').innerHTML = ''; 
+            document.getElementById('promo-section').style.display = 'none'; 
+            document.getElementById('actu-section').style.display = 'none'; 
+            document.getElementById('bons-plans-section').style.display = 'none'; 
+            document.getElementById('guides-section').style.display = 'none'; 
+            document.getElementById('newsletter-section').style.display = 'none'; 
+            
+            currentFilteredList = articlesData.filter(a => !a.category.toLowerCase().includes('actu')); 
+            displayLimit = 12; // Plus d'articles en mode filtré
+            renderArticlesList();
+            
+            setTimeout(() => { const s = document.getElementById('tests-materiel'); if(s) window.scrollTo({ top: s.offsetTop - 100, behavior: "smooth" }); }, 100);
+        }
+
+        function filterByKeyword(keyword) { 
+            if (!keyword.trim()) return;
+            
+            showPage('home'); 
+            document.getElementById('hero-section').innerHTML = ''; 
+            document.getElementById('promo-section').style.display = 'none'; 
+            document.getElementById('actu-section').style.display = 'none'; 
+            document.getElementById('bons-plans-section').style.display = 'none'; 
+            document.getElementById('guides-section').style.display = 'none'; 
+            document.getElementById('newsletter-section').style.display = 'none'; 
+            
+            currentFilteredList = articlesData.filter(a => (a.category && a.category.toLowerCase().includes(keyword.toLowerCase())) || (a.title && a.title.toLowerCase().includes(keyword.toLowerCase())) || (a.excerpt && a.excerpt.toLowerCase().includes(keyword.toLowerCase()))); 
+            
+            displayLimit = 12; // Afficher plus de résultats d'un coup
+            
+            if (currentFilteredList.length === 0) {
+                const el = document.getElementById('articles-grid');
+                if (el) el.innerHTML = `<div class="col-span-full text-center py-20"><i data-lucide="search-x" class="w-16 h-16 text-white/20 mx-auto mb-4"></i><p class="text-gray-400 text-lg">Aucun résultat trouvé pour "<strong>${keyword}</strong>".</p><button onclick="showPage('home')" class="mt-6 bg-white/10 text-white px-6 py-2 rounded-xl hover:bg-brand-yellow hover:text-black transition-colors font-bold text-sm">Retour à l'accueil</button></div>`;
+                document.getElementById('load-more-container').style.display = 'none';
+                if (typeof lucide !== 'undefined') lucide.createIcons(); 
+            } else {
+                renderArticlesList();
+            }
+            
+            setTimeout(() => { const s = document.getElementById('tests-materiel'); if(s) window.scrollTo({ top: s.offsetTop - 100, behavior: "smooth" }); }, 100);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

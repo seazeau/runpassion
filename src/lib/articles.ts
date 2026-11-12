@@ -7,6 +7,29 @@ import { normalizeTop4RunningLinksInHtml } from './affiliate'
 
 const articlesDirectory = path.join(process.cwd(), 'content/articles')
 
+const WP_UPLOAD_URL_RE =
+  /https?:\/\/(?:i\d\.wp\.com\/)?(?:www\.)?runpassion\.fr\/wp-content\/uploads\/(?:\d{4}\/\d{2}\/)?([^"'\s?#)]+)/gi;
+
+/**
+ * Rewrites legacy WordPress upload URLs (`runpassion.fr/wp-content/uploads/...`)
+ * to the flattened WebP assets hosted in `/images/<basename>.webp`.
+ */
+export function normalizeArticleImageUrl(url?: string | null): string {
+  if (!url) return '';
+  return url.replace(WP_UPLOAD_URL_RE, (_match, rawFilePath: string) => {
+    const fileName = rawFilePath.split('/').pop() || rawFilePath;
+    const baseName = fileName.replace(/(?:\.(?:jpe?g|png|webp|gif))+$/i, '');
+    return `/images/${baseName}.webp`;
+  });
+}
+
+function normalizeArticleImagesInHtml(htmlContent: string): string {
+  if (!htmlContent) return htmlContent;
+  return htmlContent.replace(WP_UPLOAD_URL_RE, (match) =>
+    normalizeArticleImageUrl(match)
+  );
+}
+
 export interface ArticleData {
   slug: string;
   title: string;
@@ -26,9 +49,11 @@ export function getSortedArticlesData(): ArticleData[] {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
 
+    const data = matterResult.data as { date: string; title: string; category: string; image: string; excerpt: string };
     return {
       slug,
-      ...(matterResult.data as { date: string; title: string; category: string; image: string; excerpt: string })
+      ...data,
+      image: normalizeArticleImageUrl(data.image),
     }
   })
 
@@ -85,10 +110,16 @@ export async function getArticleData(slug: string): Promise<ArticleData | null> 
   // 4. Normalize all Top4Running affiliate links (ensure HTTPS + a_box=sc3esau3)
   parsedContent = normalizeTop4RunningLinksInHtml(parsedContent);
 
+  // 5. Rewrite legacy WordPress upload URLs to /images/<basename>.webp
+  parsedContent = normalizeArticleImagesInHtml(parsedContent);
+
+  const data = matterResult.data as { date: string; title: string; category: string; image: string; excerpt: string };
+
   return {
     slug,
     contentHtml: parsedContent,
-    ...(matterResult.data as { date: string; title: string; category: string; image: string; excerpt: string })
+    ...data,
+    image: normalizeArticleImageUrl(data.image),
   }
 }
 

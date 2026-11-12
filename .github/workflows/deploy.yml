@@ -39,3 +39,5 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
+            **/images/**
+            **/wp-content/**

@@ -2,7 +2,7 @@
 title: "TEST : Hoka Mach X"
 date: "2023-06-13"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/06/1141450-OMLG_1.jpg"
+image: "/images/1141450-OMLG_1-1024x830.webp"
 excerpt: "<!-- wp:paragraph --> La nouvelle chaussure d’entraînement Hoka Mach&nbsp;X est conçue pour l'entrainement. En effet, Hoka la présente comme une chaussure souple et confortable mais qui allie aussi..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Coupure annuelle en course à pied : l'indispensable pause"
 date: "2024-11-18"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2023/12/d853723d-eb53-468d-a4c7-5bcc6cedcca6.jpg"
+image: "/images/2562b5d9-8e70-4e92-bc47-fa56a55ee119.webp"
 excerpt: "<p style=\"text-align: justify;\">En cette fin d'année 2024, nous vous proposons d'aborder un tout nouveau sujet concernant le running. Nous avons décidé de discuter de la coupure annuelle. Est-elle ind..."
 ---
 

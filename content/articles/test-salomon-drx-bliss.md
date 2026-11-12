@@ -2,7 +2,7 @@
 title: "Test : Salomon DRX Bliss"
 date: "2023-09-27"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/09/salomon-drx-bliss-631506-l47292501-960.webp"
+image: "/images/l47291700_3-2.webp"
 excerpt: "<!-- wp:paragraph --> Salomon nous présente un tout nouveau modèle axé route ! Bienvenue à la Salomon DRX Bliss, une chaussure stable et confortable pour courir au quotidien.  <!-- /wp:paragrap..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Nike Pegasus Plus"
 date: "2024-09-16"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/09/1726493082811-scaled.jpg"
+image: "/images/1726493082767-1024x768.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Nike innove avec la sortie d'un tout nouveau modèle : les Nike Pegasus Plus. Ce modèle semble être une évolution plus dynamique de la célèbre Pegasus 41. Elle..."
 ---
 

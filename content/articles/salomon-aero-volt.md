@@ -2,7 +2,7 @@
 title: "Test : Salomon Aero Volt"
 date: "2023-06-14"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2023/06/IMG_20230614_104204.jpg"
+image: "/images/IMG_20230614_104152-1024x577.webp"
 excerpt: "<!-- wp:paragraph --> Salomon présente un tout nouveau modèle, la Salomon aero Volt. Cette chaussure est conçue pour une pratique urbaine de la course à pied. Salomon agrandit donc sa gamme course ..."
 ---
 

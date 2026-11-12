@@ -2,7 +2,7 @@
 title: "Coach course à pied"
 date: "2024-07-28"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/06/Pastel-Minimalist-Business-Coaching-Sessions-Instagram-Post-4-e1722182968118.png"
+image: "/images/Beige-Minimalist-Client-Review-Testimonial-Instagram-Post-1-1024x1024.webp"
 excerpt: "<div class=\"hero-section\" data-type=\"type-1\"><header class=\"entry-header\"> <h1 class=\"page-title\" title=\"Coach course à pied\">Coach course à pied</h1> </header></div> <div class=\"entry-content\"> <h2 c..."
 ---
 

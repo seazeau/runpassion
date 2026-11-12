@@ -2,7 +2,7 @@
 title: "Championnat du monde d'athlétisme de Budapest 2023"
 date: "2023-08-11"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/08/action-1834465_1920.jpg"
+image: "/images/action-1834465_1920-1024x683.webp"
 excerpt: "<!-- wp:paragraph --> Les championnats du monde d'athlétisme se déroule du 19 au 27 août 2023 à Budapest en Hongrie.  <!-- /wp:paragraph -->  <!-- wp:image {\"align\":\"center\",\"id\":390,\"sizeSlug\"..."
 ---
 

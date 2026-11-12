@@ -2,7 +2,7 @@
 title: "New Balance 1080 v15 : La révolution Infinion (Moins 40g sur la balance !)"
 date: "2026-01-15"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2026/01/1-scaled-e1768480811708.jpg"
+image: "/images/4-1024x682.webp"
 excerpt: "<p style=\"text-align: justify;\" data-path-to-node=\"4\">La <b data-path-to-node=\"4\" data-index-in-node=\"3\">New Balance 1080 v15</b> n'est pas qu'une simple mise à jour, c'est une véritable démonstration..."
 ---
 

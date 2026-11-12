@@ -2,7 +2,7 @@
 title: "Mehdi Frère suspendu deux ans"
 date: "2024-07-09"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/07/043-kmsp-001052-0028-668cdf8931361861691981.avif"
+image: "/images/043-kmsp-001052-0028-668cdf8931361861691981-300x169.webp"
 excerpt: "<p style=\"text-align: justify;\">Le marathonien Français vient d'être suspendu deux ans par World Athletics pour 3 manquements aux obligations de localisation. Les JO de Paris 2024 s'éloignent pour le ..."
 ---
 

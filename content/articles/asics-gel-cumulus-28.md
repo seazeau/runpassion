@@ -2,7 +2,7 @@
 title: "Test Asics Gel-Cumulus 28"
 date: "2026-03-04"
 category: "Asics"
-image: "https://runpassion.fr/wp-content/uploads/2026/03/DSC08893-scaled.jpg"
+image: "/images/DSC08893-1-1024x683.webp"
 excerpt: "Avec la Asics Gel-Cumulus 28, la marque japonaise met à jour sa paire du quotidien, en lui apportant quelques améliorations intéressantes.  <!-- wp:image {\"id\":4510,\"width\":\"620px\",\"height\":\"au..."
 ---
 

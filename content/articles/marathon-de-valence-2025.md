@@ -2,7 +2,7 @@
 title: "Marathon de Valence 2025 : Favoris, Parcours"
 date: "2025-11-24"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2025/11/Orange-and-Blue-Football-Match-Instagram-Post.png"
+image: "/images/Orange-and-Blue-Football-Match-Instagram-Post-819x1024.webp"
 excerpt: "<!-- wp:separator --> <hr class=\"wp-block-separator has-alpha-channel-opacity\"/> <!-- /wp:separator -->  <p style=\"text-align: justify;\">Le <strong>Marathon de Valence 2025</strong>, qui se tiendra le..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Mizuno Neo Vista"
 date: "2024-07-05"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/07/IMG_5723-scaled.jpg"
+image: "/images/IMG_5733-1024x683.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"left\"} --> <p class=\"has-text-align-left\" style=\"text-align: justify;\">La marque Japonaise Mizuno propose un tout nouveau modèle de chaussures dédiées à la route : les Mizu..."
 ---
 

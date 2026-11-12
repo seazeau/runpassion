@@ -2,7 +2,7 @@
 title: "Marathon Berlin 2023 : Nouveau record du monde pour Assefa TIGST ! Victoire de Eliud KIPCHOGE"
 date: "2023-09-24"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/09/1200x768_ethiopia-s-tigist-assefa-celebrates-after-smashing-the-women-s-marathon-world-record-by-cro.jpg"
+image: "/images/1200x768_ethiopia-s-tigist-assefa-celebrates-after-smashing-the-women-s-marathon-world-record-by-cro-1024x655.webp"
 excerpt: "<!-- wp:image {\"align\":\"center\",\"id\":423,\"sizeSlug\":\"large\",\"linkDestination\":\"none\"} --> <figure class=\"wp-block-image aligncenter size-large\"><img src=\"https://runpassion.fr/wp-content/uploads/2023/..."
 ---
 

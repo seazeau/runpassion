@@ -2,7 +2,7 @@
 title: "Marathon de Valence 2023 Favoris, Parcours, Retransmission TV"
 date: "2023-11-26"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2023/11/Capture-decran-2023-11-26-183918.png"
+image: "/images/image-2-1024x597.webp"
 excerpt: "<!-- wp:separator --> <hr class=\"wp-block-separator has-alpha-channel-opacity\"/> <!-- /wp:separator -->  <!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Le Marathon de Vale..."
 ---
 

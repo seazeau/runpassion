@@ -2,7 +2,7 @@
 title: "Meilleures chaussures running 2025"
 date: "2025-03-04"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2025/03/Design-sans-titre-9.png"
+image: "/images/IMG_7046-scaled-e1740783172895-1024x585.webp"
 excerpt: "<p style=\"text-align: justify;\">Je vais au sein de cet article, vous détaillez les meilleures chaussures running 2025 dans trois catégories différentes : endurance / entraînements fractionnés / compét..."
 ---
 

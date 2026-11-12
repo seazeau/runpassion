@@ -2,7 +2,7 @@
 title: "Test Asics SonicBlast"
 date: "2026-01-10"
 category: "Asics"
-image: "https://runpassion.fr/wp-content/uploads/2026/01/DSC06357-scaled.jpg"
+image: "/images/DSC06357-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\" data-start=\"69\" data-end=\"133\">Nouvelle venue dans la gamme Blast d’Asics : la <strong data-start=\"117\" data-end=\"131\">SonicBlast</strong> ! Pensée pour la vitesse et l..."
 ---
 

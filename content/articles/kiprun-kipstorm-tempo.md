@@ -2,7 +2,7 @@
 title: "Kiprun Kipstorm Tempo – La révolution \"Super-Trainer\" de Decathlon"
 date: "2026-01-15"
 category: "Kiprun"
-image: "https://runpassion.fr/wp-content/uploads/2026/01/chaussures-de-running-route-homme-kiprun-kipstorm-tempo-bleu-rose-e1768481925361.avif"
+image: "/images/chaussures-de-running-route-homme-kiprun-kipstorm-tempo-bleu-rose-e1768481925361-1024x731.webp"
 excerpt: "<p style=\"text-align: justify;\">Après avoir frappé un grand coup avec la Kipstorm Lab de Jimmy Gressier, Kiprun décline sa nouvelle franchise avec la Kiprun <b data-path-to-node=\"4\" data-index-in-node..."
 ---
 

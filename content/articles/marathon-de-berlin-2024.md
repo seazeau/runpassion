@@ -2,7 +2,7 @@
 title: "Marathon de Berlin 2024 : Favoris, Parcours, Diffusion TV"
 date: "2024-09-23"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/09/Berlin-FA-852825046.webp"
+image: "/images/parcours-Marathon-Berlin.webp"
 excerpt: "<p style=\"text-align: justify;\">La 50ème édition du marathon de Berlin 2024 aura lieu dimanche 29 septembre 2024. Nous allons vous présenter dans cet article, l'ensemble des informations à connaitre, ..."
 ---
 

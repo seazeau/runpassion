@@ -2,7 +2,7 @@
 title: "Test Saucony Ride 17"
 date: "2024-01-28"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2024/01/1705578069772.png"
+image: "/images/1705578069772-1024x632.webp"
 excerpt: "<!-- wp:paragraph --> La marque Saucony revient avec une nouvelle édition d'un de ses modèles phares, la Saucony Ride 17. Cette chaussure promet du confort et un amorti pour tous vos runs quotidien..."
 ---
 

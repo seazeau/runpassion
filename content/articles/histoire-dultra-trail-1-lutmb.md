@@ -2,7 +2,7 @@
 title: "UTMB : Histoire d'ultra trail #1"
 date: "2023-07-21"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/07/pexels-chiaroscuro-10749940-scaled.jpg"
+image: "/images/pexels-chiaroscuro-10749940-1024x768.webp"
 excerpt: "<!-- wp:paragraph --> Aujourd'hui, je commence une nouvelle série dédiée à la présentation des plus grands ultras Trails du monde. Nous allons essayer de vous raconter l'histoire de ses courses myt..."
 ---
 

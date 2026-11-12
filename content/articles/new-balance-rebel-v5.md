@@ -2,7 +2,7 @@
 title: "Test New Balance rebel V5"
 date: "2026-01-28"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2026/01/IMG_0669-scaled-e1769585726139.jpg"
+image: "/images/IMG_0669-scaled-e1769585726139-1024x681.webp"
 excerpt: "<p style=\"text-align: justify;\">La lignée \"Rebel\" de New Balance a toujours eu une place à part dans le cœur des coureurs : légère, fun et dynamique. Avec la New Balance Rebel V5, la marque américaine..."
 ---
 

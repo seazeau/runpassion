@@ -2,7 +2,7 @@
 title: "Test Adidas Supernova Rise"
 date: "2023-12-19"
 category: "Adidas"
-image: "https://runpassion.fr/wp-content/uploads/2023/12/1702917172251.jpg"
+image: "/images/1702917172251-1024x822.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Allemande sort en cette fin d'année 2023 un tout nouveau modèle : La Adidas Supernova Rise. La marque a souhaitait..."
 ---
 

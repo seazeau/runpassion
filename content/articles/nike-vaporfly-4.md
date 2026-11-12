@@ -2,7 +2,7 @@
 title: "Test Nike Vaporfly 4"
 date: "2025-02-28"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2025/02/nike-zoomx-vaporfly-next-4-1-1-scaled-e1740783432132.jpeg"
+image: "/images/nike-zoomx-vaporfly-next-4-1-1-1024x576.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque américaine Nike, vient tout juste d'annoncer que son modèle phare, les Nike Vaporfly 4 allaient être disponible dès le 01 mars. Nous ferons un test complet de..."
 ---
 

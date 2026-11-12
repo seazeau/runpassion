@@ -2,7 +2,7 @@
 title: "Marseille Cassis 2023  Favoris, Parcours, Retransmission"
 date: "2023-10-25"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/10/635e3e538e0be_whatsapp-image-2022-10-30-at-10-03-09.webp"
+image: "/images/image-4.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Ce dimanche 29 octobre a lieu la célèbre course Marseille Cassis. La course propose un parcours de 20 km reliant Marseille e..."
 ---
 

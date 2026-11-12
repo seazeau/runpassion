@@ -2,7 +2,7 @@
 title: "Test Adidas Adizero Boston 13"
 date: "2025-05-07"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2025/05/adidas-adizero-boston-13-924193-jr4791-960-1.webp"
+image: "https://i1.t4s.cz//products/jr4791/adidas-adizero-boston-13-924193-jr4791-960.webp"
 excerpt: "<!-- wp:heading {\"level\":5} --> <h5 class=\"wp-block-heading\">Ca<strong>ractéristiques principales des Adidas Adizero Boston 13</strong></h5> <!-- /wp:heading -->  <!-- wp:paragraph {\"className\":\"\"}..."
 ---
 

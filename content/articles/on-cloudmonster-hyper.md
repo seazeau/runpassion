@@ -2,7 +2,7 @@
 title: "Test On CloudMonster Hyper"
 date: "2024-04-04"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/04/on-running-cloudmonster-hyper-737393-3me10131907-960.webp"
+image: "/images/on-running-cloudmonster-hyper-737383-3me10131910-1024x461.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Suisse On running propose un tout nouveau modèle seulement un mois après la sortie de la Cloudmonster. Ce modèle e..."
 ---
 

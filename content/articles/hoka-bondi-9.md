@@ -2,7 +2,7 @@
 title: "Test Hoka Bondi 9"
 date: "2025-01-17"
 category: "Hoka"
-image: "https://runpassion.fr/wp-content/uploads/2025/01/1738751238324-scaled-e1738759432550.jpg"
+image: "/images/1738751238324-scaled-e1738759432550-1024x606.webp"
 excerpt: "<p style=\"text-align: justify;\">Le test des Hoka Bondi 9 est rendu possible grâce au soutien de notre partenaire Top4running. Pour nous soutenir et nous aider à nous développer, vous pouvez utiliser l..."
 ---
 

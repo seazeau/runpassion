@@ -2,7 +2,7 @@
 title: "Test : Salomon S/Lab Phantasm 2"
 date: "2023-10-10"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2023/10/s-lab-s-lab-phantasm-2-662446-l47276602-960.webp"
+image: "/images/s-lab-s-lab-phantasm-2-662446-l47276603.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Nous vous présentons le nouveau modèle carbone de chez Salomon, la  Salomon S/Lab phantasm 2. La marque revient avec un nouv..."
 ---
 

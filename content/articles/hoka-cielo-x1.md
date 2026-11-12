@@ -2,7 +2,7 @@
 title: "Test Hoka Cielo X1"
 date: "2024-02-08"
 category: "Hoka"
-image: "https://runpassion.fr/wp-content/uploads/2024/02/hoka-cielo-x1-709470-1147910-enn-960.webp"
+image: "/images/t4running-claim-black-01-1-1024x223.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Hoka démarre bien l'année avec un tout nouveau modèle axé performance : la Hoka Cielo X1. Après le succès de la Ho..."
 ---
 

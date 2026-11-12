@@ -2,7 +2,7 @@
 title: "Test Asics Novablast 4"
 date: "2023-12-15"
 category: "Asics"
-image: "https://runpassion.fr/wp-content/uploads/2023/10/1702669081090-scaled.jpg"
+image: "/images/1702373919828-edited-scaled.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Asics revient avec la nouvelle version d'un de ses modèles les plus populaires : les Asics Novablast 4 ! Le modèle..."
 ---
 

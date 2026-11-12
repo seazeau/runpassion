@@ -2,7 +2,7 @@
 title: "Test : Nike UltraFly trail"
 date: "2023-08-27"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/08/IMG_20230814_153956-scaled.jpg"
+image: "https://lh5.googleusercontent.com/hmEELVtiA-7uFbz54bHzhJMh37aHy_-4QwSfr9bcvxC2O0HL7VXyNZAbQQb07NxQvczMafK8pg3Y5f4PS_GTd0gruKOuJw-t8LvB30h_joGBU89PtWzO2UJUA8zgAK4bU_22Ip4qXT_KeKJZfuJfnTQ"
 excerpt: "<!-- wp:paragraph --> Nike propose un nouveau modèle trail, la Nike Ultrafly trail pour essayer de s’imposer un peu plus dans ce domaine qui ne lui réussit pas pour le moment, en tout cas pas comme..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Kilian Jornet UTMB 2023"
 date: "2023-07-12"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/07/48lizo.jpg"
+image: "/images/48lizo-564x1024.webp"
 excerpt: "<!-- wp:paragraph --> C'est officiel ! Kilian Jornet participera à l'UTMB 2023 au mois d'août prochain pour tenter de décrocher une 5ème victoire.   <!-- /wp:paragraph -->  <!-- wp:paragraph --..."
 ---
 

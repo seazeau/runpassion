@@ -2,7 +2,7 @@
 title: "Salomon S/LAB Phantasm 3 : L'Arme Absolue pour la Haute Performance"
 date: "2026-01-15"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2026/01/1-1-scaled.jpg"
+image: "/images/1-1-1024x710.webp"
 excerpt: "<p style=\"text-align: justify;\">La quête de la vitesse pure franchit une nouvelle étape avec la Salomon <b data-path-to-node=\"3\" data-index-in-node=\"64\">S/LAB Phantasm 3</b>. Conçue pour les coureurs ..."
 ---
 

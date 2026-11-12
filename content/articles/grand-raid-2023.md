@@ -2,7 +2,7 @@
 title: "Grand Raid 2023 de la Réunion : Favoris, Retransmission, Parcours"
 date: "2023-10-17"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/10/c171f71b2be52ece75eec10edac3ef-1.png"
+image: "/images/image-1-1024x576.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Nous sommes à trois jours du départ du Grand Raid 2023 de la Réunion 2023. La course se déroule du 19 au 23 Octobre 2023. Co..."
 ---
 

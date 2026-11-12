@@ -2,7 +2,7 @@
 title: "Test On Cloudsurfer Trail"
 date: "2024-04-18"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2024/04/1712310910277-scaled.jpg"
+image: "/images/1712310910277-1024x683.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Suisse On running nous surprend en proposant un tout nouveau modèle de trail, qui est en fait une déclinaison du m..."
 ---
 

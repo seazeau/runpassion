@@ -2,7 +2,7 @@
 title: "Test : Nike Structure 26"
 date: "2025-05-23"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2025/05/nike-structure-26-womens-1-scaled.jpeg"
+image: "/images/nike-structure-26-womens-1-1024x647.webp"
 excerpt: "<h2 style=\"text-align: justify;\" data-start=\"397\" data-end=\"480\">Une chaussure pensée pour les coureurs à la recherche de stabilité et de confort</h2> <p style=\"text-align: justify;\" data-start=\"482\" ..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Hoka Cielo X1 2.0"
 date: "2025-03-02"
 category: "Hoka"
-image: "https://runpassion.fr/wp-content/uploads/2025/02/IMG_9519-scaled-e1740783269493.jpg"
+image: "/images/IMG_9519-scaled-e1740672985786-1024x630.webp"
 excerpt: "<p style=\"text-align: justify;\">Le test des Hoka Cielo X1 2.0 est rendu possible grâce au soutien de notre partenaire Top4running. Pour nous soutenir et nous aider à nous développer, vous pouvez utili..."
 ---
 

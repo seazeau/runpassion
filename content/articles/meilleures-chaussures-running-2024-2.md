@@ -2,7 +2,7 @@
 title: "Meilleures chaussures running 2024"
 date: "2024-09-01"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2024/09/Design-sans-titre.png"
+image: "/images/1709476967287-1024x576.webp"
 excerpt: "<!-- wp:paragraph --> <p style=\"text-align: justify;\">Vous cherchez les meilleures chaussures running 2024 ? Que vous soyez un coureur débutant ou un athlète chevronné, trouver la paire idéale ..."
 ---
 

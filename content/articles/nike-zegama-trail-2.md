@@ -2,7 +2,7 @@
 title: "Test Nike Zegama Trail 2"
 date: "2024-05-02"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/05/nike-zegama-2-752894-fd5191-105-960-e1714634255971.webp"
+image: "/images/nike-zegama-2-752900-fd5191-502.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Américaine Nike continue sa progression dans le monde du trail, en proposant la seconde version d'un modèle sortie..."
 ---
 

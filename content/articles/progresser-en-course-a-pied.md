@@ -2,7 +2,7 @@
 title: "Progresser en course à pied : 3 conseils fondamentaux"
 date: "2023-06-16"
 category: "Conseils"
-image: "https://runpassion.fr/wp-content/uploads/2023/06/Progresser-en-course-a-peid-Publication-Instagram-Carre.jpg"
+image: "/images/Progresser-en-course-a-peid-Publication-Instagram-Carre-1024x1024.webp"
 excerpt: "<!-- wp:paragraph --> Pour progresser en course a pied il faut comprendre son fonctionnement. Il est assez facile de comprendre comment fonctionne la progression en course à pied. En effet, cela es..."
 ---
 

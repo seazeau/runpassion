@@ -2,7 +2,7 @@
 title: "Semi marathon de Séville 2024 : Favoris, retransmission, parcours."
 date: "2024-01-27"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/01/media-maraton-de-sevilla-2024-U501595606482tc-RbxVYtYUsYn4ExUv6AGLbFN-1200x840@abc.webp"
+image: "/images/image-1.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Le semi marathon de Séville 2024 a lieu demain, dimanche 28 janvier 2024. Ce semi marathon propose un parcours ultra roulant..."
 ---
 

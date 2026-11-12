@@ -2,7 +2,7 @@
 title: "Marathon de Londres 2024 : Favoris, retransmission, parcours."
 date: "2024-04-15"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/04/1713186936294-1.jpg"
+image: "/images/1713186936294-1-1024x910.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Le dimanche 21 avril aura lieu une nouvelle édition du TCS London Marathon. La particularité du marathon de Londres 2024 est..."
 ---
 

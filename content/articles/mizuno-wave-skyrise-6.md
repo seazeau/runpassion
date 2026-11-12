@@ -2,7 +2,7 @@
 title: "Test Mizuno Wave Skyrise 6"
 date: "2025-06-15"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2025/06/DSC02219-scaled.jpg"
+image: "/images/DSC02208-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\">Dans l’univers du running actuel où les paires tendent à être de plus en plus spécialisées, les marques proposent toutes des modèles « daily », prêtes à vous accompagne..."
 ---
 

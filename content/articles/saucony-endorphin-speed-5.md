@@ -2,7 +2,7 @@
 title: "Test Saucony Endorphin speed 5"
 date: "2025-08-22"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2025/08/DSC03154-scaled.jpg"
+image: "/images/DSC03154-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\">Dans la catégorie chaussures polyvalentes et rapides, s’il y a bien une option à envisager, c’est la Saucony Endorphin Speed 5. Cette année, la marque américaine sort s..."
 ---
 

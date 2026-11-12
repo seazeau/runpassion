@@ -2,7 +2,7 @@
 title: "L'endurance fondamentale : Courir lentement pour courir plus vite"
 date: "2023-06-09"
 category: "Conseils"
-image: "https://runpassion.fr/wp-content/uploads/2023/07/Firefly-half-marathon-of-paris-68277-1.jpg"
+image: "/images/image04.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Aujourd'hui nous abordons un concept essentiel en course à pied : l'endurance fondamentale. C'est à dire courir lentement po..."
 ---
 

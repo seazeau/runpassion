@@ -2,7 +2,7 @@
 title: "Test Hoka Clifton 10"
 date: "2025-06-06"
 category: "Hoka"
-image: "https://runpassion.fr/wp-content/uploads/2025/06/DSC02176-scaled.jpg"
+image: "/images/DSC02183-1-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\">À en croire les données de Strava, la Hoka Clifton 10 est un des modèles les plus utilisés à l’entrainement. La 10ème itération de ce modèle phare de la marque Hoka éta..."
 ---
 

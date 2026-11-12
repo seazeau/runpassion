@@ -2,7 +2,7 @@
 title: "Test Brooks Adrénaline GTS 25"
 date: "2026-02-09"
 category: "Brooks"
-image: "https://runpassion.fr/wp-content/uploads/2026/02/DSC07157.jpg"
+image: "/images/DSC07134-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\">Avec sa Brooks Adrénaline GTS 25, la marque américaine met à jour une référence en terme de chaussure de stabilité, avec une version plus douce.  <!-- wp:image {\"id..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Puma Fast R Nitro Elite 2"
 date: "2024-01-16"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2024/01/1705265001809-scaled.jpg"
+image: "/images/1705265001769-1024x768.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Puma revient avec sa seconde édition de son modèle compétition typé pour le marathon : La Puma Fast R Nitro Elite 2. La marque promet un modèle beaucoup plus ..."
 ---
 

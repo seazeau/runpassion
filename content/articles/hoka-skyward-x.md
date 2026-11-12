@@ -2,7 +2,7 @@
 title: "Test Hoka Skyward X : Tout en un ?"
 date: "2024-05-08"
 category: "Hoka"
-image: "https://runpassion.fr/wp-content/uploads/2024/03/IMG_2857-scaled.jpeg"
+image: "/images/IMG_2876-847x1024.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Hoka présente un tout nouveau modèle de running sur route : les Hoka Skyward X. Une paire dédiée à l'entrainement ..."
 ---
 

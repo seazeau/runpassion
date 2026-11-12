@@ -2,7 +2,7 @@
 title: "Test Asics Metaspeed Paris : Enfin la nouvelle version du modèle carbone"
 date: "2024-03-24"
 category: "Asics"
-image: "https://runpassion.fr/wp-content/uploads/2024/03/1711200101710-scaled-e1711317344861.jpg"
+image: "/images/1711200101581.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Japonaise vient tout juste de présenter la nouvelle version de son modèle performance : Les Asics Metaspeed Paris...."
 ---
 

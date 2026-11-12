@@ -2,7 +2,7 @@
 title: "TEST : Nike Vaporfly 2"
 date: "2023-10-09"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2023/10/1696881641790-scaled.jpg"
+image: "/images/1696881773581-1024x768.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Retour en arrière aujourd’hui pour vous présenter mon test d'une des meilleures chaussures créées dans le running. Nous vous..."
 ---
 

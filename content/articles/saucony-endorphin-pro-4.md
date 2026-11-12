@@ -2,7 +2,7 @@
 title: "Test Saucony Endorphin Pro 4"
 date: "2024-03-23"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/03/1711200123006-scaled-e1711200815565.jpg"
+image: "/images/1711200123006-scaled-e1711200815565-1024x661.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Saucony revient avec une nouvelle version de son modèle axé compétition : les Saucony Endorphin Pro 4 ! Ces chauss..."
 ---
 

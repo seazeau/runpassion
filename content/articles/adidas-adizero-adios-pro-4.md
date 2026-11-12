@@ -2,7 +2,7 @@
 title: "Test Adidas Adios Pro 4"
 date: "2025-03-02"
 category: "Adidas"
-image: "https://runpassion.fr/wp-content/uploads/2024/09/IMG_7046-scaled-e1740783200550.jpg"
+image: "/images/IMG_7006-edited-1-scaled.webp"
 excerpt: "<p style=\"text-align: justify;\">Après plus de deux ans d'attente, la marque Allemande Adidas vient tout juste de présenter la nouvelle édition de son modèle axé compétition : les Adidas Adios Pro 4. N..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Nike Zoom Fly 6"
 date: "2024-12-12"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2024/12/IMG_3610-scaled.jpg"
+image: "/images/IMG_3610-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\">Ce test est rendu possible grâce au soutien de <a href=\"https://top4running.fr/p/nike-zoom-fly-6-fn8454-102?a_box=sc3esau3\">Top4running. Vous pouvez nous soutenir et éc..."
 ---
 

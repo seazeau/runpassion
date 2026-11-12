@@ -2,7 +2,7 @@
 title: "Test On CloudMonster 2"
 date: "2024-03-03"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/03/1709476967287-scaled.jpg"
+image: "/images/1709476967287-1024x576.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque suisse vient tout juste de sortir la nouvelle version de son modèle phare : la On CloudMonster 2. La marque promet..."
 ---
 

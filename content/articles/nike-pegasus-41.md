@@ -2,7 +2,7 @@
 title: "Test Nike Pegasus 41 : Découvrez les nouveautés"
 date: "2024-06-06"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/06/IMG_20240614_174839.jpg"
+image: "/images/image-1024x460.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque américaine Nike vient tout juste de présenter la nouvelle version de son modèle iconique : Les Nike Pegasus 41. No..."
 ---
 

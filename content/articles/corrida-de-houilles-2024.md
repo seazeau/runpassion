@@ -2,7 +2,7 @@
 title: "Corrida de Houilles 2024: Favoris, Parcours."
 date: "2024-12-11"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/12/Affiche-Corrida-2024-1.png"
+image: "/images/Affiche-Corrida-2024-724x1024.webp"
 excerpt: "<p style=\"text-align: justify;\">Aujourd'hui nous vous présentons la Corrida de Houilles 2024. Cette course iconique, fait son retour cette année, avec le même parcours et un plateau français exception..."
 ---
 

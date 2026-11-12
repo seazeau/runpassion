@@ -2,7 +2,7 @@
 title: "Test Nike Vomero 18"
 date: "2025-03-03"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2025/02/IMG_9473-scaled-e1740643489689.jpg"
+image: "/images/IMG_9473-scaled-e1740643293555-1024x584.webp"
 excerpt: "<p style=\"text-align: justify;\">Le test des Nike Vomero 18 est rendu possible grâce au soutien de notre partenaire Top4running. Pour nous soutenir et nous aider à nous développer, vous pouvez utiliser..."
 ---
 

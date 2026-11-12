@@ -2,7 +2,7 @@
 title: "20KM de Paris 2024 : Favoris, Parcours, diffusion TV"
 date: "2024-09-27"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/09/bar-lamico-bleu-62x128cm-scaled.jpg.webp"
+image: "/images/20km-de-Paris-parcours.webp"
 excerpt: "<p style=\"text-align: justify;\">Le Dimanche 13 Octobre aura lieu la 46ème édition des 20km de Paris 2024. Cette course historique en plein cœur de la capitale attire chaque année des milliers de coure..."
 ---
 

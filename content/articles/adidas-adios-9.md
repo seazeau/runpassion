@@ -2,7 +2,7 @@
 title: "TEST ADIDAS ADIOS 9"
 date: "2025-02-26"
 category: "Adidas"
-image: "https://runpassion.fr/wp-content/uploads/2025/02/DSC05632.jpg"
+image: "/images/DSC05632-1024x683.webp"
 excerpt: "<div id=\"toolbar-f9126670-750a-41f1-88b6-af31c2e6c3ec\" class=\"block-library-classic__toolbar has-advanced-toolbar\" data-placeholder=\"Classique\"> <div id=\"mceu_174\" class=\"mce-menu-item mce-menu-item-n..."
 ---
 

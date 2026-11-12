@@ -2,7 +2,7 @@
 title: "TEST : On CloudBoom Echo 3"
 date: "2023-06-24"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/06/vgvnmspapzqxc7x7ox0p-1.webp"
+image: "/images/on-running-cloudboom-echo-3-598514-3wd10491108-1024x441.webp"
 excerpt: "<!-- wp:paragraph --> Dotée d'une toute nouvelle super-mousse et de fibres de carbone, il s'agit de la chaussure de course la plus rapide à ce jour de chez la marque On Running. C'est la paire nota..."
 ---
 

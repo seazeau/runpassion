@@ -2,7 +2,7 @@
 title: "New Balance Fresh Foam X 1080 v14"
 date: "2024-09-20"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2024/09/m1080n14_nb_05_i.webp"
+image: "/images/PUMA-DEVIATE-NITRO-3-2-819x1024.webp"
 excerpt: "La marque américaine New balance vient tout juste d'annoncer la sortie de la nouvelle édition d'un de ses modèles phares : les New Balance Fresh Foam X 1080 V14. Nous allons voir au sein de cet art..."
 ---
 

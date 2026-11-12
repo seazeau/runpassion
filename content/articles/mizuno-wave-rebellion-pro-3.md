@@ -2,7 +2,7 @@
 title: "Test Mizuno Wave Rebellion Pro 3"
 date: "2025-03-27"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2025/03/IMG_8922-scaled-e1743004506874.jpg"
+image: "/images/IMG_8922-scaled-e1743004506874-1024x619.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Japonaise Mizuno vient de sortir la nouvelle édition de son modèle compétition : Les Mizuno Wave Rebellion Pro 3. Nous allons livrer notre ressenti sur cette ..."
 ---
 

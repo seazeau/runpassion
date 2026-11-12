@@ -2,7 +2,7 @@
 title: "Test New Balance Fuelcell Supercomp Elite v4"
 date: "2024-03-05"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/03/1709590449034-scaled.jpg"
+image: "/images/1709590449034-1024x768.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque New Balance a l'ambition de concurrencer les plus grandes marques de running sur le plan des modèles pour la compé..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test : Hoka Tecton X2 : le modèle trail carbone revient"
 date: "2023-09-27"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/06/IMG_20230614_093833-scaled.jpg"
+image: "/images/IMG_20230627_122544-1024x769.webp"
 excerpt: "<!-- wp:paragraph --> La marque Hoka vient de sortir la seconde édition de son modèle Trail axé performance et équipé d'une plaque carbone : la Hoka Tecton X2. La chaussure est conçu pour les trail..."
 ---
 

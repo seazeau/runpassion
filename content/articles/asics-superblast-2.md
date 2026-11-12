@@ -2,7 +2,7 @@
 title: "Test Asics SuperBlast 2"
 date: "2024-07-27"
 category: "Asics"
-image: "https://runpassion.fr/wp-content/uploads/2024/07/IMG_8275-scaled.jpg"
+image: "/images/1726493280553-1024x768.webp"
 excerpt: "<!-- wp:image {\"id\":1838,\"width\":\"454px\",\"height\":\"auto\",\"sizeSlug\":\"large\",\"linkDestination\":\"none\",\"align\":\"center\"} --> <figure class=\"wp-block-image aligncenter size-large is-resized\"><img src=\"ht..."
 ---
 

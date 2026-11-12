@@ -2,7 +2,7 @@
 title: "Test : Hoka Mafate X"
 date: "2025-05-21"
 category: "Hoka"
-image: "https://runpassion.fr/wp-content/uploads/2025/05/IMG_20250515_203703-scaled-e1747386012150.jpg"
+image: "/images/IMG_20250515_203703-scaled-e1747386012150-1024x695.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Hoka vient tout juste de sortir une nouvelle version de son modèle iconique \"mafate\". Il s'agit des Hoka Mafate X, une paire de trail maximaliste, prête à vou..."
 ---
 

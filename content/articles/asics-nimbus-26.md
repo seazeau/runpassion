@@ -2,7 +2,7 @@
 title: "Test Asics Nimbus 26"
 date: "2024-02-01"
 category: "Asics"
-image: "https://runpassion.fr/wp-content/uploads/2024/01/1706708546179-scaled.jpg"
+image: "/images/1706708546179-1024x768.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Asics propose une nouvelle version de son modèle emblématique : Les Asics Nimbus 26 ! Une paire confortable, amort..."
 ---
 

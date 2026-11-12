@@ -2,7 +2,7 @@
 title: "Test : Adidas Adizero Adios Pro Évo 1"
 date: "2023-09-21"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/09/1F4D7FA7-7940-4891-AF31-DD51757ECF0F.jpeg"
+image: "/images/1F4D7FA7-7940-4891-AF31-DD51757ECF0F-1024x910.webp"
 excerpt: "<!-- wp:paragraph --> Adidas frappe un grand coup sur la table du running en sortant la chaussure la plus légère de tous les modèles présents actuellement sur le marché. La Adidas Adizero Adios Pro..."
 ---
 

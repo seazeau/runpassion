@@ -2,7 +2,7 @@
 title: "Test On CloudBoom Strike"
 date: "2024-09-06"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/09/IMG_8288-scaled.jpg"
+image: "/images/IMG_8288-1024x680.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque suisse, On continue d'impressionner en proposant un tout nouveau modèle dédié à la performance sur la longue distance, les On CloudBoom Strike. Ce modèle en v..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Les meilleures chaussures running en 2024"
 date: "2023-10-25"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2023/10/beauty-rituals.jpg"
+image: "/images/beauty-rituals-1024x1024.webp"
 excerpt: "<!-- wp:paragraph --> Tout d'abord, vous pouvez bénéficier de <a href=\"https://top4running.fr/?a_box=sc3esau3\" target=\"_blank\" rel=\"noreferrer noopener\">8% supplémentaire sur tout le site de Top4ru..."
 ---
 

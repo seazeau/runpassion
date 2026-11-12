@@ -2,7 +2,7 @@
 title: "Test T-shirt Sensus ADN V3"
 date: "2025-02-20"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2025/03/Seance-Marathon-4-x-5KM-2.png"
+image: "/images/DSC05649-683x1024.webp"
 excerpt: "<p style=\"text-align: justify;\">Il y a un an, j'avais eu l'occasion de tester la première version du t-shirt ADN de la marque française Sensus. J'avais été agréablement surpris en découvrant un tissu ..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Puma Deviate Nitro 3"
 date: "2024-07-29"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/07/IMG_8254-1-scaled.jpg"
+image: "/images/IMG_8254-1-1024x680.webp"
 excerpt: "<!-- wp:image {\"id\":1643,\"width\":\"549px\",\"height\":\"auto\",\"sizeSlug\":\"large\",\"linkDestination\":\"none\",\"align\":\"center\"} --> <figure class=\"wp-block-image aligncenter size-large is-resized\"><img src=\"ht..."
 ---
 

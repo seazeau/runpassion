@@ -2,7 +2,7 @@
 title: "Test Asics Metaspeed Ray"
 date: "2026-01-12"
 category: "Asics"
-image: "https://runpassion.fr/wp-content/uploads/2026/01/IMG_7863-scaled.jpg"
+image: "/images/IMG_7863-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\">ASICS présente une toute nouvelle déclinaison de sa gamme performance avec la Asics <strong data-start=\"344\" data-end=\"361\">Metaspeed Ray</strong>, un modèle ultra-lége..."
 ---
 

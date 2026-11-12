@@ -2,7 +2,7 @@
 title: "Championnats de France de trail 2024 : Favoris, parcours, retransmission"
 date: "2024-04-04"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2024/04/b500c1_631afecc7e7d4d66a55bd68b1c65a842mv2-e1712224441280.webp"
+image: "/images/profil-long.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Les championnats de France de trail 2024 ont lieu le dimanche 07 avril à Buis les Baronnies dans le département de la Drôme,..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Puma Deviate Nitro Elite 3"
 date: "2024-08-29"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/08/IMG_8262-scaled.jpg"
+image: "/images/IMG_8267-1024x680.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Allemande Puma a sorti la toute nouvelle version de son modèle axé compétition, les Puma Deviate Nitro Elite 3. La marque a annoncé une paire plus performante..."
 ---
 

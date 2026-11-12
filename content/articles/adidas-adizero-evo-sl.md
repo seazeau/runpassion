@@ -2,7 +2,7 @@
 title: "Test Adidas Adizero EVO SL"
 date: "2025-05-26"
 category: "Adidas"
-image: "https://runpassion.fr/wp-content/uploads/2024/12/IMG_3067-scaled.jpg"
+image: "/images/IMG_3067-1024x683.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Allemande Adidas frappe un grand coup en présentant un tout nouveau modèle d'entraînement : la Adidas Adizero Evo SL. La principale nouveauté est que ce modèl..."
 ---
 

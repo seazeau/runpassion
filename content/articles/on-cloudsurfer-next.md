@@ -2,7 +2,7 @@
 title: "Test On CloudSurfer Next"
 date: "2024-11-05"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2024/10/1441b8bf-7a7b-4220-9779-e8ba26a967e1.jpeg"
+image: "/images/1441b8bf-7a7b-4220-9779-e8ba26a967e1-1024x768.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Suisse On vient tout juste de présenter un nouveau modèle taillé pour l'endurance : les On Cloudsurfer Next.  <!-- wp:image {\"id\":2031,\"width\":\"533px\",\"he..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Sensus : Vêtements de running made in France"
 date: "2024-02-15"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/02/T-shirt.png"
+image: "/images/T-shirt-1024x1024.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque française Sensus m'a permis de tester sa gamme de vêtements conçus pour le running, des vêtements de qualité, fabr..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test : Nike Pegasus 40"
 date: "2023-07-13"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/11/nike-pegasus-40-eliud-kipchoge-643549-fj0686-102.jpeg"
+image: "/images/nike-pegasus-40-eliud-kipchoge-643549-fj0686-102-1024x439.webp"
 excerpt: "<!-- wp:paragraph --> C'est parti pour l'édition 40 de l'incontournable modèle de Nike. La Nike Pegasus 40. Cette paire est la plus vendue dans le monde. Nike présente un nouveau modèle qui garde l..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test 361° Kairos 2 : La stabilité avant tout"
 date: "2023-12-27"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2023/12/1703242189830-scaled.jpg"
+image: "/images/1703242189880-edited-scaled.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Nous vous présentons pour la première fois sur notre site un test de chaussure de la marque 361°, la 361° Kairos 2. Cette ma..."
 ---
 

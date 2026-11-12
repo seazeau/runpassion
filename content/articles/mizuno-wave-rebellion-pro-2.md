@@ -2,7 +2,7 @@
 title: "Test Mizuno Wave Rebellion pro 2"
 date: "2024-03-17"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2024/03/1710610282339-scaled.jpg"
+image: "/images/1709315903623-edited-scaled.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Mizuno propose la deuxième version de son modèle axé compétition : les Mizuno Wave Rebellion pro 2. Celle ci prome..."
 ---
 

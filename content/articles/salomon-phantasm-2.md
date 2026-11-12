@@ -2,7 +2,7 @@
 title: "TEST: Salomon Phantasm 2 : Mes premières impressions !"
 date: "2023-08-17"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/08/F-p8TgYWcAABl5j.jpg"
+image: "/images/F-p8TgYWcAABl5j-1024x768.webp"
 excerpt: "<!-- wp:paragraph --> La marque Salomon continue à s'affirmer sur la route avec une deuxième du modèle Phantasm dédié à l'entrainement rapide sur la route. Cette seconde version se veut très dynami..."
 ---
 

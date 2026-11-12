@@ -2,7 +2,7 @@
 title: "Test Salomon Aero Glide 3"
 date: "2025-04-30"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2025/04/IMG_1924-scaled-e1746000234384.jpg"
+image: "/images/IMG_1924-scaled-e1746000234384-1024x589.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Française Salomon présente la toute nouvelle édition de son modèle d'entraînement sur route dédié au confort et à la stabilité : les Salomon Aero Glide 3. Nou..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Salomon S/LAB Ultra Glide"
 date: "2025-03-03"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2025/02/1740057945819-scaled-e1740058153838.jpg"
+image: "/images/1740057945819-scaled-e1740058153838-1024x637.webp"
 excerpt: "<p style=\"text-align: justify;\">Le test de la Salomon S/lab Ultra glide est rendu possible grâce au soutien de notre partenaire Top4running. Pour nous soutenir et nous aider à nous développer, vous po..."
 ---
 

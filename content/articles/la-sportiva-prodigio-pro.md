@@ -2,7 +2,7 @@
 title: "Test : La Sportiva Prodigio Pro : la nouvelle arme pour l’ultra-trail"
 date: "2025-10-24"
 category: "Blog"
-image: "https://runpassion.fr/wp-content/uploads/2025/10/IMG_4634-scaled.jpg"
+image: "/images/IMG_4639-683x1024.webp"
 excerpt: "<p style=\"text-align: justify;\" data-start=\"471\" data-end=\"858\">La marque italienne <strong data-start=\"491\" data-end=\"506\">La Sportiva</strong> dévoile une toute nouvelle chaussure de trail pensée po..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Nike Pegasus Premium"
 date: "2025-01-20"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2025/01/IMG_9255-scaled-e1738791226910.jpg"
+image: "/images/IMG_9293-scaled-e1738791061126-966x1024.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque américaine Nike annonce révolutionner le fonctionnement et sa vision du running en proposant trois catégories deux chaussures qui auront toutes, trois déclina..."
 ---
 

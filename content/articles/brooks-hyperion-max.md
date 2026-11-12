@@ -2,7 +2,7 @@
 title: "Test Brooks Hyperion Max"
 date: "2023-10-14"
 category: "Matériel"
-image: "https://runpassion.fr/wp-content/uploads/2023/10/1697283660336-scaled.jpg"
+image: "/images/1697283660336-1024x768.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">La marque Brooks présente un tout nouveau modèle de chaussure dans la gamme Hyperion : La Brooks Hyperion max. La principale..."
 ---
 

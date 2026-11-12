@@ -2,7 +2,7 @@
 title: "NNormal Kboix, la chaussure réinventée 3 en 1 par Kilian Jornet"
 date: "2023-11-23"
 category: "Actualités"
-image: "https://runpassion.fr/wp-content/uploads/2023/11/NN_Kboix_land_image_3-2000.jpg"
+image: "/images/NN_Kboix_land_image_2-2000-1024x574.webp"
 excerpt: "<!-- wp:paragraph {\"align\":\"justify\"} --> <p class=\"has-text-align-justify\">Grande nouveauté aujourd'hui du côté de la marque NNormal de Kilian Jornet. Plus d'un an après la création de la marque et l..."
 ---
 

@@ -2,7 +2,7 @@
 title: "Test Kiprun Kipstorm lab"
 date: "2025-11-11"
 category: "Kiprun"
-image: "https://runpassion.fr/wp-content/uploads/2025/11/Asics-1500-x-100-px.png"
+image: "/images/IMG_20250410_161649-scaled-e1762896257932-1024x998.webp"
 excerpt: "<p style=\"text-align: justify;\">La marque Kiprun a certainement connu un très grand tournant suite à la signature de Jimmy Gressier. La Kiprun Kipstorm Lab en est un exemple. Une chaussure pour la per..."
 ---
 

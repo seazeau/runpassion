@@ -18,7 +18,7 @@ export function normalizeArticleImageUrl(url?: string | null): string {
   if (!url) return '';
   return url.replace(WP_UPLOAD_URL_RE, (_match, rawFilePath: string) => {
     const fileName = rawFilePath.split('/').pop() || rawFilePath;
-    const baseName = fileName.replace(/(?:\.(?:jpe?g|png|webp|gif))+$/i, '');
+    const baseName = fileName.replace(/(?:\.(?:jpe?g|png|webp|gif|avif))+$/i, '');
     return `/images/${baseName}.webp`;
   });
 }

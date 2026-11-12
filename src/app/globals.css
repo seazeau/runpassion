@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Contenu Article */
+  .article-content { font-size: 1.125rem; line-height: 1.8; color: #d1d5db; }
+  .article-content p { margin-bottom: 1.5rem; text-align: justify; hyphens: auto; }
+  .article-content strong { color: #fff; font-weight: 700; }
+  .article-content h2 { color: #ffb600; font-weight: 900; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; }
+  .article-content h3 { color: #fff; font-weight: 800; font-size: 1.25rem; margin-top: 2rem; margin-bottom: 1rem; }
+  .article-content img {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 1rem !important;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
+  }
+  /* Single images (inside a figure, not in a gallery grid) keep the centered margin look */
+  .article-content figure {
+      margin: 2rem auto !important;
+      display: block !important;
+  }
+  .article-content figure img {
+      margin: 0 auto !important;
+  }
+  /* Gallery grid images — flush fill inside their container */
+  .article-content .auto-gallery img {
+      margin: 0 !important;
+      border-radius: 0.75rem !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      aspect-ratio: 4/3 !important;
+  }
+}
+

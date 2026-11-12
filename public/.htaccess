@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Redirection 301 de l'ancien coaching vers vincentbuisson.fr
+RewriteRule ^coaching(/.*)?$ https://vincentbuisson.fr/ [R=301,L]
+RewriteRule ^coach-running-en-ligne/?$ https://vincentbuisson.fr/ [R=301,L]
+RewriteRule ^coach-course-a-pied/?$ https://vincentbuisson.fr/ [R=301,L]
+
+# Si le fichier ou dossier existe réellement, on le sert directement
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Résolution des URLs propres Next.js (/slug -> /slug.html)
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+ErrorDocument 404 /404.html

@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <!-- Importation des données (cache-buster mis à jour) -->
-    <script src="articles_data.js?v=20261113_1802"></script>
+    <script src="articles_data.js?v=20261113_1835"></script>
     
     <style>
         body { 
@@ -72,9 +72,233 @@
             font-size: 1.125rem !important;
         }
         
-        .article-content p { margin-bottom: 1.5rem !important; text-align: justify; hyphens: auto; }
-        .article-content h2 { color: #fcb900 !important; font-weight: 900 !important; font-family: 'Inter', sans-serif !important; font-size: 1.5rem !important; margin-top: 3.5rem !important; margin-bottom: 1.5rem !important; text-transform: uppercase; font-style: italic; letter-spacing: -0.05em; scroll-margin-top: 100px; line-height: 1.3 !important; }
-        .article-content h3 { color: #fff !important; font-weight: 800 !important; font-family: 'Inter', sans-serif !important; font-size: 1.25rem !important; margin-top: 2rem !important; margin-bottom: 1rem !important; scroll-margin-top: 100px; line-height: 1.3 !important; }
+        .article-content p { margin-bottom: 1.5rem !important; text-align: left; }
+        .article-content h2 { color: #ffffff !important; font-weight: 800 !important; font-family: 'Outfit', 'Inter', sans-serif !important; font-size: 1.55rem !important; margin-top: 3.25rem !important; margin-bottom: 1.25rem !important; border-left: 3px solid #fcb900; padding-left: 0.9rem; letter-spacing: -0.02em; scroll-margin-top: 100px; line-height: 1.3 !important; }
+        .article-content h3 { color: #fff !important; font-weight: 700 !important; font-family: 'Outfit', 'Inter', sans-serif !important; font-size: 1.2rem !important; margin-top: 2rem !important; margin-bottom: 0.85rem !important; scroll-margin-top: 100px; line-height: 1.35 !important; }
+        .article-content ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 1.5rem !important; }
+        .article-content li { margin-bottom: 0.65rem; }
+        .article-content a:not(.rp-btn) { color: #fcb900; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+        .article-content a:not(.rp-btn):hover { color: #ffffff; }
+
+        /* SideRun-style Comparison & E-commerce Components */
+        .rp-hero-duel {
+            background: radial-gradient(circle at 50% 0%, rgba(252, 185, 0, 0.14), #0c0d13 70%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            padding: 2rem 1.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .rp-duel-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            align-items: center;
+        }
+        .rp-duel-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.125rem;
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+        .rp-duel-item img {
+            margin: 0 auto 0.75rem auto !important;
+            width: 100% !important;
+            height: 145px !important;
+            object-fit: contain !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+        .rp-duel-label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+        }
+        .rp-duel-sub {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-top: 0.2rem;
+        }
+        .rp-compare-pair {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin: 2rem 0 2.75rem 0;
+        }
+        .rp-shoe-frame {
+            background: #111219;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .rp-shoe-frame img {
+            margin: 0 !important;
+            width: 100% !important;
+            height: 190px !important;
+            object-fit: contain !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+        .rp-shoe-caption {
+            margin-top: 0.85rem;
+            padding-top: 0.65rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #d1d5db;
+        }
+        .rp-buy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin: 2rem 0 2.5rem 0;
+        }
+        .rp-buy-card {
+            background: #0e0f15;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.25rem;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .rp-buy-card.featured {
+            border-color: rgba(252, 185, 0, 0.45);
+            box-shadow: 0 12px 30px -12px rgba(252, 185, 0, 0.18);
+        }
+        .rp-buy-imgbox {
+            background: #f3f4f6;
+            border-radius: 0.9rem;
+            padding: 1rem;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .rp-buy-imgbox img {
+            margin: 0 !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            width: auto !important;
+            height: auto !important;
+            object-fit: contain !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+        .rp-buy-badge {
+            position: absolute;
+            top: 0.65rem;
+            left: 0.65rem;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            background: #111827;
+            color: #fcb900;
+        }
+        .rp-buy-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.25;
+        }
+        .rp-buy-specs {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 0.25rem;
+        }
+        .rp-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+        }
+        .rp-price-now {
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: #ffffff;
+        }
+        .rp-price-old {
+            font-size: 0.85rem;
+            color: #6b7280;
+            text-decoration: line-through;
+        }
+        .rp-price-disc {
+            font-size: 0.7rem;
+            font-weight: 800;
+            background: rgba(16, 185, 129, 0.16);
+            color: #34d399;
+            padding: 0.15rem 0.45rem;
+            border-radius: 0.375rem;
+        }
+        .rp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            width: 100%;
+            background: #fcb900;
+            color: #000000 !important;
+            font-weight: 800;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.85rem 1rem;
+            border-radius: 0.75rem;
+            text-decoration: none !important;
+            transition: background-color 0.2s ease, transform 0.15s ease;
+        }
+        .rp-btn:hover {
+            background: #ffffff;
+            color: #000000 !important;
+            transform: translateY(-1px);
+        }
+        .rp-verdict-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0 2rem 0;
+        }
+        .rp-verdict-card {
+            background: #101118;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.125rem;
+            padding: 1.35rem;
+        }
+        .rp-verdict-card h3 {
+            margin-top: 0 !important;
+            margin-bottom: 0.75rem !important;
+            font-size: 1.05rem !important;
+            color: #fcb900 !important;
+        }
+        .rp-verdict-card p {
+            margin-bottom: 0 !important;
+            font-size: 0.95rem !important;
+            line-height: 1.65 !important;
+        }
+        @media (max-width: 640px) {
+            .rp-duel-grid, .rp-compare-pair, .rp-buy-grid, .rp-verdict-grid {
+                grid-template-columns: 1fr;
+            }
+            .rp-shoe-frame img { height: 155px !important; }
+        }
         
         /* Centrage et style par défaut des images individuelles hors de la galerie */
         .article-content img:not(.gallery-img) {
@@ -1449,12 +1673,12 @@
                             </div>
 
                             <!-- INTRO -->
-                            <p class="text-xl text-gray-300 font-normal leading-relaxed mb-10 text-justify">
+                            <p class="text-xl text-gray-300 font-normal leading-relaxed mb-10">
                                 ${art.excerpt || (isShoeReview ? "Après plusieurs semaines d'essai sur différents terrains, allant du bitume sec aux chemins humides, voici notre verdict détaillé en conditions réelles." : "Découvrez notre analyse détaillée et nos conseils dans cet article.")}
                             </p>
 
                             <!-- IMAGE PRINCIPALE -->
-                            <img src="${art.image}" class="w-11/12 md:w-3/4 lg:w-2/3 mx-auto rounded-2xl mb-12 shadow-2xl object-cover aspect-video" style="margin: 0 auto 3rem auto !important;">
+                            ${art.hideDefaultHero ? '' : `<img src="${art.image}" class="w-11/12 md:w-3/4 lg:w-2/3 mx-auto rounded-2xl mb-12 shadow-2xl object-cover aspect-video" style="margin: 0 auto 3rem auto !important;">`}
 
                             ${isShoeReview ? `
                             <!-- CARACTÉRISTIQUES ET NOTES -->
@@ -1535,7 +1759,7 @@
 
                             <!-- TESTS PRATIQUES / CONTENU -->
                             ${isShoeReview ? `<h2 class="text-2xl md:text-3xl font-black italic uppercase tracking-tighter text-white mb-8 border-l-4 border-brand-yellow pl-4 mt-12">Tests Pratiques</h2>` : ''}
-                            <div class="article-content max-w-none text-justify mb-12" id="article-content-body">
+                            <div class="article-content max-w-none mb-12" id="article-content-body">
                                 ${finalMainContent}
                             </div>
 
@@ -1628,7 +1852,7 @@
 
                         <!-- COLONNE DE DROITE : LA SIDEBAR -->
                         <aside class="w-full lg:w-[340px] xl:w-[380px] shrink-0 space-y-8 h-fit lg:sticky lg:top-28">
-                            
+                            <div id="article-toc-container"></div>
                             <!-- ENCART COACHING VINCENT BUISSON -->
                             <div class="bg-gradient-to-br from-brand-cardGray via-black to-[#13131a] border border-brand-yellow/30 p-8 rounded-[32px] shadow-2xl flex flex-col items-center relative overflow-hidden group">
                                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none"></div>
@@ -1699,6 +1923,17 @@
                 } else {
                     stickyBar.classList.add('hidden');
                 }
+            }
+
+            const tocContainer = document.getElementById('article-toc-container');
+            const headings = document.querySelectorAll('#article-content-body h2');
+            if (tocContainer && headings.length >= 2) {
+                const linksHtml = Array.from(headings).map((h, idx) => {
+                    const id = `sec-${idx}`;
+                    h.id = id;
+                    return `<a href="#${id}" onclick="event.preventDefault(); document.getElementById('${id}').scrollIntoView({behavior:'smooth'});" class="block text-xs text-gray-300 hover:text-brand-yellow py-2 border-b border-white/5 last:border-b-0 transition-colors leading-snug">${h.textContent}</a>`;
+                }).join('');
+                tocContainer.innerHTML = `<div class="bg-brand-cardGray border border-white/10 p-6 rounded-[24px] shadow-xl"><h4 class="text-brand-yellow font-black uppercase tracking-[0.18em] text-[10px] mb-3 flex items-center gap-2"><i data-lucide="list" class="w-3.5 h-3.5"></i> Sommaire</h4><nav class="flex flex-col">${linksHtml}</nav></div>`;
             }
 
             if (typeof lucide !== 'undefined') {

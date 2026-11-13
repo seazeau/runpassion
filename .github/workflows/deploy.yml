@@ -29,12 +29,15 @@ jobs:
           lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" -e "
             set ssl:verify-certificate no;
             set ftp:passive-mode true;
-            set net:max-retries 3;
-            mirror --reverse --delete --parallel=4 \
+            set net:max-retries 5;
+            set net:reconnect-interval-base 5;
+            set net:timeout 20;
+            mirror --reverse --delete --no-perms --parallel=2 \
               --exclude '^\.git' \
               --exclude '^\.github' \
               --exclude '^\.gitignore$' \
               --exclude '^wp-content/' \
+              --exclude '^insta_carousel/' \
               --exclude '^\.ftp-deploy-sync-state' \
               --exclude '^save_article\.php$' \
               --exclude '^__pycache__/' \

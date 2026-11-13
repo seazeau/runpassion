@@ -101,6 +101,9 @@
         .rounded-\[24px\] { border-radius: 24px; }
         .hover\:bg-\[\#111216\]:hover { background-color: #111216; }
         .border-black\/5 { border-color: rgba(0, 0, 0, 0.05); }
+        .border-black\/10 { border-color: rgba(0, 0, 0, 0.1); }
+        .bg-\[\#0d0f14\] { background-color: #0d0f14; }
+        .text-\[\#2e313a\] { color: #2e313a; }
         .rp-hero-main {
             aspect-ratio: 16 / 10;
             min-height: 240px;
@@ -882,17 +885,17 @@
     </section>
 
     <!-- BARRE D'ACHAT STICKY (FICHES TESTS) -->
-    <div id="sticky-buy-bar" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-t border-brand-yellow/30 px-4 py-3 shadow-2xl">
+    <div id="sticky-buy-bar" class="hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0a0b0e]/95 backdrop-blur-md border-t border-white/10 px-4 py-3 shadow-2xl">
         <div class="max-w-[1200px] mx-auto flex items-center justify-between gap-3">
             <div class="min-w-0 hidden sm:block">
-                <p class="text-[10px] font-black uppercase tracking-widest text-brand-yellow">Meilleur prix Top4Running (-5% code RUNPASSION)</p>
-                <p id="sticky-buy-title" class="text-sm font-black italic uppercase text-white truncate"></p>
+                <p class="text-[10px] font-bold uppercase tracking-[0.16em] text-brand-yellow">Meilleur prix Top4Running • -5 % code RUNPASSION</p>
+                <p id="sticky-buy-title" class="text-sm font-bold text-white truncate tracking-tight"></p>
             </div>
             <div class="flex items-center gap-2 w-full sm:w-auto">
-                <button type="button" onclick="copyCode('RUNPASSION', this)" class="bg-white/10 hover:bg-white/20 border border-white/15 text-white font-black px-3.5 py-3 rounded-xl text-[10px] uppercase tracking-wider shrink-0 transition-all">
-                    Copier -5% : RUNPASSION
+                <button type="button" onclick="copyCode('RUNPASSION', this)" class="bg-white/10 hover:bg-white/20 border border-white/15 text-white font-bold px-4 py-2.5 rounded-full text-[10px] uppercase tracking-wider shrink-0 transition-all">
+                    Copier -5 % : RUNPASSION
                 </button>
-                <a id="sticky-buy-link" href="https://top4running.fr?a_box=sc3esau3" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-initial text-center bg-brand-yellow hover:bg-white text-black font-black px-5 py-3 rounded-xl text-[11px] uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-all">
+                <a id="sticky-buy-link" href="https://top4running.fr?a_box=sc3esau3" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-initial text-center bg-brand-yellow hover:bg-white text-black font-bold px-5 py-2.5 rounded-full text-[11px] uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-all">
                     Voir le prix <i data-lucide="shopping-cart" class="w-4 h-4"></i>
                 </a>
             </div>
@@ -900,14 +903,15 @@
     </div>
 
     <!-- FOOTER GLOBAL -->
-    <footer id="runpassion-global-footer" class="bg-brand-cardGray pt-20 pb-10 border-t border-white/10">
+    <footer id="runpassion-global-footer" class="bg-[#0d0f14] pt-20 pb-10 border-t border-white/10">
         <div class="max-w-[1200px] mx-auto px-6">
             <!-- PAVÉ SEO -->
-            <div class="bg-gradient-to-br from-black to-brand-cardGray rounded-[40px] p-10 border border-white/5 shadow-2xl text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-black text-white mb-8 leading-tight underline decoration-brand-yellow decoration-4 underline-offset-8 italic">RunPassion : Votre Média Expert en Running et Trail</h2>
-                <div class="grid md:grid-cols-2 gap-12 text-gray-400 leading-relaxed text-left font-medium">
+            <div class="bg-[#11131a] rounded-[24px] p-8 md:p-10 border border-white/10 shadow-2xl text-center mb-16">
+                <div class="rp-sec-eyebrow">À propos du média</div>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight leading-tight">RunPassion : Votre Média Expert en Running et Trail</h2>
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 text-gray-400 leading-relaxed text-left text-sm">
                     <p>Bienvenue sur <strong class="text-white">RunPassion.fr</strong>, la référence indépendante pour tous les passionnés de running. Nous décortiquons pour vous les dernières nouveautés matériel avec des <strong class="text-white">tests de chaussures de running</strong> complets et impartiaux.</p>
-                    <p>Pour vos objectifs chronométriques (<a href="https://vincentbuisson.fr/coaching-10km/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">plan 10 km</a>, <a href="https://vincentbuisson.fr/coaching-semi-marathon/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">préparation semi-marathon</a>, <a href="https://vincentbuisson.fr/coaching-marathon/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">coaching marathon</a> et trail), profitez du <strong class="text-white"><a href="https://vincentbuisson.fr/" target="_blank" rel="noopener" class="text-brand-yellow hover:underline">coaching course à pied en ligne de Vincent Buisson</a></strong> (enseignant d'EPS & diplômé STAPS sur Nolio), et découvrez nos codes promos exclusifs chez Top4Running et Nutripure.</p>
+                    <p>Pour vos objectifs chronométriques (<a href="https://vincentbuisson.fr/coaching-10km/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">plan 10 km</a>, <a href="https://vincentbuisson.fr/coaching-semi-marathon/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">préparation semi-marathon</a>, <a href="https://vincentbuisson.fr/coaching-marathon/" target="_blank" rel="noopener" class="text-gray-200 underline hover:text-brand-yellow">coaching marathon</a> et trail), profitez du <strong class="text-white"><a href="https://vincentbuisson.fr/" target="_blank" rel="noopener" class="text-brand-yellow hover:underline">coaching course à pied en ligne de Vincent Buisson</a></strong> (enseignant d'EPS &amp; diplômé STAPS sur Nolio), et découvrez nos codes promos exclusifs chez Top4Running et Nutripure.</p>
                 </div>
             </div>
 
@@ -955,8 +959,8 @@
 
             <!-- LOGO & ADMIN -->
             <div class="text-center pt-8">
-                <div class="text-2xl font-black mb-6 uppercase italic tracking-tighter">RUN<span class="text-brand-yellow">PASSION</span></div>
-                <button onclick="showPage('admin')" class="text-[9px] text-gray-600 hover:text-white transition-colors uppercase tracking-[0.4em] font-black">Espace Rédaction</button>
+                <div class="text-2xl font-bold mb-6 uppercase tracking-[0.14em]">RUN<span class="text-brand-yellow">PASSION</span></div>
+                <button onclick="showPage('admin')" class="text-[10px] text-gray-500 hover:text-white transition-colors uppercase tracking-[0.28em] font-semibold">Espace Rédaction</button>
             </div>
         </div>
     </footer>
@@ -1191,6 +1195,18 @@
             });
         }
 
+        function getCardMeta(art) {
+            if (art.specs && (art.specs.poids || art.specs.drop)) {
+                const parts = [art.specs.poids, art.specs.drop ? `Drop ${art.specs.drop}` : null, art.specs.prix].filter(Boolean);
+                return parts.slice(0, 2).join(' • ');
+            }
+            const txt = (art.excerpt || '').replace(/\s+/g, ' ');
+            const wMatch = txt.match(/\b(\d{3}\s?g)\b/i);
+            const dMatch = txt.match(/drop\s*(?:de\s*)?(\d+(?:[.,]\d+)?\s?mm)/i);
+            if (wMatch && dMatch) return `${wMatch[1]} • Drop ${dMatch[1]}`;
+            return new Date(art.date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
         function renderArticlesList() {
             const el = document.getElementById('articles-grid');
             const loadMoreBtn = document.getElementById('load-more-container');
@@ -1198,7 +1214,7 @@
             
             const articlesToShow = currentFilteredList.slice(0, displayLimit);
             
-            el.innerHTML = articlesToShow.map(art => `<a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex flex-col group cursor-pointer animate-in block"><div class="aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-[#11131a] border border-white/10 shadow-lg relative hover-zoom"><img src="${art.image}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"><div class="absolute top-3.5 right-3.5 bg-[#0a0b0e]/85 backdrop-blur border border-white/15 px-3 py-1 rounded-full text-[9px] font-bold uppercase text-brand-yellow tracking-widest">${art.category}</div></div><h3 class="text-lg font-bold leading-snug text-white group-hover:text-brand-yellow transition-colors tracking-tight">${art.title}</h3></a>`).join('');
+            el.innerHTML = articlesToShow.map(art => `<a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex flex-col group cursor-pointer animate-in block"><div class="aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-[#11131a] border border-white/10 shadow-lg relative hover-zoom"><img src="${art.image}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"><div class="absolute top-3.5 right-3.5 bg-[#0a0b0e]/85 backdrop-blur border border-white/15 px-3 py-1 rounded-full text-[9px] font-bold uppercase text-brand-yellow tracking-widest">${art.category}</div></div><h3 class="text-lg font-bold leading-snug text-white group-hover:text-brand-yellow transition-colors tracking-tight">${art.title}</h3><p class="text-xs text-gray-400 font-medium mt-1.5">${getCardMeta(art)}</p></a>`).join('');
             
             if (currentFilteredList.length > displayLimit) {
                 loadMoreBtn.style.display = 'flex';
@@ -1880,73 +1896,79 @@
                             ${isShoeReview ? `
                             <!-- CARACTÉRISTIQUES ET NOTES -->
                             <h2 class="rp-ed-section-title">Caractéristiques & Verdict</h2>
-                            <div class="rp-ed-card p-7 md:p-8 my-8 shadow-xl overflow-hidden">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                    <!-- Specs -->
-                                    <div>
-                                        <h4 class="text-brand-yellow font-black uppercase tracking-[0.2em] text-[10px] mb-6">Spécifications</h4>
-                                        <ul class="space-y-4 text-gray-300 font-medium">
-                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
-                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="scale" class="w-4 h-4 text-brand-yellow"></i> Poids</span> 
-                                                <strong class="text-white text-sm text-right">${specs.poids}</strong>
+                            <div class="my-8 space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Specs (Carte Ivoire) -->
+                                    <div class="bg-[#f3f2ee] text-[#111216] rounded-2xl p-6 md:p-7 border border-black/5 shadow-xl">
+                                        <h4 class="text-[#111216] font-bold uppercase tracking-[0.18em] text-[10px] mb-5">Spécifications</h4>
+                                        <ul class="space-y-3.5 font-medium">
+                                            <li class="flex justify-between items-center border-b border-black/10 pb-2.5">
+                                                <span class="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[#5b5e68]"><i data-lucide="scale" class="w-4 h-4 text-[#111216]"></i> Poids</span> 
+                                                <strong class="text-[#111216] text-sm text-right">${specs.poids}</strong>
                                             </li>
-                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
-                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="arrow-down-up" class="w-4 h-4 text-brand-yellow"></i> Drop</span> 
-                                                <strong class="text-white text-sm text-right">${specs.drop}</strong>
+                                            <li class="flex justify-between items-center border-b border-black/10 pb-2.5">
+                                                <span class="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[#5b5e68]"><i data-lucide="arrow-down-up" class="w-4 h-4 text-[#111216]"></i> Drop</span> 
+                                                <strong class="text-[#111216] text-sm text-right">${specs.drop}</strong>
                                             </li>
-                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
-                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="layers" class="w-4 h-4 text-brand-yellow"></i> Stack</span> 
-                                                <strong class="text-white text-sm text-right">${specs.stack}</strong>
+                                            <li class="flex justify-between items-center border-b border-black/10 pb-2.5">
+                                                <span class="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[#5b5e68]"><i data-lucide="layers" class="w-4 h-4 text-[#111216]"></i> Stack</span> 
+                                                <strong class="text-[#111216] text-sm text-right">${specs.stack}</strong>
                                             </li>
-                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
-                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="tag" class="w-4 h-4 text-brand-yellow"></i> Prix</span> 
-                                                <strong class="text-white text-sm text-right">${specs.prix}</strong>
+                                            <li class="flex justify-between items-center border-b border-black/10 pb-2.5">
+                                                <span class="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[#5b5e68]"><i data-lucide="tag" class="w-4 h-4 text-[#111216]"></i> Prix</span> 
+                                                <strong class="text-[#111216] text-sm text-right">${specs.prix}</strong>
                                             </li>
-                                            <li class="flex justify-between items-center border-b border-white/5 pb-3">
-                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-gray-500"><i data-lucide="activity" class="w-4 h-4 text-brand-yellow"></i> Profil</span> 
-                                                <strong class="text-white text-sm text-right">${specs.profil}</strong>
+                                            <li class="flex justify-between items-center border-b border-black/10 pb-2.5">
+                                                <span class="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[#5b5e68]"><i data-lucide="activity" class="w-4 h-4 text-[#111216]"></i> Profil</span> 
+                                                <strong class="text-[#111216] text-sm text-right">${specs.profil}</strong>
                                             </li>
-                                            <li class="flex flex-col gap-2 pt-2">
-                                                <span class="flex items-center gap-3 text-xs uppercase tracking-widest text-brand-yellow"><i data-lucide="target" class="w-4 h-4"></i> Usage</span> 
-                                                <strong class="text-gray-300 text-sm font-medium leading-relaxed">${specs.usage}</strong>
+                                            <li class="flex flex-col gap-1.5 pt-1">
+                                                <span class="flex items-center gap-2.5 text-xs uppercase tracking-wider text-[#111216] font-bold"><i data-lucide="target" class="w-4 h-4"></i> Usage</span> 
+                                                <span class="text-[#2e313a] text-sm font-medium leading-relaxed">${specs.usage}</span>
                                             </li>
                                         </ul>
                                     </div>
-                                    <!-- Notes -->
-                                    <div>
-                                        <h4 class="text-brand-yellow font-black uppercase tracking-[0.2em] text-[10px] mb-6">Nos Notes</h4>
-                                        <div class="space-y-5">
-                                            <div>
-                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Amorti</span> <strong class="text-white">${notes.amorti}<span class="text-gray-600">/10</span></strong></div>
-                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.amorti * 10}%"></div></div>
+                                    <!-- Notes (Carte Obsidienne) -->
+                                    <div class="bg-[#11131a] rounded-2xl p-6 md:p-7 border border-brand-yellow/30 shadow-xl flex flex-col justify-between">
+                                        <div>
+                                            <h4 class="text-brand-yellow font-bold uppercase tracking-[0.18em] text-[10px] mb-5">Nos Notes</h4>
+                                            <div class="space-y-5">
+                                                <div>
+                                                    <div class="flex justify-between text-[11px] font-bold uppercase tracking-widest mb-2"><span class="text-gray-300">Amorti</span> <strong class="text-white">${notes.amorti}<span class="text-gray-500">/10</span></strong></div>
+                                                    <div class="h-1.5 bg-black/60 rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.amorti * 10}%"></div></div>
+                                                </div>
+                                                <div>
+                                                    <div class="flex justify-between text-[11px] font-bold uppercase tracking-widest mb-2"><span class="text-gray-300">Dynamisme</span> <strong class="text-white">${notes.dynamisme}<span class="text-gray-500">/10</span></strong></div>
+                                                    <div class="h-1.5 bg-black/60 rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.dynamisme * 10}%"></div></div>
+                                                </div>
+                                                <div>
+                                                    <div class="flex justify-between text-[11px] font-bold uppercase tracking-widest mb-2"><span class="text-gray-300">Confort</span> <strong class="text-white">${notes.confort}<span class="text-gray-500">/10</span></strong></div>
+                                                    <div class="h-1.5 bg-black/60 rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.confort * 10}%"></div></div>
+                                                </div>
+                                                <div>
+                                                    <div class="flex justify-between text-[11px] font-bold uppercase tracking-widest mb-2"><span class="text-gray-300">Stabilité</span> <strong class="text-white">${notes.stabilite}<span class="text-gray-500">/10</span></strong></div>
+                                                    <div class="h-1.5 bg-black/60 rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.stabilite * 10}%"></div></div>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Dynamisme</span> <strong class="text-white">${notes.dynamisme}<span class="text-gray-600">/10</span></strong></div>
-                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.dynamisme * 10}%"></div></div>
-                                            </div>
-                                            <div>
-                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Confort</span> <strong class="text-white">${notes.confort}<span class="text-gray-600">/10</span></strong></div>
-                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.confort * 10}%"></div></div>
-                                            </div>
-                                            <div>
-                                                <div class="flex justify-between text-[10px] font-black uppercase tracking-widest mb-2"><span class="text-gray-400">Stabilité</span> <strong class="text-white">${notes.stabilite}<span class="text-gray-600">/10</span></strong></div>
-                                                <div class="h-1.5 bg-black rounded-full overflow-hidden"><div class="h-full bg-brand-yellow rounded-full" style="width: ${notes.stabilite * 10}%"></div></div>
-                                            </div>
+                                        </div>
+                                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                                            <span class="text-gray-400 uppercase tracking-widest font-semibold">Note globale</span>
+                                            <strong class="text-brand-yellow text-lg font-bold">${((notes.amorti + notes.dynamisme + notes.confort + notes.stabilite)/4).toFixed(1)}/10</strong>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- POINTS FORTS / FAIBLES DYNAMIQUES -->
-                                <div class="mt-10 pt-8 border-t border-white/5 grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div class="bg-white/5 rounded-2xl p-6 border border-white/5">
-                                        <h4 class="text-green-400 font-black uppercase tracking-[0.2em] text-[10px] mb-4 flex items-center gap-2"><i data-lucide="plus-circle" class="w-4 h-4"></i> Points forts</h4>
-                                        <ul class="space-y-3 text-gray-300 text-sm font-medium">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-[#11131a] rounded-2xl p-6 border border-white/10">
+                                        <h4 class="text-green-400 font-bold uppercase tracking-[0.18em] text-[10px] mb-4 flex items-center gap-2"><i data-lucide="plus-circle" class="w-4 h-4"></i> Points forts</h4>
+                                        <ul class="space-y-2.5 text-gray-300 text-sm font-medium">
                                             ${pointsFortsHTML}
                                         </ul>
                                     </div>
-                                    <div class="bg-white/5 rounded-2xl p-6 border border-white/5">
-                                        <h4 class="text-red-400 font-black uppercase tracking-[0.2em] text-[10px] mb-4 flex items-center gap-2"><i data-lucide="minus-circle" class="w-4 h-4"></i> Points faibles</h4>
-                                        <ul class="space-y-3 text-gray-300 text-sm font-medium">
+                                    <div class="bg-[#11131a] rounded-2xl p-6 border border-white/10">
+                                        <h4 class="text-red-400 font-bold uppercase tracking-[0.18em] text-[10px] mb-4 flex items-center gap-2"><i data-lucide="minus-circle" class="w-4 h-4"></i> Points faibles</h4>
+                                        <ul class="space-y-2.5 text-gray-300 text-sm font-medium">
                                             ${pointsFaiblesHTML}
                                         </ul>
                                     </div>

@@ -104,9 +104,12 @@
         .custom-auto-gallery img.gallery-img {
             margin: 0 !important;
             width: 100% !important;
-            height: 100% !important;
+            height: auto !important;
             aspect-ratio: 4/3 !important;
-            object-fit: cover !important;
+            object-fit: contain !important;
+            background: #0a0a0e !important;
+            padding: 0.75rem !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
             border-radius: 1.5rem !important;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5) !important;
         }
@@ -132,8 +135,7 @@
             border: 1px solid rgba(252, 185, 0, 0.2) !important;
             border-radius: 1rem !important;
             overflow: hidden !important;
-            display: block !important;
-            overflow-x: auto !important;
+            display: table !important;
         }
         .article-content th {
             background: rgba(252, 185, 0, 0.14) !important;
@@ -151,7 +153,21 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
             font-size: 0.95rem !important;
             color: #e5e7eb !important;
-            white-space: nowrap;
+            line-height: 1.45 !important;
+            vertical-align: middle !important;
+        }
+        @media (max-width: 640px) {
+            .article-content th, .article-content td {
+                padding: 0.65rem 0.6rem !important;
+                font-size: 0.82rem !important;
+            }
+        }
+        .whitespace-nowrap { white-space: nowrap; }
+        @media (min-width: 1024px) {
+            .lg\:hidden { display: none; }
+        }
+        @media (min-width: 1280px) {
+            .xl\:gap-7 { gap: 1.75rem; }
         }
         .tiled-gallery__item img {
             margin: 0 !important;
@@ -201,7 +217,7 @@
     <header class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-white/10">
         <div class="max-w-[1200px] mx-auto px-6 h-20 flex justify-between items-center">
             <!-- LOGO AREA -->
-            <div class="flex items-center gap-3 cursor-pointer group" onclick="showPage('home')">
+            <div class="flex items-center gap-3 cursor-pointer group shrink-0" onclick="showPage('home')">
                 <img src="Vert et Orange Fluo Sci-Fi Jeu YouTube Chaîne Art.png" 
                      alt="RunPassion" 
                      class="h-10 w-auto logo-img group-hover:scale-105 transition-transform" 
@@ -212,28 +228,28 @@
                 </div>
             </div>
             
-            <nav class="hidden md:flex gap-5 lg:gap-7 font-bold text-xs uppercase tracking-widest items-center">
-                <a href="javascript:void(0)" onclick="showPage('home')" class="text-white hover:text-brand-yellow transition">Accueil</a>
-                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition" onclick="scrollToSection('tests-materiel')">Tests</a>
-                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition" onclick="scrollToSection('guides-section')">Guides</a>
-                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition" onclick="scrollToSection('actu-section')">Actualités</a>
-                <a href="javascript:void(0)" onclick="scrollToSection('bons-plans-section')" class="text-gray-400 hover:text-brand-yellow transition">Bons Plans</a>
-                <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="text-brand-yellow border border-brand-yellow/40 px-3.5 py-1.5 rounded-lg hover:bg-brand-yellow hover:text-black transition flex items-center gap-1.5 font-black shadow-sm group">
+            <nav class="hidden lg:flex gap-5 xl:gap-7 font-bold text-xs uppercase tracking-widest items-center">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="text-white hover:text-brand-yellow transition whitespace-nowrap">Accueil</a>
+                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition whitespace-nowrap" onclick="scrollToSection('tests-materiel')">Tests</a>
+                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition whitespace-nowrap" onclick="scrollToSection('guides-section')">Guides</a>
+                <a href="javascript:void(0)" class="text-gray-400 hover:text-brand-yellow transition whitespace-nowrap" onclick="scrollToSection('actu-section')">Actualités</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('bons-plans-section')" class="text-gray-400 hover:text-brand-yellow transition whitespace-nowrap">Bons Plans</a>
+                <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="text-brand-yellow border border-brand-yellow/40 px-3.5 py-1.5 rounded-lg hover:bg-brand-yellow hover:text-black transition flex items-center gap-1.5 font-black shadow-sm group whitespace-nowrap">
                     <span>Coaching</span>
                     <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 opacity-75 group-hover:opacity-100"></i>
                 </a>
                 <!-- BARRE DE RECHERCHE -->
-                <div class="relative ml-2">
+                <div class="relative ml-2 shrink-0">
                     <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
                     <input type="text" id="desktop-search" placeholder="Rechercher..." class="bg-white/5 border border-white/10 text-white text-xs rounded-full pl-10 pr-4 py-2 w-40 focus:w-56 focus:outline-none focus:border-brand-yellow transition-all duration-300 placeholder-gray-500" onkeyup="if(event.key === 'Enter') filterByKeyword(this.value)">
                 </div>
             </nav>
-            <button class="md:hidden text-white" id="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.remove('translate-x-full')"><i data-lucide="menu"></i></button>
+            <button class="lg:hidden text-white" id="mobile-menu-btn" onclick="document.getElementById('mobile-menu').classList.remove('translate-x-full')"><i data-lucide="menu"></i></button>
         </div>
     </header>
 
     <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[60] transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8 text-2xl font-black uppercase">
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-dark z-[60] transform translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col items-center justify-center space-y-8 text-2xl font-black uppercase">
         <button class="absolute top-6 right-6 text-white" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"><i data-lucide="x" class="w-10 h-10"></i></button>
         
         <div class="relative w-3/4 mb-4">

@@ -22,36 +22,12 @@
     <!-- Design & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css?v=20261113">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <!-- Importation des données (cache-buster mis à jour) -->
     <script src="articles_data.js?v=20261113_1319"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { 
-                        sans: ['Inter', 'sans-serif'],
-                        title: ['Outfit', 'sans-serif']
-                    },
-                    colors: {
-                        brand: {
-                            yellow: '#fcb900',
-                            yellowHover: '#d89f00',
-                            dark: '#040406',
-                            card: '#0a0a0e',
-                            cardGray: '#121217',
-                            border: 'rgba(252, 185, 0, 0.08)',
-                            metaGray: '#94A3B8'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
     
     <style>
         body { 
@@ -1554,6 +1530,46 @@
                                     </a>
                                 </div>
                             </div>
+
+                            <!-- TESTS SIMILAIRES (MAILLAGE & CONVERSION) -->
+                            ${(() => {
+                                const words = (art.title || '').toLowerCase().split(/\s+/).filter(w => w.length > 3);
+                                const rel = articlesData
+                                    .filter(x => x.id !== art.id && x.slug !== art.slug)
+                                    .map(x => {
+                                        const hay = ((x.title || '') + ' ' + (x.category || '')).toLowerCase();
+                                        let sc = x.category === art.category ? 3 : 0;
+                                        if (x.affiliateLink && x.affiliateLink.includes('/p/')) sc += 2;
+                                        words.forEach(w => { if (hay.includes(w)) sc += 2; });
+                                        return { x, sc };
+                                    })
+                                    .sort((a, b) => b.sc - a.sc)
+                                    .slice(0, 3)
+                                    .map(o => o.x);
+                                if (!rel.length) return '';
+                                return `
+                                <div class="mb-12 border-t border-white/10 pt-10">
+                                    <h3 class="text-xl md:text-2xl font-black italic uppercase tracking-tighter text-white mb-6 flex items-center gap-2">
+                                        <i data-lucide="sparkles" class="w-5 h-5 text-brand-yellow"></i> À lire &amp; comparer ensuite
+                                    </h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        ${rel.map(r => `
+                                            <div class="bg-brand-cardGray border border-white/5 rounded-2xl p-4 flex flex-col justify-between gap-3 hover:border-brand-yellow/30 transition-all">
+                                                <a href="/${r.slug}" onclick="openArticle('${r.slug}'); return false;" class="group block">
+                                                    <div class="aspect-[16/10] rounded-xl overflow-hidden mb-3 bg-black">
+                                                        <img src="${r.image}" alt="${(r.title || '').replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="margin:0 !important;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                                    </div>
+                                                    <h4 class="text-sm font-black italic uppercase leading-tight text-white group-hover:text-brand-yellow transition-colors line-clamp-2">${r.title}</h4>
+                                                </a>
+                                                <div class="flex gap-2 pt-1">
+                                                    <a href="/${r.slug}" onclick="openArticle('${r.slug}'); return false;" class="flex-1 text-center bg-white/5 hover:bg-white/10 text-white text-[10px] font-black uppercase py-2 rounded-lg border border-white/10">Lire</a>
+                                                    <a href="${r.affiliateLink || 'https://top4running.fr?a_box=sc3esau3'}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-brand-yellow hover:bg-white text-black text-[10px] font-black uppercase py-2 rounded-lg">Top4Running</a>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>`;
+                            })()}
 
                             <!-- CTA LIRE D'AUTRES ARTICLES -->
                             <div class="flex justify-center mb-10 border-t border-white/10 pt-10">

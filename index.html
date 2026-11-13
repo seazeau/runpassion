@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <!-- Importation des données (cache-buster mis à jour) -->
-    <script src="articles_data.js?v=20261113_1754"></script>
+    <script src="articles_data.js?v=20261113_1800"></script>
     
     <style>
         body { 
@@ -791,10 +791,11 @@
             const isActu = (a) => a.category && a.category.toLowerCase().includes('actu');
             const isGuide = (a) => a.category && a.category.toLowerCase().includes('guide');
 
-            const featuredList = articlesData.filter(a => a.featured === true);
+            const isTest = (a) => !isActu(a) && !isGuide(a);
+            const featuredList = articlesData.filter(a => a.featured === true && isTest(a));
             let displayFeatured = [...featuredList];
             if (displayFeatured.length < 3) {
-                const extras = articlesData.filter(a => !displayFeatured.some(f => f.id === a.id) && !isGuide(a) && !isActu(a)).slice(0, 3 - displayFeatured.length);
+                const extras = articlesData.filter(a => !displayFeatured.some(f => f.id === a.id) && isTest(a)).slice(0, 3 - displayFeatured.length);
                 displayFeatured = [...displayFeatured, ...extras];
             }
             const hero = displayFeatured[0]; const sideFeatured = displayFeatured.slice(1, 3);

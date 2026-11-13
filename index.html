@@ -120,12 +120,12 @@
         .article-content { font-size: 1.125rem; line-height: 1.8; color: #d1d5db; }
         
         /* BOUCLIER TYPOGRAPHIQUE ABSOLU : Force la police, la taille et retire le gras parasite de WordPress */
-        .article-content p, 
-        .article-content div, 
-        .article-content span,
-        .article-content ul,
-        .article-content li,
-        .article-content font {
+        .article-content p:not([class*="rp-"]):not([class*="rp-"] *), 
+        .article-content div:not([class*="rp-"]):not([class*="rp-"] *), 
+        .article-content span:not([class*="rp-"]):not([class*="rp-"] *),
+        .article-content ul:not([class*="rp-"]):not([class*="rp-"] *),
+        .article-content li:not([class*="rp-"]):not([class*="rp-"] *),
+        .article-content font:not([class*="rp-"]):not([class*="rp-"] *) {
             font-family: 'Inter', sans-serif !important;
             font-weight: 400 !important;
             font-size: 1.125rem !important;
@@ -134,8 +134,8 @@
         }
         
         /* Autorise le gras uniquement sur les vraies balises Strong/B courtes */
-        .article-content strong, 
-        .article-content b { 
+        .article-content strong:not([class*="rp-"] *), 
+        .article-content b:not([class*="rp-"] *) { 
             font-family: 'Inter', sans-serif !important;
             color: #fff !important; 
             font-weight: 700 !important; 
@@ -286,7 +286,7 @@
         .rp-shoe-frame img {
             margin: 0 !important;
             width: 100% !important;
-            height: 190px !important;
+            height: 210px !important;
             object-fit: contain !important;
             box-shadow: none !important;
             border-radius: 0 !important;
@@ -326,8 +326,8 @@
         .rp-buy-imgbox {
             background: #f3f4f6;
             border-radius: 0.9rem;
-            padding: 1rem;
-            height: 170px;
+            padding: 2.5rem 1rem 1rem 1rem;
+            height: 195px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2020,13 +2020,13 @@
                             </div>
 
                             <!-- ENCART AUTEUR -->
-                            <div class="mb-16 bg-white/5 border border-white/10 rounded-[32px] p-8 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-lg">
+                            <div class="mb-16 bg-[#11131a] border border-white/10 rounded-[24px] p-8 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-lg">
                                 <img src="Paris_Half_Race_Story-08.jpg" class="w-24 h-24 rounded-full object-cover border-2 border-brand-yellow shadow-xl" alt="${authorName}" onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=200'" style="margin: 0 !important;">
                                 <div class="text-center md:text-left">
-                                    <h4 class="text-brand-yellow font-black uppercase tracking-[0.2em] text-[10px] mb-2">Rédigé par</h4>
-                                    <h5 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">${art.author || "Vincent"}</h5>
-                                    <p class="text-gray-400 text-sm leading-relaxed text-justify mb-4">Fondateur de RunPassion, enseignant d'EPS et coach running diplômé STAPS. Passionné de matériel, Vincent teste chaque paire en conditions réelles et accompagne également les coureurs de tous niveaux vers leurs records personnels.</p>
-                                    <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-yellow hover:text-white font-black text-xs uppercase tracking-widest transition-colors group">
+                                    <h4 class="text-brand-yellow font-bold uppercase tracking-[0.2em] text-[10px] mb-2">Rédigé par</h4>
+                                    <h5 class="text-2xl font-bold text-white tracking-tight mb-2">${art.author || "Vincent"}</h5>
+                                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Fondateur de RunPassion, enseignant d'EPS et coach running diplômé STAPS. Passionné de matériel, Vincent teste chaque paire en conditions réelles et accompagne également les coureurs de tous niveaux vers leurs records personnels.</p>
+                                    <a href="https://vincentbuisson.fr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brand-yellow hover:text-white font-bold text-xs uppercase tracking-widest transition-colors group">
                                         <span>Découvrir son coaching sur vincentbuisson.fr</span> <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
                                     </a>
                                 </div>
@@ -2050,17 +2050,17 @@
                                 if (!rel.length) return '';
                                 return `
                                 <div class="mb-12 border-t border-white/10 pt-10">
-                                    <h3 class="text-xl md:text-2xl font-black italic uppercase tracking-tighter text-white mb-6 flex items-center gap-2">
+                                    <h3 class="text-xl md:text-2xl font-bold tracking-tight text-white mb-6 flex items-center gap-2">
                                         <i data-lucide="sparkles" class="w-5 h-5 text-brand-yellow"></i> À lire &amp; comparer ensuite
                                     </h3>
                                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                         ${rel.map(r => `
-                                            <div class="bg-brand-cardGray border border-white/5 rounded-2xl p-4 flex flex-col justify-between gap-3 hover:border-brand-yellow/30 transition-all">
+                                            <div class="bg-[#11131a] border border-white/10 rounded-2xl p-4 flex flex-col justify-between gap-3 hover:border-brand-yellow/30 transition-all">
                                                 <a href="/${r.slug}" onclick="openArticle('${r.slug}'); return false;" class="group block">
                                                     <div class="aspect-[16/10] rounded-xl overflow-hidden mb-3 bg-black">
                                                         <img src="${r.image}" alt="${(r.title || '').replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="margin:0 !important;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                                     </div>
-                                                    <h4 class="text-sm font-black italic uppercase leading-tight text-white group-hover:text-brand-yellow transition-colors line-clamp-2">${r.title}</h4>
+                                                    <h4 class="text-sm font-bold leading-snug text-white group-hover:text-brand-yellow transition-colors line-clamp-2">${r.title}</h4>
                                                 </a>
                                                 <div class="flex gap-2 pt-1">
                                                     <a href="/${r.slug}" onclick="openArticle('${r.slug}'); return false;" class="flex-1 text-center bg-white/5 hover:bg-white/10 text-white text-[10px] font-black uppercase py-2 rounded-lg border border-white/10">Lire</a>

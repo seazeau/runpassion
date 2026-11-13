@@ -243,6 +243,7 @@ def main():
     parser = argparse.ArgumentParser(description="Publication tout-en-un RunPassion")
     parser.add_argument("--push", action="store_true", help="Commit et push sur GitHub main")
     parser.add_argument("-m", "--message", default="Publication mise a jour RunPassion", help="Message de commit")
+    parser.add_argument("--bons-plans", action="store_true", help="Mettre a jour les Bons Plans Flash depuis Top4Running")
     args = parser.parse_args()
 
     print("1/5 Compilation Markdown (content/shoes)...")
@@ -260,6 +261,14 @@ def main():
 
     print("4/5 Mise a jour du cache-buster dans index.html...")
     bump_cache_buster()
+
+    if getattr(args, "bons_plans", False):
+        print("    Mise a jour des Bons Plans Flash Top4Running...")
+        try:
+            import update_bons_plans
+            update_bons_plans.main()
+        except Exception as e:
+            print(f"    (Bons plans ignores: {e})")
 
     print("5/5 Verification...")
     verify(articles)

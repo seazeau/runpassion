@@ -1241,7 +1241,27 @@
             
             const articlesToShow = currentFilteredList.slice(0, displayLimit);
             
-            el.innerHTML = articlesToShow.map(art => `<a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex flex-col group cursor-pointer animate-in block"><div class="aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-[#11131a] border border-white/10 shadow-lg relative hover-zoom"><img src="${art.image}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"><div class="absolute top-3.5 right-3.5 bg-[#0a0b0e]/85 backdrop-blur border border-white/15 px-3 py-1 rounded-full text-[9px] font-bold uppercase text-brand-yellow tracking-widest">${art.category}</div></div><h3 class="text-lg font-bold leading-snug text-white group-hover:text-brand-yellow transition-colors tracking-tight">${art.title}</h3><p class="text-xs text-gray-400 font-medium mt-1.5">${getCardMeta(art)}</p></a>`).join('');
+            el.innerHTML = articlesToShow.map(art => {
+                const guideMatch = typeof guidesData !== 'undefined' ? guidesData.find(g => g.slug === art.slug && g.duelImages) : null;
+                const isStudio = art.hideDefaultHero || /-t4r-|\/nike-/i.test(art.image || '');
+                const cardMedia = guideMatch
+                    ? `<div class="aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-[#f3f2ee] border border-white/10 shadow-lg relative p-4 flex items-center justify-center gap-3">
+                           <img src="${guideMatch.duelImages[0]}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="width:42%;height:100%;filter:drop-shadow(0 10px 14px rgba(0,0,0,0.18));" class="object-contain transition-transform duration-500 group-hover:scale-105">
+                           <span class="text-[10px] font-bold uppercase tracking-widest bg-[#111216] text-brand-yellow px-2.5 py-1 rounded-full shrink-0">VS</span>
+                           <img src="${guideMatch.duelImages[1]}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="width:42%;height:100%;filter:drop-shadow(0 10px 14px rgba(0,0,0,0.18));" class="object-contain transition-transform duration-500 group-hover:scale-105">
+                           <div class="absolute top-3.5 right-3.5 bg-[#0a0b0e]/85 backdrop-blur border border-white/15 px-3 py-1 rounded-full text-[9px] font-bold uppercase text-brand-yellow tracking-widest">${art.category}</div>
+                       </div>`
+                    : isStudio
+                    ? `<div class="aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-[#f3f2ee] border border-white/10 shadow-lg relative p-5 flex items-center justify-center">
+                           <img src="${art.image}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="filter:drop-shadow(0 12px 16px rgba(0,0,0,0.2));" class="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                           <div class="absolute top-3.5 right-3.5 bg-[#0a0b0e]/85 backdrop-blur border border-white/15 px-3 py-1 rounded-full text-[9px] font-bold uppercase text-brand-yellow tracking-widest">${art.category}</div>
+                       </div>`
+                    : `<div class="aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-[#11131a] border border-white/10 shadow-lg relative hover-zoom">
+                           <img src="${art.image}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                           <div class="absolute top-3.5 right-3.5 bg-[#0a0b0e]/85 backdrop-blur border border-white/15 px-3 py-1 rounded-full text-[9px] font-bold uppercase text-brand-yellow tracking-widest">${art.category}</div>
+                       </div>`;
+                return `<a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex flex-col group cursor-pointer animate-in block">${cardMedia}<h3 class="text-lg font-bold leading-snug text-white group-hover:text-brand-yellow transition-colors tracking-tight">${art.title}</h3><p class="text-xs text-gray-400 font-medium mt-1.5">${getCardMeta(art)}</p></a>`;
+            }).join('');
             
             if (currentFilteredList.length > displayLimit) {
                 loadMoreBtn.style.display = 'flex';

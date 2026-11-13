@@ -263,6 +263,47 @@
                 <div id="bons-plans-grid" class="flex overflow-x-auto hide-scroll lg:grid lg:grid-cols-5 md:grid-cols-3 gap-6 pb-4"></div>
             </section>
 
+            <!-- SÉLECTEUR INTELLIGENT : TROUVE TA CHAUSSURE -->
+            <section id="shoe-finder-section" class="mb-20 animate-in">
+                <div class="bg-gradient-to-br from-brand-cardGray via-brand-card to-black border border-brand-yellow/20 rounded-[32px] p-6 md:p-10 shadow-2xl relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 border-b border-white/10 pb-6">
+                        <div>
+                            <span class="inline-block bg-brand-yellow text-black text-[10px] font-black uppercase px-3 py-1 rounded-full mb-3 tracking-widest italic">Assistant Matériel</span>
+                            <h2 class="text-2xl md:text-4xl font-black uppercase italic tracking-tighter text-white">Trouve ta chaussure idéale</h2>
+                            <p class="text-gray-400 text-xs md:text-sm mt-1">Sélectionne ton profil : nos tests terrain + les meilleurs prix Top4Running (-5% code <strong class="text-brand-yellow">RUNPASSION</strong>).</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div>
+                            <p class="text-[10px] font-black uppercase tracking-widest text-brand-yellow mb-3">1. Terrain / Objectif</p>
+                            <div class="flex flex-wrap gap-2" id="finder-terrain">
+                                <button type="button" onclick="setFinderOpt('terrain','route',this)" class="finder-btn bg-brand-yellow text-black font-black text-xs px-4 py-2 rounded-xl uppercase">Route</button>
+                                <button type="button" onclick="setFinderOpt('terrain','carbone',this)" class="finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow">Compétition</button>
+                                <button type="button" onclick="setFinderOpt('terrain','trail',this)" class="finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow">Trail</button>
+                                <button type="button" onclick="setFinderOpt('terrain','gravel',this)" class="finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow">Gravel</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black uppercase tracking-widest text-brand-yellow mb-3">2. Ton niveau</p>
+                            <div class="flex flex-wrap gap-2" id="finder-niveau">
+                                <button type="button" onclick="setFinderOpt('niveau','debutant',this)" class="finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow">Débutant</button>
+                                <button type="button" onclick="setFinderOpt('niveau','intermediaire',this)" class="finder-btn bg-brand-yellow text-black font-black text-xs px-4 py-2 rounded-xl uppercase">Intermédiaire</button>
+                                <button type="button" onclick="setFinderOpt('niveau','pro',this)" class="finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow">Pro</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black uppercase tracking-widest text-brand-yellow mb-3">3. Priorité</p>
+                            <div class="flex flex-wrap gap-2" id="finder-prio">
+                                <button type="button" onclick="setFinderOpt('prio','amorti',this)" class="finder-btn bg-brand-yellow text-black font-black text-xs px-4 py-2 rounded-xl uppercase">Amorti</button>
+                                <button type="button" onclick="setFinderOpt('prio','dynamisme',this)" class="finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow">Dynamisme</button>
+                                <button type="button" onclick="setFinderOpt('prio','stabilite',this)" class="finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow">Stabilité</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="shoe-finder-results" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+                </div>
+            </section>
+
             <!-- SECTION PARTENAIRES -->
             <section id="promo-section" class="mb-20 animate-in">
                 <div class="flex items-center justify-between mb-8 border-b border-white/10 pb-4">
@@ -361,8 +402,25 @@
 
             <!-- SECTION ARTICLES (FLUX GLOBAL) -->
             <section id="tests-materiel" class="mb-10 animate-in">
-                <div class="flex items-center justify-between mb-10 border-b border-white/10 pb-4">
-                    <h2 class="text-2xl font-black uppercase tracking-tight italic">Nos Tests & Conseils</h2>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 border-b border-white/10 pb-4">
+                    <h2 class="text-2xl font-black uppercase tracking-tight italic">Nos Tests &amp; Conseils</h2>
+                    <div class="relative w-full md:w-72">
+                        <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
+                        <input type="text" id="tests-search-input" placeholder="Filtrer par modèle ou marque..." oninput="applyTestFilters()" class="bg-brand-card border border-white/10 text-white text-xs rounded-xl pl-10 pr-4 py-2.5 w-full focus:outline-none focus:border-brand-yellow placeholder-gray-500">
+                    </div>
+                </div>
+                <div id="tests-filter-pills" class="flex flex-wrap gap-2 mb-8">
+                    <button type="button" onclick="setTestFilter('all', this)" class="test-pill bg-brand-yellow text-black font-black text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider">Tous</button>
+                    <button type="button" onclick="setTestFilter('nike', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Nike</button>
+                    <button type="button" onclick="setTestFilter('asics', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Asics</button>
+                    <button type="button" onclick="setTestFilter('hoka', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Hoka</button>
+                    <button type="button" onclick="setTestFilter('saucony', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Saucony</button>
+                    <button type="button" onclick="setTestFilter('adidas', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Adidas</button>
+                    <button type="button" onclick="setTestFilter('new balance', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">New Balance</button>
+                    <button type="button" onclick="setTestFilter('brooks', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Brooks</button>
+                    <button type="button" onclick="setTestFilter('salomon', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Salomon</button>
+                    <button type="button" onclick="setTestFilter('trail', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Trail</button>
+                    <button type="button" onclick="setTestFilter('carbone', this)" class="test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow">Carbone</button>
                 </div>
                 <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 mb-12"></div>
                 <div id="load-more-container" class="flex justify-center mt-4">
@@ -650,12 +708,90 @@
         ];
 
         const bonsPlansData = [
-            { brand: "Adidas", model: "Adios Pro 4", image: "https://i1.t4s.cz//products/js2579/adidas-adizero-adios-pro-4-1054720-js25791-960.webp", oldPrice: "250,00€", newPrice: "215,40€", discount: "-14%", link: "https://top4running.fr/p/adidas-adizero-adios-pro-4-running-shoe-js2579?a_box=sc3esau3" },
-            { brand: "Nike", model: "Vomero Plus", image: "image_047be3.jpg", oldPrice: "169,95€", newPrice: "158,30€", discount: "-7%", link: "https://top4running.fr/p/nike-vomero-plus-running-shoe-hv8150-008?a_box=sc3esau3" },
-            { brand: "Asics", model: "SonicBlast", image: "image_047c04.jpg", oldPrice: "190,00€", newPrice: "134,90€", discount: "-29%", link: "https://top4running.fr/p/asics-sonicblast-1012b862-100?a_box=sc3esau3#p0" },
-            { brand: "Asics", model: "Metaspeed Sky Tokyo", image: "image_046882.jpg", oldPrice: "270,00€", newPrice: "213,90€", discount: "-21%", link: "https://top4running.fr/p/asics-metaspeed-sky-tokyo-1013a162-600?a_box=sc3esau3" },
-            { brand: "Saucony", model: "Endorphin Elite 2", image: "image_047b67.jpg", oldPrice: "300,00€", newPrice: "219,00€", discount: "-27%", link: "https://top4running.fr/c/soldes-top4running-fr/type-2/page-10?a_box=sc3esau3" }
+            { brand: "Asics", model: "Superblast 2 Ekiden", image: "https://i1.t4s.cz/products/1013a185-300/asics-superblast-2-ekiden-1035146-1013a185-3005.png", oldPrice: "220,00€", newPrice: "153,90€", discount: "-30%", link: "https://top4running.fr/p/asics-superblast-2-1013a185-300?a_box=sc3esau3" },
+            { brand: "Saucony", model: "Endorphin Azura", image: "https://i1.t4s.cz/products/s101329-1041/saucony-endorphin-azura-1138310-s101329-10411.png", oldPrice: "160,00€", newPrice: "152,00€*", discount: "-5% CODE", link: "https://top4running.fr/p/saucony-endorphin-azura-s101329-1041?a_box=sc3esau3" },
+            { brand: "Nike", model: "Vomero Plus", image: "https://i1.t4s.cz/products/im8336-100/nike-vomero-plus-running-shoe-1139588-im8336-1003.png", oldPrice: "179,99€", newPrice: "170,99€*", discount: "-5% CODE", link: "https://top4running.fr/p/nike-vomero-plus-running-shoe-im8336-100?a_box=sc3esau3" },
+            { brand: "Adidas", model: "Adios Pro 4", image: "https://i1.t4s.cz/products/ki4781/adidas-adizero-adios-pro-4-w-1138869-ki47811.png", oldPrice: "250,00€", newPrice: "237,50€*", discount: "-5% CODE", link: "https://top4running.fr/p/adidas-adizero-adios-pro-4-w-ki4781?a_box=sc3esau3" },
+            { brand: "Asics", model: "Metaspeed Sky Tokyo", image: "https://i1.t4s.cz/products/1013a162-400/asics-metaspeed-sky-tokyo-1131425-1013a162-4005.png", oldPrice: "270,00€", newPrice: "256,50€*", discount: "-5% CODE", link: "https://top4running.fr/p/asics-metaspeed-sky-tokyo-1013a162-400?a_box=sc3esau3" }
         ];
+
+        let finderState = { terrain: 'route', niveau: 'intermediaire', prio: 'amorti' };
+        let activeTestFilter = 'all';
+
+        function setFinderOpt(key, val, btn) {
+            finderState[key] = val;
+            if (btn && btn.parentElement) {
+                btn.parentElement.querySelectorAll('.finder-btn').forEach(b => {
+                    b.className = 'finder-btn bg-white/5 text-gray-300 border border-white/10 font-bold text-xs px-4 py-2 rounded-xl uppercase hover:border-brand-yellow';
+                });
+                btn.className = 'finder-btn bg-brand-yellow text-black font-black text-xs px-4 py-2 rounded-xl uppercase';
+            }
+            renderShoeFinder();
+        }
+
+        function renderShoeFinder() {
+            const container = document.getElementById('shoe-finder-results');
+            if (!container || !articlesData.length) return;
+            const tests = articlesData.filter(a => {
+                const c = (a.category || '').toLowerCase();
+                return c.includes('test') || c.includes('matériel') || c.includes('materiel') || !!a.specs;
+            });
+            const scored = tests.map(a => {
+                const hay = ((a.title || '') + ' ' + (a.excerpt || '') + ' ' + JSON.stringify(a.specs || {})).toLowerCase();
+                let score = (a.affiliateLink && a.affiliateLink.includes('/p/')) ? 5 : 0;
+                if (finderState.terrain === 'trail' && (hay.includes('trail') || hay.includes('montagne') || hay.includes('crampon'))) score += 10;
+                if (finderState.terrain === 'carbone' && (hay.includes('carbone') || hay.includes('compétition') || hay.includes('marathon') || hay.includes('vaporfly') || hay.includes('metaspeed') || hay.includes('adios pro'))) score += 10;
+                if (finderState.terrain === 'gravel' && (hay.includes('gravel') || hay.includes('mount to coast') || hay.includes('chemin'))) score += 10;
+                if (finderState.terrain === 'route' && !hay.includes('trail')) score += 6;
+                if (finderState.niveau === 'pro' && (hay.includes('carbone') || hay.includes('élite') || hay.includes('pro'))) score += 4;
+                if (finderState.niveau === 'debutant' && (hay.includes('confort') || hay.includes('amorti') || hay.includes('pegasus') || hay.includes('cumulus') || hay.includes('1080'))) score += 4;
+                if (finderState.prio === 'amorti' && (hay.includes('amorti') || hay.includes('confort') || hay.includes('max') || hay.includes('vomero') || hay.includes('1080'))) score += 5;
+                if (finderState.prio === 'dynamisme' && (hay.includes('dynam') || hay.includes('rebel') || hay.includes('azura') || hay.includes('superblast') || hay.includes('tempo'))) score += 5;
+                if (finderState.prio === 'stabilite' && (hay.includes('stabi') || hay.includes('structure') || hay.includes('adrenaline') || hay.includes('kayano'))) score += 5;
+                return { a, score };
+            }).sort((x, y) => y.score - x.score).slice(0, 3);
+
+            container.innerHTML = scored.map(({ a }) => `
+                <div class="bg-black/60 border border-white/10 rounded-2xl p-4 flex flex-col justify-between gap-4 hover:border-brand-yellow/40 transition-all">
+                    <a href="/${a.slug}" onclick="openArticle('${a.slug}'); return false;" class="flex items-center gap-4 group">
+                        <img src="${a.image}" alt="${a.title.replace(/"/g, '&quot;')}" loading="lazy" class="w-20 h-20 rounded-xl object-cover shrink-0 bg-brand-card">
+                        <div>
+                            <span class="text-[9px] font-black uppercase tracking-widest text-brand-yellow">${a.category || 'Test'}</span>
+                            <h3 class="text-sm font-black uppercase italic leading-tight text-white group-hover:text-brand-yellow transition-colors">${a.title}</h3>
+                        </div>
+                    </a>
+                    <div class="flex gap-2">
+                        <a href="/${a.slug}" onclick="openArticle('${a.slug}'); return false;" class="flex-1 text-center bg-white/5 hover:bg-white/10 text-white text-[10px] font-black uppercase py-2.5 rounded-xl border border-white/10">Lire le test</a>
+                        <a href="${a.affiliateLink || 'https://top4running.fr?a_box=sc3esau3'}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-brand-yellow hover:bg-white text-black text-[10px] font-black uppercase py-2.5 rounded-xl">Top4Running -5%</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setTestFilter(val, btn) {
+            activeTestFilter = val;
+            document.querySelectorAll('.test-pill').forEach(b => {
+                b.className = 'test-pill bg-white/5 text-gray-300 border border-white/10 font-bold text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider hover:border-brand-yellow';
+            });
+            if (btn) btn.className = 'test-pill bg-brand-yellow text-black font-black text-[11px] px-3.5 py-1.5 rounded-full uppercase tracking-wider';
+            applyTestFilters();
+        }
+
+        function applyTestFilters() {
+            const q = (document.getElementById('tests-search-input')?.value || '').trim().toLowerCase();
+            const isActu = (a) => a.category && a.category.toLowerCase().includes('actu');
+            const isGuide = (a) => a.category && a.category.toLowerCase().includes('guide');
+            displayLimit = 8;
+            currentFilteredList = articlesData.filter(a => {
+                if (isActu(a) || isGuide(a)) return false;
+                const hay = ((a.title || '') + ' ' + (a.excerpt || '') + ' ' + (a.category || '')).toLowerCase();
+                const okPill = activeTestFilter === 'all' || hay.includes(activeTestFilter);
+                const okSearch = !q || hay.includes(q);
+                return okPill && okSearch;
+            });
+            renderArticlesList();
+            renderShoeFinder();
+        }
 
         function init() {
             articlesData.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -713,6 +849,7 @@
         function loadMoreArticles() {
             displayLimit += 8;
             renderArticlesList();
+            renderShoeFinder();
         }
 
         function renderHome() {
@@ -799,6 +936,7 @@
             `).join(''));
 
             renderArticlesList();
+            renderShoeFinder();
         }
 
         async function openArticle(identifier, pushHistory = true) {

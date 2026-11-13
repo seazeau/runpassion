@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <!-- Importation des données (cache-buster mis à jour) -->
-    <script src="articles_data.js?v=20261113_1750"></script>
+    <script src="articles_data.js?v=20261113_1754"></script>
     
     <style>
         body { 
@@ -123,6 +123,35 @@
         .tiled-gallery__col {
             flex: 1 !important;
             min-width: 0 !important;
+        }
+        .article-content table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+            margin: 2rem 0 !important;
+            background: #0a0a0e !important;
+            border: 1px solid rgba(252, 185, 0, 0.2) !important;
+            border-radius: 1rem !important;
+            overflow: hidden !important;
+            display: block !important;
+            overflow-x: auto !important;
+        }
+        .article-content th {
+            background: rgba(252, 185, 0, 0.14) !important;
+            color: #fcb900 !important;
+            font-weight: 800 !important;
+            text-transform: uppercase !important;
+            font-size: 0.78rem !important;
+            letter-spacing: 0.06em !important;
+            padding: 0.9rem 1rem !important;
+            text-align: left !important;
+            border-bottom: 1px solid rgba(252, 185, 0, 0.2) !important;
+        }
+        .article-content td {
+            padding: 0.85rem 1rem !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+            font-size: 0.95rem !important;
+            color: #e5e7eb !important;
+            white-space: nowrap;
         }
         .tiled-gallery__item img {
             margin: 0 !important;

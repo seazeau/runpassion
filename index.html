@@ -101,6 +101,16 @@
         .rounded-\[24px\] { border-radius: 24px; }
         .hover\:bg-\[\#111216\]:hover { background-color: #111216; }
         .border-black\/5 { border-color: rgba(0, 0, 0, 0.05); }
+        .rp-hero-main {
+            aspect-ratio: 16 / 10;
+            min-height: 240px;
+        }
+        @media (min-width: 1024px) {
+            .rp-hero-main {
+                aspect-ratio: auto;
+                height: 550px;
+            }
+        }
         .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
         
         /* Contenu Article */
@@ -1234,12 +1244,12 @@
             if (hero) {
                 setHtml('hero-section', `
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in w-full">
-                        <a href="/${hero.slug}" onclick="openArticle('${hero.slug}'); return false;" class="lg:col-span-2 relative h-[500px] lg:h-[550px] rounded-[24px] overflow-hidden group cursor-pointer border border-white/10 shadow-2xl block" style="min-height: 420px;">
+                        <a href="/${hero.slug}" onclick="openArticle('${hero.slug}'); return false;" class="lg:col-span-2 relative rp-hero-main rounded-[24px] overflow-hidden group cursor-pointer border border-white/10 shadow-2xl block">
                             <img src="${hero.image}" alt="${hero.title.replace(/"/g, '&quot;')}" fetchpriority="high" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='images/marathon.webp'">
                             <div class="absolute inset-0 bg-gradient-to-t from-[#0a0b0e] via-[#0a0b0e]/45 to-transparent"></div>
-                            <div class="absolute bottom-0 p-8 md:p-11 w-full">
-                                <span class="bg-brand-yellow text-black text-[10px] font-bold uppercase px-3.5 py-1 rounded-full mb-4 inline-block tracking-widest">À la une • Test terrain</span>
-                                <h2 class="text-3xl md:text-5xl font-bold leading-[1.08] text-white group-hover:text-brand-yellow transition-colors tracking-tight">${hero.title}</h2>
+                            <div class="absolute bottom-0 p-5 sm:p-8 md:p-11 w-full">
+                                <span class="bg-brand-yellow text-black text-[10px] font-bold uppercase px-3.5 py-1 rounded-full mb-3 sm:mb-4 inline-block tracking-widest">À la une • Test terrain</span>
+                                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold leading-[1.08] text-white group-hover:text-brand-yellow transition-colors tracking-tight">${hero.title}</h2>
                             </div>
                         </a>
                         <div class="flex flex-col gap-6 h-full">

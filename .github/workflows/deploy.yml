@@ -15,6 +15,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Generate SEO HTML pages for all articles
+        run: python3 generate_seo_pages.py
+
       - name: Deploy to Hostinger via lftp
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}

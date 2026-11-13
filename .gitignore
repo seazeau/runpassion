@@ -12,5 +12,8 @@ input_tests/
 # Heavy RAW camera files
 *.CR3
 
+# Generated SEO HTML pages (built automatically in GitHub Actions)
+pages/
+
 # Sensitive file (contains hardcoded password; kept on Hostinger)
 save_article.php

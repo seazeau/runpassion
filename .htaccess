@@ -12,6 +12,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# Sert la page HTML SEO pré-générée si elle existe dans /pages/<slug>.html
+RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+RewriteRule ^([^/]+)/?$ pages/$1.html [L]
+
 # Toutes les autres URLs d'articles renvoient vers index.html (statut HTTP 200)
 RewriteRule ^ index.html [L,QSA]
 </IfModule>

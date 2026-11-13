@@ -2219,7 +2219,7 @@ const wordpressArticles = [
         "category": "Actualités",
         "author": "Vincent",
         "date": "2026-11-13",
-        "image": "images/sas_marathon.webp",
+        "image": "images/actu-kejelcha-valence-2026.webp",
         "featured": false,
         "excerpt": "Coup de tonnerre à trois semaines du départ : blessé en fin de préparation, Yomif Kejelcha déclare officiellement forfait pour le Marathon de Valence 2026.",
         "content": "<p>C'est la grosse nouvelle du jour dans le monde du marathon : ce vendredi 13 novembre 2026, l'Éthiopien <strong>Yomif Kejelcha</strong> a annoncé son <strong>forfait officiel pour le Marathon de Valence 2026</strong>, prévu le 6 décembre prochain.</p><h2>Une blessure en fin de préparation</h2><p>Contraint de stopper sa préparation finale, le champion éthiopien a partagé la nouvelle avec émotion sur Instagram : <em>« C'est un post que je ne voulais vraiment pas faire. Je ne courrai pas le Marathon de Valence cette année en raison d'une blessure durant ma préparation. Parfois, le sport est ainsi. Je dois m'arrêter maintenant, bien récupérer et travailler dur pour revenir vite sur la ligne de départ. »</em></p><h2>Un coup dur pour la quête du record du monde à Valence</h2><p>L'absence de Kejelcha est un séisme pour les organisateurs espagnols. Détenteur du record du monde du semi-marathon (56'51\" à Buenos Aires) et auteur d'un chrono stratosphérique de <strong>1h59'41\"</strong> dès son tout premier marathon à Londres cette année, il était la tête d'affiche absolue attendue pour attaquer le record du monde et le bonus d'un million d'euros dans les rues de Valence.</p><h2>Cap sur 2027</h2><p>Cette blessure met un terme prématuré à une saison 2026 exceptionnelle sur route pour Yomif Kejelcha, qui va désormais se consacrer à sa rééducation afin de revenir à 100 % en 2027.</p>"
@@ -2231,7 +2231,7 @@ const wordpressArticles = [
         "category": "Actualités",
         "author": "Vincent",
         "date": "2026-11-02",
-        "image": "images/marathon.webp",
+        "image": "images/actu-nyc-marathon-2026.webp",
         "featured": false,
         "excerpt": "Pour les 50 ans du parcours des 5 boroughs, le Suédois Andreas Almgren remporte son premier marathon en 2h06'01\" et Sheila Chepkirui s'impose chez les femmes.",
         "content": "<p>L'édition 2026 du <strong>TCS New York City Marathon</strong> (1er novembre 2026), qui célébrait les 50 ans du mythique tracé à travers les cinq boroughs, a tenu toutes ses promesses avec un record historique de plus de <strong>61 000 finishers</strong>.</p><h2>Andreas Almgren frappe fort dès son premier marathon</h2><p>Le Suédois <strong>Andreas Almgren</strong> a créé la sensation en remportant la course hommes en <strong>2h06'01\"</strong> pour ses grands débuts sur la distance, devenant le premier vainqueur suédois de l'histoire à New York. Il devance l'Italien Yemaneberhan Crippa (2h06'14\") et Kamohelo Mofolo (2h06'26\").</p><h2>Sheila Chepkirui double la mise</h2><p>Chez les femmes, la Kényane <strong>Sheila Chepkirui</strong> s'offre un deuxième titre à Central Park en <strong>2h24'36\"</strong>, au terme d'un final haletant devant l'Américaine Jess McClain (2h24'42\") et Hellen Obiri (2h24'43\"). En fauteuil, les Suisses Marcel Hug (8e victoire) et Catherine Debrunner ont une nouvelle fois dominé les débats.</p>"
@@ -2243,7 +2243,7 @@ const wordpressArticles = [
         "category": "Actualités",
         "author": "Vincent",
         "date": "2026-10-30",
-        "image": "images/nike-zoomx-vaporfly-next-4-1-1-1024x576.webp",
+        "image": "images/actu-adios-pro-5-alphafly-4.webp",
         "featured": false,
         "affiliateLink": "https://top4running.fr/p/adidas-adizero-adios-pro-5-m-ki8294?a_box=sc3esau3",
         "excerpt": "Sorties cet automne 2026, la Nike Alphafly 4 (208g) et l'Adidas Adizero Adios Pro 5 (175g) redéfinissent la performance sur marathon.",
@@ -2256,7 +2256,7 @@ const wordpressArticles = [
         "category": "Actualités",
         "author": "Vincent",
         "date": "2026-10-18",
-        "image": "images/chrono.webp",
+        "image": "images/actu-diagonale-des-fous-2026.webp",
         "featured": false,
         "excerpt": "Le Français Hugo Deck remporte le Grand Raid 2026 en 22h54'19\" devant Robin Juillaguet, tandis que Ruth Croft s'impose chez les femmes.",
         "content": "<p>Partis le 15 octobre 2026 de Saint-Pierre pour affronter les 180 km et 10 200 m de dénivelé positif de la <strong>Diagonale des Fous</strong>, les traileurs ont livré une édition 2026 mémorable jusqu'au stade de la Redoute.</p><h2>Doublé français chez les hommes</h2><p><strong>Hugo Deck</strong> s'est imposé en <strong>22h54'19\"</strong> au terme d'une gestion de course maîtrisée, devançant un autre Français, <strong>Robin Juillaguet</strong> (23h51'54\"), et le Belge Jérôme Vanderschaeghe (24h10'35\").</p><h2>Ruth Croft impériale chez les femmes</h2><p>Déjà référence mondiale sur les formats 100 miles, la Néo-Zélandaise <strong>Ruth Croft</strong> remporte la course féminine en <strong>27h13'23\"</strong> (11e au classement scratch), devant l'Américaine Alyssa Clark (28h26'53\") et la Française <strong>Agathe Bes</strong> (29h05'19\").</p>"
@@ -2268,7 +2268,7 @@ const wordpressArticles = [
         "category": "Actualités",
         "author": "Vincent",
         "date": "2026-09-28",
-        "image": "images/Marathon-de-Berlin-2023-A-quelle-heure-et-sur-quelle-chaine-TV.webp",
+        "image": "images/actu-berlin-marathon-2026.webp",
         "featured": false,
         "excerpt": "Le 27 septembre 2026, Tigst Assefa a signé le 3e chrono féminin de l'histoire à Berlin (2h11'04\") et Guye Adola a remporté son 2e titre en 2h02'50\".",
         "content": "<p>La 52e édition du <strong>Marathon de Berlin</strong> (27 septembre 2026) a confirmé une fois encore son statut de parcours le plus rapide du monde.</p><h2>Guye Adola retrouve le sommet</h2><p>Dans la course masculine, l'Éthiopien <strong>Guye Adola</strong> s'est offert un deuxième sacre dans la capitale allemande en signant son record personnel en <strong>2h02'50\"</strong>, devant Gemechu Dida (2h03'19\") et le Tanzanien Gabriel Gerald Geay (2h03'59\").</p><h2>Tigst Assefa à 2h11'04\" malgré la douleur</h2><p>Chez les femmes, <strong>Tigst Assefa</strong> a livré une démonstration impressionnante en bouclant les 42,195 km en <strong>2h11'04\"</strong> — le 3e meilleur temps de tous les temps et un nouveau record du parcours berlinois — malgré une alerte physique dans les derniers kilomètres.</p>"

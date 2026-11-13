@@ -32,7 +32,8 @@ const wordpressArticles = [
             "drop": "6 mm",
             "stack": "Non précisé",
             "prix": "160€"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/new-balance-fuelcell-rebel-v5-mfcx1v1d?a_box=sc3esau3"
     },
     {
         "id": 20,
@@ -224,7 +225,8 @@ const wordpressArticles = [
             "drop": "6 mm",
             "stack": "Non précisé",
             "prix": "250€"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/adidas-adizero-adios-pro-4-w-ki4781?a_box=sc3esau3"
     },
     {
         "id": 5,
@@ -504,7 +506,8 @@ const wordpressArticles = [
             "drop": "5mm",
             "stack": "Non précisé",
             "prix": "Non précisé"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/hoka-w-mach-x-3-1168721-gblv?a_box=sc3esau3"
     },
     {
         "id": 117,
@@ -1241,7 +1244,8 @@ const wordpressArticles = [
             "drop": "Non précisé",
             "stack": "Non précisé",
             "prix": "232€"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/asics-metaspeed-sky-tokyo-1013a162-400?a_box=sc3esau3"
     },
     {
         "id": 49,
@@ -1417,7 +1421,8 @@ const wordpressArticles = [
             "drop": "Non précisé",
             "stack": "Non précisé",
             "prix": "220€"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/asics-superblast-2-1013a185-300?a_box=sc3esau3"
     },
     {
         "id": 40,
@@ -1645,7 +1650,8 @@ const wordpressArticles = [
             "drop": "10mm",
             "stack": "Non précisé",
             "prix": "210€"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/nike-pegasus-premium-running-shoe-hq2592-110?a_box=sc3esau3"
     },
     {
         "id": 87,
@@ -1904,7 +1910,8 @@ const wordpressArticles = [
             "drop": "Non précisé",
             "stack": "Non précisé",
             "prix": "Non précisé"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/nike-structure-26-cm-running-shoe-iq0460-001?a_box=sc3esau3"
     },
     {
         "id": 115,
@@ -2131,7 +2138,8 @@ const wordpressArticles = [
             "drop": "6 mm",
             "stack": "Non précisé",
             "prix": "Non précisé"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/adidas-hyperboost-edge-m-ki0358?a_box=sc3esau3"
     },
     {
         "id": 113,
@@ -2351,7 +2359,8 @@ const wordpressArticles = [
             "drop": "8mm",
             "stack": "40mm / 32mm",
             "prix": "160€"
-        }
+        },
+        "affiliateLink": "https://top4running.fr/p/saucony-endorphin-azura-s101329-1041?a_box=sc3esau3"
     },
     {
         "id": 129,

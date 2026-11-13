@@ -299,6 +299,24 @@
             }
             .rp-shoe-frame img { height: 155px !important; }
         }
+        .rp-article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 2.5rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+        @media (min-width: 1024px) {
+            .rp-article-layout {
+                grid-template-columns: minmax(0, 1fr) 330px;
+                gap: 3rem;
+            }
+        }
+        @media (min-width: 1280px) {
+            .rp-article-layout {
+                grid-template-columns: minmax(0, 1fr) 370px;
+            }
+        }
         
         /* Centrage et style par défaut des images individuelles hors de la galerie */
         .article-content img:not(.gallery-img) {
@@ -1546,6 +1564,7 @@
 
             // NETTOYAGE RADICAL DES STYLES WORDPRESS (Polices, tailles, couleurs forcées)
             Array.from(tempDiv.querySelectorAll('*')).forEach(el => {
+                if (el.closest('[class*="rp-"]')) return;
                 if(el.tagName !== 'IMG' && el.tagName !== 'IFRAME') {
                     el.removeAttribute('style');
                     el.removeAttribute('class');
@@ -1569,6 +1588,7 @@
 
             for (let i = 0; i < allImgs.length; i++) {
                 let img = allImgs[i];
+                if (img.closest('[class*="rp-"]')) continue;
                 img.setAttribute('loading', 'lazy'); // LAZY LOADING
                 let container = img;
                 while (container.parentNode && container.parentNode !== tempDiv) container = container.parentNode;
@@ -1652,7 +1672,7 @@
 
             p.innerHTML = `
                 <div class="max-w-[1200px] mx-auto px-6 pt-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_380px] gap-8 lg:gap-12 mt-4 w-full">
+                    <div class="rp-article-layout">
                         
                         <!-- COLONNE DE GAUCHE : LE CONTENU -->
                         <div class="animate-in min-w-0 overflow-hidden w-full">

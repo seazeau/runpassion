@@ -20,12 +20,14 @@
     <meta property="og:image" content="RUN.png">
 
     <!-- Design & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
-    <!-- Importation des données du script Python (avec cache-buster anti-reprise d'ancienne version) -->
-    <script src="articles_data.js?v=20260917_nocoach"></script>
+    <!-- Importation des données (cache-buster mis à jour) -->
+    <script src="articles_data.js?v=20261113"></script>
 
     <script>
         tailwind.config = {
@@ -650,9 +652,9 @@
         const bonsPlansData = [
             { brand: "Adidas", model: "Adios Pro 4", image: "https://i1.t4s.cz//products/js2579/adidas-adizero-adios-pro-4-1054720-js25791-960.webp", oldPrice: "250,00€", newPrice: "215,40€", discount: "-14%", link: "https://top4running.fr/p/adidas-adizero-adios-pro-4-running-shoe-js2579?a_box=sc3esau3" },
             { brand: "Nike", model: "Vomero Plus", image: "image_047be3.jpg", oldPrice: "169,95€", newPrice: "158,30€", discount: "-7%", link: "https://top4running.fr/p/nike-vomero-plus-running-shoe-hv8150-008?a_box=sc3esau3" },
-            { brand: "Asics", model: "SonicBlast", image: "image_047c04.jpg", oldPrice: "190,00€", newPrice: "134,90€", discount: "-29%", link: "https://top4running.fr/p/asics-sonicblast-1012b862-100#p0" },
+            { brand: "Asics", model: "SonicBlast", image: "image_047c04.jpg", oldPrice: "190,00€", newPrice: "134,90€", discount: "-29%", link: "https://top4running.fr/p/asics-sonicblast-1012b862-100?a_box=sc3esau3#p0" },
             { brand: "Asics", model: "Metaspeed Sky Tokyo", image: "image_046882.jpg", oldPrice: "270,00€", newPrice: "213,90€", discount: "-21%", link: "https://top4running.fr/p/asics-metaspeed-sky-tokyo-1013a162-600?a_box=sc3esau3" },
-            { brand: "Saucony", model: "Endorphin Elite 2", image: "image_047b67.jpg", oldPrice: "300,00€", newPrice: "219,00€", discount: "-27%", link: "https://top4running.fr/c/soldes-top4running-fr/type-2/page-10" }
+            { brand: "Saucony", model: "Endorphin Elite 2", image: "image_047b67.jpg", oldPrice: "300,00€", newPrice: "219,00€", discount: "-27%", link: "https://top4running.fr/c/soldes-top4running-fr/type-2/page-10?a_box=sc3esau3" }
         ];
 
         function init() {
@@ -697,7 +699,7 @@
             
             const articlesToShow = currentFilteredList.slice(0, displayLimit);
             
-            el.innerHTML = articlesToShow.map(art => `<a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex flex-col group cursor-pointer animate-in block"><div class="aspect-[16/10] rounded-[24px] overflow-hidden mb-6 bg-brand-card border border-white/5 shadow-lg relative hover-zoom"><img src="${art.image}" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute top-4 right-4 bg-brand-yellow/90 backdrop-blur px-3 py-1 rounded-full text-[9px] font-black uppercase text-black tracking-widest">${art.category}</div></div><h3 class="text-xl font-bold leading-tight group-hover:text-brand-yellow transition-colors italic uppercase tracking-tighter">${art.title}</h3></a>`).join('');
+            el.innerHTML = articlesToShow.map(art => `<a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex flex-col group cursor-pointer animate-in block"><div class="aspect-[16/10] rounded-[24px] overflow-hidden mb-6 bg-brand-card border border-white/5 shadow-lg relative hover-zoom"><img src="${art.image}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute top-4 right-4 bg-brand-yellow/90 backdrop-blur px-3 py-1 rounded-full text-[9px] font-black uppercase text-black tracking-widest">${art.category}</div></div><h3 class="text-xl font-bold leading-tight group-hover:text-brand-yellow transition-colors italic uppercase tracking-tighter">${art.title}</h3></a>`).join('');
             
             if (currentFilteredList.length > displayLimit) {
                 loadMoreBtn.style.display = 'flex';
@@ -743,7 +745,7 @@
                 setHtml('hero-section', `
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in w-full">
                         <a href="/${hero.slug}" onclick="openArticle('${hero.slug}'); return false;" class="lg:col-span-2 relative h-[500px] lg:h-[550px] rounded-[32px] overflow-hidden group cursor-pointer border border-white/5 shadow-2xl block">
-                            <img src="${hero.image}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1200'">
+                            <img src="${hero.image}" alt="${hero.title.replace(/"/g, '&quot;')}" fetchpriority="high" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onerror="this.src='images/marathon.webp'">
                             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent md:bg-gradient-to-r md:from-black/90 md:to-transparent"></div>
                             <div class="absolute bottom-0 p-8 md:p-12 w-full">
                                 <span class="bg-brand-yellow text-black text-[10px] font-black uppercase px-3 py-1 rounded-full mb-4 inline-block italic">À la une</span>
@@ -753,7 +755,7 @@
                         <div class="flex flex-col gap-6 h-full">
                             ${sideFeatured.map(art => `
                                 <a href="/${art.slug}" onclick="openArticle('${art.slug}'); return false;" class="flex-1 relative rounded-[24px] overflow-hidden cursor-pointer group shadow-xl border border-white/5 min-h-[200px] block">
-                                    <img src="${art.image}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                    <img src="${art.image}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                                     <div class="absolute bottom-0 p-6 w-full"><h3 class="text-lg md:text-xl font-black text-white group-hover:text-brand-yellow transition-colors leading-tight italic uppercase">${art.title}</h3></div>
                                 </a>
@@ -817,7 +819,28 @@
             if(metaDescEl && art.excerpt) metaDescEl.setAttribute('content', art.excerpt);
             
             const canonicalEl = document.getElementById('canonical-url');
-            if(canonicalEl) canonicalEl.setAttribute('href', `https://runpassion.fr/${art.slug}`);
+            const articleUrl = `https://runpassion.fr/${art.slug}`;
+            if(canonicalEl) canonicalEl.setAttribute('href', articleUrl);
+
+            const setOg = (prop, val) => { const el = document.querySelector(`meta[property="${prop}"]`); if (el && val) el.setAttribute('content', val); };
+            setOg('og:type', 'article');
+            setOg('og:url', articleUrl);
+            setOg('og:title', `${art.title} | RunPassion`);
+            setOg('og:description', art.excerpt || '');
+            setOg('og:image', art.image ? (art.image.startsWith('http') ? art.image : `https://runpassion.fr/${art.image}`) : 'https://runpassion.fr/RUN.png');
+
+            let ld = document.getElementById('json-ld-schema');
+            if (!ld) { ld = document.createElement('script'); ld.type = 'application/ld+json'; ld.id = 'json-ld-schema'; document.head.appendChild(ld); }
+            ld.textContent = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": art.title,
+                "description": art.excerpt || "",
+                "datePublished": art.date || "",
+                "author": { "@type": "Person", "name": art.author || "Vincent Buisson" },
+                "publisher": { "@type": "Organization", "name": "RunPassion", "url": "https://runpassion.fr/" },
+                "mainEntityOfPage": articleUrl
+            });
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
 

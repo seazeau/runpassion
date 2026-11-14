@@ -32,7 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <!-- Importation des données (cache-buster mis à jour) -->
-    <script src="articles_data.js?v=20261114_0925"></script>
+    <script src="articles_data.js?v=20261114_0935"></script>
     
     <style>
         body { 
@@ -147,7 +147,11 @@
             font-size: 1.125rem !important;
         }
         
-        .article-content p { margin-bottom: 1.5rem !important; text-align: left; }
+        .article-content p { margin-bottom: 1.5rem !important; text-align: justify; }
+        .article-content p:not([class*="rp-"]):not([class*="rp-"] *),
+        .article-content li:not([class*="rp-"]):not([class*="rp-"] *) {
+            text-align: justify !important;
+        }
         .article-content h2 { color: #ffffff !important; font-weight: 800 !important; font-family: 'Outfit', 'Inter', sans-serif !important; font-size: 1.55rem !important; margin-top: 3.25rem !important; margin-bottom: 1.25rem !important; border-left: 3px solid #fcb900; padding-left: 0.9rem; letter-spacing: -0.02em; scroll-margin-top: 100px; line-height: 1.3 !important; }
         .article-content h3 { color: #fff !important; font-weight: 700 !important; font-family: 'Outfit', 'Inter', sans-serif !important; font-size: 1.2rem !important; margin-top: 2rem !important; margin-bottom: 0.85rem !important; scroll-margin-top: 100px; line-height: 1.35 !important; }
         .article-content ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 1.5rem !important; }
@@ -177,6 +181,7 @@
         #page-article .rp-ed-lead {
             font-size: 1.2rem;
             line-height: 1.7;
+            text-align: justify;
             color: #b8bcc6;
             border-left: 2px solid rgba(252, 185, 0, 0.65);
             padding-left: 1.25rem;

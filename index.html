@@ -1068,11 +1068,11 @@
         ];
 
         const bonsPlansData = [
-            { brand: "Asics", model: "Superblast 2 Ekiden", image: "https://i1.t4s.cz/products/1013a185-300/asics-superblast-2-ekiden-1035146-1013a185-3005.png", oldPrice: "220,00€", newPrice: "153,90€", discount: "-30%", link: "https://top4running.fr/p/asics-superblast-2-1013a185-300?a_box=sc3esau3" },
-            { brand: "Adidas", model: "Adios Pro 4", image: "https://i1.t4s.cz/products/ki4781/adidas-adizero-adios-pro-4-w-1138869-ki47811.png", oldPrice: "250,00€", newPrice: "175,00€", discount: "-30%", link: "https://top4running.fr/p/adidas-adizero-adios-pro-4-w-ki4781?a_box=sc3esau3" },
-            { brand: "On Running", model: "Cloudboom Max", image: "https://i1.t4s.cz/products/3mf30310485/on-running-cloudboom-max-1140212-3mf303104851.png", oldPrice: "240,00€", newPrice: "173,80€", discount: "-28%", link: "https://top4running.fr/p/on-running-cloudboom-max-3mf30310485?a_box=sc3esau3" },
-            { brand: "Nike", model: "Vomero Plus", image: "https://i1.t4s.cz/products/im8336-100/nike-vomero-plus-running-shoe-1139588-im8336-1003.png", oldPrice: "179,99€", newPrice: "144,00€", discount: "-20%", link: "https://top4running.fr/p/nike-vomero-plus-running-shoe-im8336-100?a_box=sc3esau3" },
-            { brand: "Saucony", model: "Endorphin Azura", image: "https://i1.t4s.cz/products/s101329-1041/saucony-endorphin-azura-1138310-s101329-10411.png", oldPrice: "160,00€", newPrice: "143,90€", discount: "-10%", link: "https://top4running.fr/p/saucony-endorphin-azura-s101329-1041?a_box=sc3esau3" }
+            { brand: "Asics", model: "Superblast 2 Ekiden", image: "images/deal-superblast-2.webp", oldPrice: "220,00€", newPrice: "153,90€", discount: "-30%", link: "https://top4running.fr/p/asics-superblast-2-1013a185-300?a_box=sc3esau3" },
+            { brand: "Adidas", model: "Adios Pro 4", image: "images/deal-adios-pro-4.webp", oldPrice: "250,00€", newPrice: "175,00€", discount: "-30%", link: "https://top4running.fr/p/adidas-adizero-adios-pro-4-w-ki4781?a_box=sc3esau3" },
+            { brand: "On Running", model: "Cloudboom Max", image: "images/deal-cloudboom-max.webp", oldPrice: "240,00€", newPrice: "173,80€", discount: "-28%", link: "https://top4running.fr/p/on-running-cloudboom-max-3mf30310485?a_box=sc3esau3" },
+            { brand: "Nike", model: "Vomero Plus", image: "images/deal-vomero-plus.webp", oldPrice: "179,99€", newPrice: "144,00€", discount: "-20%", link: "https://top4running.fr/p/nike-vomero-plus-running-shoe-im8336-100?a_box=sc3esau3" },
+            { brand: "Saucony", model: "Endorphin Azura", image: "images/deal-endorphin-azura.webp", oldPrice: "160,00€", newPrice: "143,90€", discount: "-10%", link: "https://top4running.fr/p/saucony-endorphin-azura-s101329-1041?a_box=sc3esau3" }
         ];
 
         let activeTestFilter = 'all';
@@ -1278,7 +1278,7 @@
                 <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="min-w-[260px] md:min-w-0 w-full bg-[#11131a] border border-white/10 rounded-2xl p-5 flex flex-col group hover:border-brand-yellow/40 transition-all cursor-pointer shadow-lg relative block">
                     <div class="relative w-full aspect-square bg-[#f3f2ee] rounded-xl mb-5 overflow-hidden p-4 flex items-center justify-center">
                         <span class="absolute top-3 left-3 bg-[#111216] text-brand-yellow text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm z-10">${item.discount}</span>
-                        <img src="${item.image}" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        <img src="${item.image}" alt="${item.brand} ${item.model}" loading="lazy" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="text-center flex-grow flex flex-col">
                         <span class="text-gray-400 text-[10px] font-semibold uppercase tracking-widest mb-1.5">${item.brand}</span>

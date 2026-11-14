@@ -1,130 +1,245 @@
+from datetime import date
 import html as htmllib
+import io
 import json
+import os
 import re
 import urllib.request
+from PIL import Image
 
 INDEX_FILE = "index.html"
+IMAGES_DIR = "images"
 ABOX = "a_box=sc3esau3"
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
-CANDIDATE_URLS = [
-    "https://top4running.fr/c/running-chaussures-de-running",
-    "https://top4running.fr/c/soldes-top4running-fr",
+LISTING_URLS = [
+    *[f"https://top4running.fr/c/running-chaussures-de-running?page={p}" for p in range(1, 5)],
+    *[f"https://top4running.fr/c/soldes-top4running-fr?page={p}" for p in range(1, 4)],
 ]
 
-KNOWN_BRANDS = [
-    "Asics",
-    "Adidas",
-    "Nike",
-    "Saucony",
-    "Hoka",
-    "New Balance",
-    "Brooks",
-    "Salomon",
-    "On Running",
-    "Puma",
-    "Mizuno",
-]
+KNOWN_BRANDS = {
+    "asics": "Asics",
+    "adidas": "Adidas",
+    "nike": "Nike",
+    "hoka": "Hoka",
+    "on running": "On Running",
+    "saucony": "Saucony",
+    "new balance": "New Balance",
+    "brooks": "Brooks",
+    "salomon": "Salomon",
+    "puma": "Puma",
+    "mizuno": "Mizuno",
+    "altra": "Altra",
+}
+
+MIN_OLD_PRICE = 175.0
+TARGET_DEALS = 5
+CARD_PATTERN = re.compile(
+    r'<a href="(/p/[^"]+)" class="product-box-item-small[^"]*"([^>]*)>([\s\S]*?)</a>'
+)
 
 
 def fetch(url: str) -> str:
     req = urllib.request.Request(url, headers=HEADERS)
-    return urllib.request.urlopen(req, timeout=10).read().decode("utf-8", "ignore")
+    return urllib.request.urlopen(req, timeout=15).read().decode("utf-8", "ignore")
 
 
 def parse_euro(val: str) -> float:
-    return float(val.replace("€", "").replace("\xa0", "").replace(" ", "").replace(",", ".").strip())
+    return float(
+        val.replace("€", "").replace("\xa0", "").replace(" ", "").replace(",", ".").strip()
+    )
 
 
 def format_euro(val: float) -> str:
     return f"{val:.2f}".replace(".", ",") + "€"
 
 
-def extract_brand_model(title: str):
-    t = re.sub(r"\s*[-|].*$", "", title).strip()
-    for b in KNOWN_BRANDS:
-        if t.lower().startswith(b.lower()):
-            model = t[len(b):].strip(" -")
-            return b, model[:28]
-    parts = t.split(" ", 1)
-    return parts[0], (parts[1] if len(parts) > 1 else t)[:28]
+def clean_model_name(name: str, brand: str) -> str:
+    # Remove redundant brand prefix if present and strip Wide/Waterproof noise if overly long
+    n = re.sub(rf"^{re.escape(brand)}\s+", "", name.strip(), flags=re.IGNORECASE)
+    n = re.sub(r"\s+", " ", n).strip()
+    words = []
+    for w in n.split(" "):
+        if w.isupper() and len(w) > 3:
+            words.append(w.capitalize())
+        elif w.upper() in ("GEL-NIMBUS", "GEL-KAYANO", "GEL-CUMULUS"):
+            words.append("Gel-" + w.split("-", 1)[1].capitalize())
+        else:
+            words.append(w)
+    res = " ".join(words)
+    return res[:32].rstrip()
 
 
-def inspect_product(slug_path: str):
-    url = f"https://top4running.fr{slug_path}"
-    h = fetch(url)
-    title_m = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
-    img_m = re.search(r'<meta property="og:image" content="([^"]+)"', h)
-    if not title_m or not img_m:
-        return None
+def is_eligible_shoe(cat: str, name: str) -> bool:
+    c_low = cat.lower()
+    n_low = name.lower()
+    if "chaussures" not in c_low:
+        return False
+    excluded_cat = ("enfant", "junior", "pointe", "athlétisme", "track")
+    excluded_name = (" jr", " kids", " gs", "wide", "2e", "4e")
+    if any(x in c_low for x in excluded_cat):
+        return False
+    if any(x in n_low for x in excluded_name):
+        return False
+    return True
 
-    title = htmllib.unescape(re.sub(r"<[^>]+>", "", title_m.group(1))).strip()
-    img = img_m.group(1).strip()
 
-    # Extract euro prices from page, ignoring the 75€ free-shipping banner
-    euros = re.findall(r"€\s*[0-9]+,[0-9]{2}|[0-9]+,[0-9]{2}\s*€", h)
-    vals = []
-    for e in euros:
+def collect_candidates() -> list[dict]:
+    best_by_model: dict[tuple[str, str], dict] = {}
+    seen_slugs: set[str] = set()
+
+    for url in LISTING_URLS:
         try:
-            v = parse_euro(e)
-            if 76.0 <= v <= 400.0 and v not in vals:
-                vals.append(v)
-        except ValueError:
-            pass
+            page_html = fetch(url)
+        except Exception as exc:
+            print(f"Warn: impossible de lire {url} ({exc})")
+            continue
 
-    if len(vals) < 2:
-        return None
+        for slug_path, attrs, body in CARD_PATTERN.findall(page_html):
+            if slug_path in seen_slugs:
+                continue
+            seen_slugs.add(slug_path)
 
-    old_p = max(vals[:2])
-    new_p = min(vals[:2])
-    disc = round((1 - new_p / old_p) * 100)
-    if disc < 10 or disc > 75:
-        return None
+            cat_m = re.search(r'data-category="([^"]*)"', attrs)
+            cat = htmllib.unescape(cat_m.group(1)) if cat_m else ""
 
-    brand, model = extract_brand_model(title)
-    return {
-        "brand": brand,
-        "model": model,
-        "image": img,
-        "oldPrice": format_euro(old_p),
-        "newPrice": format_euro(new_p),
-        "discount": f"-{disc}%",
-        "link": f"{url}?{ABOX}",
-    }
+            brand_m = re.search(r'data-brand="([^"]*)"', attrs)
+            name_m = re.search(r'data-name="([^"]*)"', attrs)
+            price_m = re.search(r'data-price="([^"]*)"', attrs)
+            del_m = re.search(r"<del[^>]*>([^<]+)</del>", body)
+            img_m = re.search(
+                r'<source[^>]+srcset="(https://i1\.t4s\.cz/products/[^"]+?\.png)"',
+                body,
+            )
+            if not (brand_m and name_m and price_m and del_m and img_m):
+                continue
+
+            raw_brand = htmllib.unescape(brand_m.group(1)).strip().lower()
+            if raw_brand not in KNOWN_BRANDS:
+                continue
+            brand = KNOWN_BRANDS[raw_brand]
+
+            raw_name = htmllib.unescape(name_m.group(1)).strip()
+            if not is_eligible_shoe(cat, raw_name):
+                continue
+
+            try:
+                new_p = float(price_m.group(1))
+                old_p = parse_euro(del_m.group(1))
+            except ValueError:
+                continue
+
+            if old_p < MIN_OLD_PRICE or new_p <= 0 or new_p >= old_p:
+                continue
+
+            disc = round((1.0 - new_p / old_p) * 100)
+            if disc < 15 or disc > 70:
+                continue
+
+            model = clean_model_name(raw_name, brand)
+            dedup_key = (brand.lower(), model.lower())
+            candidate = {
+                "brand": brand,
+                "model": model,
+                "image_url": img_m.group(1).strip(),
+                "old_val": old_p,
+                "new_val": new_p,
+                "disc_val": disc,
+                "oldPrice": format_euro(old_p),
+                "newPrice": format_euro(new_p),
+                "discount": f"-{disc}%",
+                "link": f"https://top4running.fr{slug_path}?{ABOX}",
+            }
+
+            prev = best_by_model.get(dedup_key)
+            if prev is None or disc > prev["disc_val"] or (
+                disc == prev["disc_val"] and old_p > prev["old_val"]
+            ):
+                best_by_model[dedup_key] = candidate
+
+    return list(best_by_model.values())
+
+
+def pick_sorted_candidates(candidates: list[dict]) -> list[dict]:
+    # Sort descending by model name so newer versions naturally come before older ones
+    ordered = sorted(
+        candidates,
+        key=lambda x: (x["disc_val"] >= 24, x["disc_val"] >= 20, x["model"].lower()),
+        reverse=True,
+    )
+    selected: list[dict] = []
+    brand_counts: dict[str, int] = {}
+
+    for pass_max_per_brand in (1, 2):
+        for item in ordered:
+            if item in selected:
+                continue
+            b = item["brand"].lower()
+            if brand_counts.get(b, 0) >= pass_max_per_brand:
+                continue
+            selected.append(item)
+            brand_counts[b] = brand_counts.get(b, 0) + 1
+            if len(selected) >= 12:
+                return selected
+    return selected
+
+
+def download_deal_webp(img_url: str, out_path: str) -> bool:
+    try:
+        req = urllib.request.Request(img_url, headers=HEADERS)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            if resp.status != 200:
+                return False
+            data = resp.read()
+        im = Image.open(io.BytesIO(data)).convert("RGBA")
+        bbox = im.getbbox()
+        if bbox:
+            im = im.crop(bbox)
+        im.thumbnail((700, 700), Image.Resampling.LANCZOS)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        im.save(out_path, "WEBP", quality=85, method=6)
+        return True
+    except Exception as exc:
+        print(f"Warn: image KO pour {img_url} ({exc})")
+        return False
 
 
 def main():
-    seen_slugs = set()
-    candidates = []
-    for u in CANDIDATE_URLS:
-        try:
-            h = fetch(u)
-            for p in re.findall(r'/p/[a-z0-9\-]+', h):
-                if p not in seen_slugs and ("shoe" in p or "superblast" in p or "adios" in p or "cloudboom" in p or "azura" in p or "vomero" in p or "pegasus" in p or "metaspeed" in p):
-                    seen_slugs.add(p)
-                    candidates.append(p)
-        except Exception:
-            pass
+    raw_candidates = collect_candidates()
+    print(f"Candidats >= {MIN_OLD_PRICE:.0f}€ trouves : {len(raw_candidates)}")
+    if len(raw_candidates) < 3:
+        print("Pas assez de promos haut de gamme recuperees, index.html inchange.")
+        return
+
+    ranked = pick_sorted_candidates(raw_candidates)
+    version_tag = date.today().strftime("%Y%m%d")
 
     deals = []
-    used_models = set()
-    for p in candidates[:25]:
-        try:
-            item = inspect_product(p)
-            if not item:
-                continue
-            key = (item["brand"].lower(), item["model"].split(" ")[0].lower())
-            if key in used_models:
-                continue
-            used_models.add(key)
-            deals.append(item)
-            if len(deals) >= 5:
-                break
-        except Exception:
+    for item in ranked:
+        slot = len(deals) + 1
+        rel_img = f"{IMAGES_DIR}/deal-{slot}.webp"
+        if not download_deal_webp(item["image_url"], rel_img):
             continue
+        deals.append(
+            {
+                "brand": item["brand"],
+                "model": item["model"],
+                "image": f"{rel_img}?v={version_tag}",
+                "oldPrice": item["oldPrice"],
+                "newPrice": item["newPrice"],
+                "discount": item["discount"],
+                "link": item["link"],
+            }
+        )
+        print(
+            f"  #{slot}: {item['brand']} {item['model']} "
+            f"({item['oldPrice']} -> {item['newPrice']}, {item['discount']}) -> {rel_img}"
+        )
+        if len(deals) >= TARGET_DEALS:
+            break
 
     if len(deals) < 3:
-        print("Pas assez de promos recuperees, index.html inchange.")
+        print("Pas assez d'images valides telechargees, index.html inchange.")
         return
 
     with open(INDEX_FILE, "r", encoding="utf-8") as f:
@@ -139,7 +254,7 @@ def main():
 
     updated = re.sub(
         r"const bonsPlansData = \[.*?\];",
-        new_block,
+        lambda _: new_block,
         html_txt,
         count=1,
         flags=re.DOTALL,

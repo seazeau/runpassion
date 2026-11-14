@@ -1,3 +1,4 @@
+from email.utils import parsedate_to_datetime
 import html
 import json
 import os
@@ -7,6 +8,16 @@ TEMPLATE_FILE = "index.html"
 DATA_FILE = "articles_data.js"
 OUT_DIR = "pages"
 SITE_URL = "https://runpassion.fr"
+
+
+def normalize_iso_date(raw_date: str) -> str:
+    s = (raw_date or "").strip()
+    if re.match(r"^\d{4}-\d{2}-\d{2}", s):
+        return s[:10]
+    try:
+        return parsedate_to_datetime(s).date().isoformat()
+    except Exception:
+        return "2026-11-14"
 
 
 def clean_slug(slug: str) -> str:
@@ -45,13 +56,12 @@ def main():
             continue
         seen.add(slug)
 
-        title = art.get("title", "RunPassion")
+        title = strip_html(art.get("title", "RunPassion"))
         full_title = f"{title} | RunPassion"
-        desc = art.get("excerpt") or strip_html(art.get("content", ""))[:160]
-        desc = desc[:160].strip()
+        desc = strip_html(art.get("excerpt") or art.get("content", ""))[:160].strip()
         url = f"{SITE_URL}/{slug}"
         img_url = full_img_url(art.get("image", ""))
-        date_pub = (art.get("date") or "")[:10]
+        date_pub = normalize_iso_date(art.get("date", ""))
         author = art.get("author") or "Vincent Buisson"
 
         e_title = html.escape(full_title, quote=True)
@@ -95,10 +105,10 @@ def main():
     <meta name="twitter:image" content="{e_img}">
     <script type="application/ld+json" id="json-ld-schema">{ld_json}</script>"""
 
-        # Replace the <title>...<meta og:image> block in template
+        # Replace the <title>...<meta og:image/twitter:*> block in template (lambda prevents \n unescaping)
         page_html = re.sub(
-            r'<title id="meta-title">.*?</title>.*?<meta property="og:image"[^>]*>',
-            seo_block,
+            r'<title id="meta-title">.*?</title>.*?<meta property="og:image"[^>]*>(?:\s*<meta name="twitter:[^>]*>)*',
+            lambda _: seo_block,
             template,
             count=1,
             flags=re.DOTALL,

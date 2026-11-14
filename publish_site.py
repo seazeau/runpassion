@@ -1,5 +1,6 @@
 import argparse
 import datetime
+from email.utils import parsedate_to_datetime
 import json
 import os
 import re
@@ -165,8 +166,21 @@ def optimize_new_images(max_w=1400, quality=82):
     return optimized, saved_bytes
 
 
+def normalize_iso_date(raw_date: str, fallback: str) -> str:
+    s = (raw_date or "").strip()
+    if re.match(r"^\d{4}-\d{2}-\d{2}", s):
+        return s[:10]
+    try:
+        return parsedate_to_datetime(s).date().isoformat()
+    except Exception:
+        return fallback
+
+
 def sync_data_and_sitemap(articles):
-    articles.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+    today = datetime.date.today().isoformat()
+    for a in articles:
+        a["date"] = normalize_iso_date(a.get("date", ""), today)
+    articles.sort(key=lambda x: (str(x.get("date", "")), int(x.get("id", 0) or 0)), reverse=True)
 
     with open(DATA_JS, "w", encoding="utf-8") as f:
         f.write("const wordpressArticles = ")
@@ -176,7 +190,6 @@ def sync_data_and_sitemap(articles):
     with open(DATA_JSON, "w", encoding="utf-8") as f:
         json.dump(articles, f, ensure_ascii=False, indent=4)
 
-    today = datetime.date.today().isoformat()
     urls = [
         f"   <url>\n      <loc>{SITE_URL}/</loc>\n      <lastmod>{today}</lastmod>\n      <changefreq>daily</changefreq>\n      <priority>1.0</priority>\n   </url>"
     ]
@@ -186,7 +199,7 @@ def sync_data_and_sitemap(articles):
         if not slug or slug in seen:
             continue
         seen.add(slug)
-        dt = (a.get("date") or today)[:10]
+        dt = normalize_iso_date(a.get("date", ""), today)
         urls.append(
             f"   <url>\n      <loc>{SITE_URL}/{slug}</loc>\n      <lastmod>{dt}</lastmod>\n      <changefreq>monthly</changefreq>\n      <priority>0.8</priority>\n   </url>"
         )
@@ -259,8 +272,13 @@ def main():
     url_count = sync_data_and_sitemap(articles)
     print(f"    {url_count} URLs dans sitemap.xml.")
 
-    print("4/5 Mise a jour du cache-buster dans index.html...")
+    print("4/5 Mise a jour du cache-buster dans index.html et pages SEO...")
     bump_cache_buster()
+    try:
+        import generate_seo_pages
+        generate_seo_pages.main()
+    except Exception as e:
+        print(f"    (Generation pages SEO ignoree: {e})")
 
     if getattr(args, "bons_plans", False):
         print("    Mise a jour des Bons Plans Flash Top4Running...")

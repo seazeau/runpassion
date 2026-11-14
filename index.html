@@ -17,7 +17,11 @@
     <meta property="og:url" content="https://runpassion.fr/">
     <meta property="og:title" content="RunPassion | Le média expert du running indépendant">
     <meta property="og:description" content="Tests de chaussures, conseils d'entraînement et bons plans running.">
-    <meta property="og:image" content="RUN.png">
+    <meta property="og:image" content="https://runpassion.fr/RUN.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RunPassion | Le média expert du running indépendant">
+    <meta name="twitter:description" content="Tests de chaussures, conseils d'entraînement et bons plans running.">
+    <meta name="twitter:image" content="https://runpassion.fr/RUN.png">
 
     <!-- Design & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:ital,wght@0,300;0,400;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     
     <!-- Importation des données (cache-buster mis à jour) -->
-    <script src="articles_data.js?v=20261113_2359"></script>
+    <script src="articles_data.js?v=20261114_0800"></script>
     
     <style>
         body { 
@@ -308,6 +312,11 @@
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1.25rem;
             margin: 2rem 0 2.5rem 0;
+        }
+        @media (min-width: 768px) {
+            .rp-buy-grid:has(> .rp-buy-card:nth-child(3):last-child) {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
         }
         .rp-buy-card {
             background: #0e0f15;
@@ -778,7 +787,7 @@
                         <h2 class="rp-sec-title">Guides d'Achat 2026</h2>
                     </div>
                 </div>
-                <div id="guides-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+                <div id="guides-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
             </section>
 
             <!-- ENCART PROMO COACHING VINCENT BUISSON -->
@@ -1147,7 +1156,7 @@
         });
 
         const guidesData = [
-            { title: "Gamme Nike Running 2026 : le guide complet", count: "Guide Gamme 2026", image: "images/nike-pegasus-premium.webp", duelImages: ["images/nike-pegasus-premium.webp", "images/alphafly-4-t4r-3.webp"], slug: "gamme-nike-running-2026-guide-complet" },
+            { title: "Gamme Nike Running 2026 : le guide complet", count: "Guide Gamme 2026", image: "images/nike-pegasus-premium.webp", duelImages: ["images/nike-pegasus-premium.webp", "images/alphafly-4-t4r-3.webp"], duelLabel: "2026", slug: "gamme-nike-running-2026-guide-complet" },
             { title: "Adidas Adios Pro 4 vs Adios Pro 5 : laquelle choisir ?", count: "Comparatif 2026", image: "images/adios-pro-5-t4r-1.webp", duelImages: ["images/adios-pro-4-t4r-1.webp", "images/adios-pro-5-t4r-1.webp"], slug: "adidas-adios-pro-4-vs-adios-pro-5" },
             { title: "Nike Alphafly 4 vs Adidas Adios Pro 5 : le duel marathon", count: "Duel 2026", image: "images/alphafly-4-t4r-3.webp", duelImages: ["images/alphafly-4-t4r-3.webp", "images/adios-pro-5-t4r-1.webp"], slug: "nike-alphafly-4-vs-adidas-adios-pro-5-2026" },
             { title: "Les 4 meilleures chaussures pour marathon", count: "4 modèles", image: "IMG_0425.jpg", slug: "les-4-meilleures-chaussures-pour-marathon" }
@@ -1247,7 +1256,7 @@
                 const cardMedia = guideMatch
                     ? `<div class="aspect-[16/10] rounded-2xl overflow-hidden mb-4 bg-[#f3f2ee] border border-white/10 shadow-lg relative p-4 flex items-center justify-center gap-3">
                            <img src="${guideMatch.duelImages[0]}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="width:42%;height:100%;filter:drop-shadow(0 10px 14px rgba(0,0,0,0.18));" class="object-contain transition-transform duration-500 group-hover:scale-105">
-                           <span class="text-[10px] font-bold uppercase tracking-widest bg-[#111216] text-brand-yellow px-2.5 py-1 rounded-full shrink-0">VS</span>
+                           <span class="text-[10px] font-bold uppercase tracking-widest bg-[#111216] text-brand-yellow px-2.5 py-1 rounded-full shrink-0">${guideMatch.duelLabel || 'VS'}</span>
                            <img src="${guideMatch.duelImages[1]}" alt="${art.title.replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="width:42%;height:100%;filter:drop-shadow(0 10px 14px rgba(0,0,0,0.18));" class="object-contain transition-transform duration-500 group-hover:scale-105">
                            <div class="absolute top-3.5 right-3.5 bg-[#0a0b0e]/85 backdrop-blur border border-white/15 px-3 py-1 rounded-full text-[9px] font-bold uppercase text-brand-yellow tracking-widest">${art.category}</div>
                        </div>`
@@ -1331,11 +1340,16 @@
             }
 
             let guidesHtml = guidesData.map(g => {
+                const isSingleStudio = !g.duelImages && /-t4r-|\/nike-/i.test(g.image || '');
                 const topVisual = g.duelImages
                     ? `<div class="aspect-[16/10] bg-[#f3f2ee] p-4 flex items-center justify-center gap-3 relative overflow-hidden">
                            <img src="${g.duelImages[0]}" loading="lazy" style="width:42%;height:100%;" class="object-contain group-hover:scale-105 transition-transform duration-500">
-                           <span class="text-[10px] font-bold uppercase tracking-widest bg-[#111216] text-brand-yellow px-2.5 py-1 rounded-full shrink-0">VS</span>
+                           <span class="text-[10px] font-bold uppercase tracking-widest bg-[#111216] text-brand-yellow px-2.5 py-1 rounded-full shrink-0">${g.duelLabel || 'VS'}</span>
                            <img src="${g.duelImages[1]}" loading="lazy" style="width:42%;height:100%;" class="object-contain group-hover:scale-105 transition-transform duration-500">
+                       </div>`
+                    : isSingleStudio
+                    ? `<div class="aspect-[16/10] bg-[#f3f2ee] p-4 flex items-center justify-center overflow-hidden">
+                           <img src="${g.image}" loading="lazy" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
                        </div>`
                     : `<div class="aspect-[16/10] bg-[#11131a] overflow-hidden">
                            <img src="${g.image}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -2068,7 +2082,7 @@
 
                             <!-- ENCART AUTEUR -->
                             <div class="mb-16 bg-[#11131a] border border-white/10 rounded-[24px] p-8 flex flex-col md:flex-row items-center md:items-start gap-8 shadow-lg">
-                                <img src="Paris_Half_Race_Story-08.jpg" class="w-24 h-24 rounded-full object-cover border-2 border-brand-yellow shadow-xl" alt="${authorName}" onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=200'" style="margin: 0 !important;">
+                                <img src="Paris_Half_Race_Story-08.jpg" class="w-24 h-24 rounded-full object-cover object-top border-2 border-brand-yellow shadow-xl" alt="${authorName}" onerror="this.src='https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=200'" style="margin: 0 !important; object-position: 42% 8%;">
                                 <div class="text-center md:text-left">
                                     <h4 class="text-brand-yellow font-bold uppercase tracking-[0.2em] text-[10px] mb-2">Rédigé par</h4>
                                     <h5 class="text-2xl font-bold text-white tracking-tight mb-2">${art.author || "Vincent"}</h5>
@@ -2101,20 +2115,23 @@
                                         <i data-lucide="sparkles" class="w-5 h-5 text-brand-yellow"></i> À lire &amp; comparer ensuite
                                     </h3>
                                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                        ${rel.map(r => `
+                                        ${rel.map(r => {
+                                            const rStudio = r.hideDefaultHero || /-t4r-|\/nike-/i.test(r.image || '');
+                                            const rMedia = rStudio
+                                                ? `<div class="aspect-[16/10] rounded-xl overflow-hidden mb-3 bg-[#f3f2ee] p-3 flex items-center justify-center"><img src="${r.image}" alt="${(r.title || '').replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="margin:0 !important;filter:drop-shadow(0 8px 12px rgba(0,0,0,0.18));" class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"></div>`
+                                                : `<div class="aspect-[16/10] rounded-xl overflow-hidden mb-3 bg-black"><img src="${r.image}" alt="${(r.title || '').replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="margin:0 !important;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></div>`;
+                                            return `
                                             <div class="bg-[#11131a] border border-white/10 rounded-2xl p-4 flex flex-col justify-between gap-3 hover:border-brand-yellow/30 transition-all">
                                                 <a href="/${r.slug}" onclick="openArticle('${r.slug}'); return false;" class="group block">
-                                                    <div class="aspect-[16/10] rounded-xl overflow-hidden mb-3 bg-black">
-                                                        <img src="${r.image}" alt="${(r.title || '').replace(/"/g, '&quot;')}" loading="lazy" decoding="async" style="margin:0 !important;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                                    </div>
+                                                    ${rMedia}
                                                     <h4 class="text-sm font-bold leading-snug text-white group-hover:text-brand-yellow transition-colors line-clamp-2">${r.title}</h4>
                                                 </a>
                                                 <div class="flex gap-2 pt-1">
                                                     <a href="/${r.slug}" onclick="openArticle('${r.slug}'); return false;" class="flex-1 text-center bg-white/5 hover:bg-white/10 text-white text-[10px] font-black uppercase py-2 rounded-lg border border-white/10">Lire</a>
                                                     <a href="${r.affiliateLink || 'https://top4running.fr?a_box=sc3esau3'}" target="_blank" rel="noopener noreferrer" class="flex-1 text-center bg-brand-yellow hover:bg-white text-black text-[10px] font-black uppercase py-2 rounded-lg">Top4Running</a>
                                                 </div>
-                                            </div>
-                                        `).join('')}
+                                            </div>`;
+                                        }).join('')}
                                     </div>
                                 </div>`;
                             })()}
@@ -2134,7 +2151,7 @@
                             <div class="bg-gradient-to-br from-brand-cardGray via-black to-[#13131a] border border-brand-yellow/30 p-8 rounded-[32px] shadow-2xl flex flex-col items-center relative overflow-hidden group">
                                 <div class="absolute -top-10 -right-10 w-32 h-32 bg-brand-yellow/10 rounded-full blur-2xl pointer-events-none"></div>
                                 <div class="relative w-20 h-20 rounded-full overflow-hidden border-2 border-brand-yellow mb-4 shadow-xl shrink-0">
-                                    <img src="Paris_Half_Race_Story-08.jpg" alt="Vincent Buisson Coach Running" style="margin: 0 !important;" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                    <img src="Paris_Half_Race_Story-08.jpg" alt="Vincent Buisson Coach Running" style="margin: 0 !important; object-position: 42% 8%;" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300">
                                 </div>
                                 <span class="bg-brand-yellow/10 text-brand-yellow border border-brand-yellow/30 text-[9px] font-black uppercase px-3 py-1 rounded-full mb-3 tracking-widest">Coaching Course à Pied</span>
                                 <h4 class="text-white font-black text-lg text-center mb-1 leading-tight uppercase italic">Vincent Buisson</h4>

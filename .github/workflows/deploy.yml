@@ -54,7 +54,8 @@ jobs:
             set net:timeout 20;
             mirror --reverse --delete --no-perms --ignore-time --parallel=8 \
               ./images ./images ;
-            mirror --reverse --delete --no-perms --ignore-time --parallel=8 \
+            mirror --reverse --delete --no-perms --parallel=8 \
+              --exclude '^images/' \
               --exclude '^\.git' \
               --exclude '^\.github' \
               --exclude '^\.gitignore$' \

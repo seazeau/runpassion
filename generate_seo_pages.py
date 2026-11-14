@@ -63,6 +63,8 @@ def main():
         img_url = full_img_url(art.get("image", ""))
         date_pub = normalize_iso_date(art.get("date", ""))
         author = art.get("author") or "Vincent Buisson"
+        category = strip_html(art.get("category") or "Articles")
+        word_count = len(strip_html(art.get("content", "")).split())
 
         e_title = html.escape(full_title, quote=True)
         e_desc = html.escape(desc, quote=True)
@@ -72,21 +74,53 @@ def main():
         ld_json = json.dumps(
             {
                 "@context": "https://schema.org",
-                "@type": "BlogPosting",
-                "headline": title,
-                "description": desc,
-                "image": img_url,
-                "datePublished": date_pub,
-                "author": {"@type": "Person", "name": author},
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "RunPassion",
-                    "url": f"{SITE_URL}/",
-                },
-                "mainEntityOfPage": url,
+                "@graph": [
+                    {
+                        "@type": "BlogPosting",
+                        "headline": title,
+                        "description": desc,
+                        "image": img_url,
+                        "datePublished": date_pub,
+                        "articleSection": category,
+                        "wordCount": word_count,
+                        "author": {"@type": "Person", "name": author},
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "RunPassion",
+                            "url": f"{SITE_URL}/",
+                        },
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": url,
+                        },
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Accueil",
+                                "item": f"{SITE_URL}/",
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": category,
+                                "item": f"{SITE_URL}/#articles",
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": title,
+                                "item": url,
+                            },
+                        ],
+                    },
+                ],
             },
             ensure_ascii=False,
-        )
+        ).replace("</", "<\\/")
 
         seo_block = f"""<base href="/">
     <title id="meta-title">{e_title}</title>

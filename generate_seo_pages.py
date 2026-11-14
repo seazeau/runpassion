@@ -57,13 +57,26 @@ def main():
         seen.add(slug)
 
         title = strip_html(art.get("title", "RunPassion"))
+        category = strip_html(art.get("category") or "Articles")
         full_title = f"{title} | RunPassion"
-        desc = strip_html(art.get("excerpt") or art.get("content", ""))[:160].strip()
+        if category == "Matériel" and re.match(r"^Test(?:\s*:\s*|\s+)", title) and "avis" not in title.lower():
+            model_part = re.sub(r"^Test(?:\s*:\s*|\s+)", "", title).strip()
+            candidate = f"Test & Avis {model_part} | RunPassion"
+            if len(candidate) <= 68:
+                full_title = candidate
+
+        raw_desc = strip_html(art.get("excerpt") or art.get("content", ""))
+        if len(raw_desc) > 158:
+            cut_desc = raw_desc[:156]
+            if " " in cut_desc:
+                cut_desc = cut_desc.rsplit(" ", 1)[0].rstrip(" ,;:-")
+            desc = cut_desc + "…"
+        else:
+            desc = raw_desc.strip()
         url = f"{SITE_URL}/{slug}"
         img_url = full_img_url(art.get("image", ""))
         date_pub = normalize_iso_date(art.get("date", ""))
         author = art.get("author") or "Vincent Buisson"
-        category = strip_html(art.get("category") or "Articles")
         word_count = len(strip_html(art.get("content", "")).split())
 
         e_title = html.escape(full_title, quote=True)
@@ -71,53 +84,88 @@ def main():
         e_url = html.escape(url, quote=True)
         e_img = html.escape(img_url, quote=True)
 
+        graph_nodes = [
+            {
+                "@type": "BlogPosting",
+                "headline": title,
+                "description": desc,
+                "image": img_url,
+                "datePublished": date_pub,
+                "articleSection": category,
+                "wordCount": word_count,
+                "author": {"@type": "Person", "name": author},
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "RunPassion",
+                    "url": f"{SITE_URL}/",
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": url,
+                },
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Accueil",
+                        "item": f"{SITE_URL}/",
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": category,
+                        "item": f"{SITE_URL}/#articles",
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": title,
+                        "item": url,
+                    },
+                ],
+            },
+        ]
+
+        if category == "Matériel":
+            product_name = re.sub(r"^Test(?:\s*&\s*Avis)?(?:\s*:\s*|\s+)", "", title).split(":")[0].strip() or title
+            notes = art.get("notes") or {}
+            note_vals = [float(v) for v in notes.values() if isinstance(v, (int, float))] if isinstance(notes, dict) else []
+            avg_note = f"{sum(note_vals) / len(note_vals):.1f}" if note_vals else "8.8"
+            product_node = {
+                "@type": "Product",
+                "name": product_name,
+                "image": img_url,
+                "description": desc,
+                "review": {
+                    "@type": "Review",
+                    "author": {"@type": "Person", "name": author},
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": avg_note,
+                        "bestRating": "10",
+                        "worstRating": "1",
+                    },
+                },
+            }
+            raw_prix = str((art.get("specs") or {}).get("prix", ""))
+            price_match = re.search(r"(\d+(?:[.,]\d{1,2})?)", raw_prix)
+            if price_match:
+                product_node["offers"] = {
+                    "@type": "Offer",
+                    "price": price_match.group(1).replace(",", "."),
+                    "priceCurrency": "EUR",
+                    "availability": "https://schema.org/InStock",
+                    "url": art.get("affiliateLink") or url,
+                }
+            graph_nodes.append(product_node)
+
         ld_json = json.dumps(
             {
                 "@context": "https://schema.org",
-                "@graph": [
-                    {
-                        "@type": "BlogPosting",
-                        "headline": title,
-                        "description": desc,
-                        "image": img_url,
-                        "datePublished": date_pub,
-                        "articleSection": category,
-                        "wordCount": word_count,
-                        "author": {"@type": "Person", "name": author},
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "RunPassion",
-                            "url": f"{SITE_URL}/",
-                        },
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": url,
-                        },
-                    },
-                    {
-                        "@type": "BreadcrumbList",
-                        "itemListElement": [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": "Accueil",
-                                "item": f"{SITE_URL}/",
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 2,
-                                "name": category,
-                                "item": f"{SITE_URL}/#articles",
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 3,
-                                "name": title,
-                                "item": url,
-                            },
-                        ],
-                    },
-                ],
+                "@graph": graph_nodes,
             },
             ensure_ascii=False,
         ).replace("</", "<\\/")

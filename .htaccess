@@ -4,8 +4,27 @@ RewriteBase /
 
 # Redirection 301 de l'ancien coaching vers le nouveau site indépendant
 RewriteRule ^coaching(/.*)?$ https://vincentbuisson.fr/ [R=301,L]
+RewriteRule ^coach-running(/.*)?$ https://vincentbuisson.fr/ [R=301,L]
 RewriteRule ^coach-running-en-ligne/?$ https://vincentbuisson.fr/ [R=301,L]
 RewriteRule ^coach-course-a-pied/?$ https://vincentbuisson.fr/ [R=301,L]
+
+# Anciens sitemaps & pages supprimées à fort potentiel Search Console (1 seul saut 301)
+RewriteRule ^sitemap_index\.xml$ /sitemap.xml [R=301,L]
+RewriteRule ^saucony-endorphin-speed-4/?$ /saucony-endorphin-speed-5 [R=301,L]
+RewriteRule ^nike-pegasus-41-vs-vomero-17/?$ /gamme-nike-running-2026-guide-complet [R=301,L]
+RewriteRule ^marathon-valence-denivele/?$ /marathon-de-valence-2025 [R=301,L]
+RewriteRule ^asics-metaspeed-paris/?$ /asics-metaspeed-sky-paris [R=301,L]
+RewriteRule ^adidas-adios-pro-4/?$ /adidas-adizero-adios-pro-4 [R=301,L]
+RewriteRule ^nike-ultrafly/?$ /nike-ultrafly-trail [R=301,L]
+RewriteRule ^courir-lentement-pour-courir-plus-vite-lendurance-fondamentale/?$ /endurance-fondamentale [R=301,L]
+RewriteRule ^(?:category|race|tests-running)(?:/.*)?$ / [R=301,L]
+
+# Redirection 301 des préfixes /test-<slug> vers /<slug>
+RewriteRule ^test-(.+?)/?$ /$1 [R=301,L]
+
+# Suppression du trailing slash (/slug/ -> /slug) pour éviter le contenu dupliqué
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # Si le fichier ou le dossier demandé existe réellement (images, css, js), on le sert directement
 RewriteCond %{REQUEST_FILENAME} -f [OR]

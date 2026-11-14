@@ -122,8 +122,7 @@ def main():
             ensure_ascii=False,
         ).replace("</", "<\\/")
 
-        seo_block = f"""<base href="/">
-    <title id="meta-title">{e_title}</title>
+        seo_block = f"""<title id="meta-title">{e_title}</title>
     <meta name="description" id="meta-desc" content="{e_desc}">
     <link rel="canonical" id="canonical-url" href="{e_url}">
 

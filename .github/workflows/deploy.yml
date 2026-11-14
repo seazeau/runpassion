@@ -52,7 +52,9 @@ jobs:
             set net:max-retries 5;
             set net:reconnect-interval-base 5;
             set net:timeout 20;
-            mirror --reverse --delete --no-perms --parallel=2 \
+            mirror --reverse --delete --no-perms --ignore-time --parallel=8 \
+              ./images ./images ;
+            mirror --reverse --delete --no-perms --ignore-time --parallel=8 \
               --exclude '^\.git' \
               --exclude '^\.github' \
               --exclude '^\.gitignore$' \

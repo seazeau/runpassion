@@ -12,6 +12,9 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# Ne jamais renvoyer index.html (200 OK) pour un média ou asset manquant : renvoyer une vraie 404
+RewriteRule ^(?:images/|pages/|.*\.(?:webp|jpe?g|png|gif|svg|ico|css|js|woff2?|ttf|map)$) - [R=404,NC,L]
+
 # Sert la page HTML SEO pré-générée si elle existe dans /pages/<slug>.html
 RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
 RewriteRule ^([^/]+)/?$ pages/$1.html [L]

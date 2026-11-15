@@ -1,5 +1,41 @@
 const wordpressArticles = [
     {
+        "id": 151,
+        "title": "Test Kiprun Kipclimb MAX",
+        "slug": "kiprun-kipclimb-max",
+        "category": "Matériel",
+        "author": "Vincent",
+        "date": "2026-11-15",
+        "image": "images/kiprun-kipclimb-max-hero.webp",
+        "affiliateLink": "https://www.decathlon.fr/",
+        "excerpt": "Tige Matryx®, mousse Shiftech+™, crampons de 5 mm et drop de 4 mm à 149,99 € : découvrez notre test terrain complet de la Kiprun Kipclimb MAX en montagne.",
+        "specs": {
+            "poids": "315 g (en 42)",
+            "drop": "4 mm",
+            "stack": "34 mm / 30 mm",
+            "prix": "149,99 €",
+            "profil": "Trail montagne & ultra technique (neutre, crampons 5 mm)",
+            "usage": "Ultra-trails techniques (40 à 170 km), pierriers, pentes raides et terrains alpins cassants"
+        },
+        "notes": {
+            "amorti": 8.4,
+            "dynamisme": 7.9,
+            "confort": 8.6,
+            "stabilite": 9.3
+        },
+        "pointsForts": [
+            "Tige en tissu Matryx® renforcé aramide offrant une résistance exceptionnelle à l'abrasion et un maintien latéral irréprochable en dévers",
+            "Accroche mordante des crampons de 5 mm sur terrains meubles, boueux et sentiers forestiers raides",
+            "Stabilité remarquable en terrains cassants grâce au châssis Shiftech+™ structuré et au drop bas de 4 mm (34 / 30 mm)",
+            "Protection complète (pare-pierres intégral et guêtre anti-débris intégrée) pour un tarif très agressif de 149,99 €"
+        ],
+        "pointsFaibles": [
+            "Amorti Shiftech+™ volontairement ferme et structure rigide, peu adaptés aux sentiers roulants",
+            "Poids de 315 g et drop de 4 mm exigeants sur le plan musculaire si l'on n'y est pas habitué"
+        ],
+        "content": "<p>Avec la <strong>Kiprun Kipclimb MAX</strong>, la marque running de Decathlon change clairement de dimension sur le segment du trail alpin et des courses techniques de longue haleine. Pensée pour affronter les pierriers, les crêtes instables et les forts dénivelés (de 40 à 170 km), cette nouvelle venue mise sur des matériaux éprouvés — tige <strong>Matryx®</strong>, mousse <strong>Shiftech+™</strong> associée à un insert <strong>FASTECH™</strong> et crampons de <strong>5 mm</strong> — tout en conservant un positionnement tarifaire agressif à 149,99 €.</p>\n\n<h2>Fiche technique et positionnement en montagne</h2>\n<p>Sur la balance, la Kipclimb MAX affiche environ <strong>315 g en pointure 42</strong> pour un profil de semelle de <strong>34 mm au talon et 30 mm à l'avant-pied</strong>, soit un <strong>drop de 4 mm</strong>. Ce choix géométrique, combiné à un empilement généreux mais contenu, vise avant tout à garder le pied proche du terrain afin de préserver la proprioception et la stabilité lorsque les appuis deviennent fuyants.</p>\n<p>Contrairement à des modèles maximalistes très moelleux conçus pour avaler les pistes larges et roulantes, la Kipclimb MAX assume une orientation radicalement alpine. Elle s'adresse aux traileurs qui privilégient la précision du placement de pied, la sécurité en descente et la robustesse face à la roche abrasive plutôt que la légèreté pure sur terrain facile.</p>\n\n<h2>Tige Matryx®, guêtre intégrée et maintien du pied</h2>\n<p>Visuellement comme au toucher, l'empeigne en <strong>Matryx®</strong> inspire immédiatement confiance. Tissé avec des fils d'aramide haute ténacité, ce mesh résiste sans broncher aux frottements répétés contre les cailloux et racines tout en évitant que le pied ne glisse latéralement dans les dévers marqués. Un pare-pierres strié enveloppant l'ensemble de l'avant-pied vient compléter cette armure, tandis que le col chaussette extensible limite efficacement l'intrusion de graviers et d'aiguilles de pin dans la chaussure.</p>\n<p>Le laçage profite d'un passant élastique bien pensé sur le cou-de-pied pour maintenir les lacets en place et éviter qu'ils ne s'accrochent dans la végétation. Le verrouillage du talon est franc dès les premiers mètres, sans point de pression sur le tendon d'Achille grâce à la souplesse de la guêtre intégrée.</p>\n\n<div class=\"custom-auto-gallery\" data-cols=\"3\">\n<img src=\"images/kiprun-kipclimb-max-forefoot.webp\" alt=\"Gros plan avant-pied Kiprun Kipclimb MAX tige Matryx et pare-pierres sur sentier\" loading=\"lazy\">\n<img src=\"images/kiprun-kipclimb-max-heel.webp\" alt=\"Gros plan talon Kiprun Kipclimb MAX mousse Shiftech+ et col chaussette anti-débris\" loading=\"lazy\">\n<img src=\"images/kiprun-kipclimb-max-outsole.webp\" alt=\"Semelle extérieure Kiprun Kipclimb MAX avec crampons de 5 mm en chevrons\" loading=\"lazy\">\n</div>\n\n<h2>Sur le terrain : amorti Shiftech+™ et accroche des crampons de 5 mm</h2>\n<p>Dès les premières ascensions, la fermeté structurée de la mousse <strong>Shiftech+™</strong> se fait sentir. L'amorti ne s'écrase pas sous les appuis appuyés et renvoie suffisamment d'énergie grâce à l'insert <strong>FASTECH™</strong> placé sous le pied pour relancer proprement lorsque la pente s'adoucit. Sur les longues sorties alpines, cette densité maîtrisée protège efficacement la voûte plantaire des chocs répétés sur les rochers saillants tout en conservant une assise saine après plusieurs heures d'effort.</p>\n<p>Côté semelle extérieure, les <strong>crampons de 5 mm</strong> en chevrons multidirectionnels mordent avec autorité dans la terre meuble, les sous-bois humides et les pentes herbeuses ou boueuses. Le freinage en descente raide est sécurisant et l'espacement entre les crampons facilite le débourrage. Seule la roche mouillée très lisse demande un minimum de vigilance par rapport aux références équipées en gomme Vibram Megagrip, même si le composé propriétaire Kiprun s'en sort honorablement dans la majorité des conditions rencontrées en montagne.</p>\n\n<h2>Notre verdict sur la Kiprun Kipclimb MAX</h2>\n<p>Sans chercher à séduire tout le monde sur les parcours roulants, la <strong>Kiprun Kipclimb MAX</strong> frappe fort là où on l'attend : en haute montagne et sur les sentiers cassants. Offrir une tige Matryx®, une protection intégrale, une stabilité de premier plan et un grip de 5 mm à 149,99 € constitue une proposition redoutablement cohérente pour qui prépare un ultra technique exigeant avec des mollets déjà rodés au drop de 4 mm.</p>\n<p>La Kipclimb MAX est disponible directement chez <a href=\"https://www.decathlon.fr/\" target=\"_blank\" rel=\"noopener noreferrer\">Decathlon (149,99 €)</a>. Si vous souhaitez comparer avec d'autres modèles d'ultra-trail techniques (Salomon, Hoka, NNormal), vous pouvez également consulter la sélection trail chez notre partenaire <a href=\"https://top4running.fr/c/trail-running?a_box=sc3esau3\" target=\"_blank\" rel=\"noopener noreferrer\">Top4Running (avec -5 % via le code RUNPASSION)</a> et parcourir nos autres essais dans <a href=\"https://runpassion.fr/#articles\">la rubrique Matériel du site</a>.</p>"
+    },
+    {
         "id": 123,
         "title": "Test Salomon S/LAB Phantasm 3",
         "slug": "salomon-s-lab-phantasm-3",
